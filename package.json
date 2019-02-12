@@ -1,0 +1,27 @@
+{
+  "name": "snbook_edit",
+  "version": "1.0.0",
+  "description": "## 这是一本开源免费的电子书, 用gitbook编写的",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-github-buttons": "^2.1.0",
+    "gitbook-plugin-summary": "^1.0.0",
+    "gulp": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stone0117/snbook_edit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stone0117/snbook_edit/issues"
+  },
+  "homepage": "https://github.com/stone0117/snbook_edit#readme"
+}

@@ -1,0 +1,830 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Swift-record · 编写gitbook电子书教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="stone">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-packt-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../MacOS-record/MacOS-record.html" />
+    
+    
+    <link rel="prev" href="../regex-record/regex-record.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"stone0117/snbook","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    records
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../vue-record/vue-record.html">
+            
+                <a href="../vue-record/vue-record.html">
+            
+                    
+                    vue-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../PHP-record/PHP-record.html">
+            
+                <a href="../PHP-record/PHP-record.html">
+            
+                    
+                    PHP-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../Git-record/Git-record.html">
+            
+                <a href="../Git-record/Git-record.html">
+            
+                    
+                    Git-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../ssr-record/ssr-record.html">
+            
+                <a href="../ssr-record/ssr-record.html">
+            
+                    
+                    ssr-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../Koa2-record/Koa2-record.html">
+            
+                <a href="../Koa2-record/Koa2-record.html">
+            
+                    
+                    Koa2-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../trap-record/trap-record.html">
+            
+                <a href="../trap-record/trap-record.html">
+            
+                    
+                    trap-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../html-record/html-record.html">
+            
+                <a href="../html-record/html-record.html">
+            
+                    
+                    html-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="../ruby-record/ruby-record.html">
+            
+                <a href="../ruby-record/ruby-record.html">
+            
+                    
+                    ruby-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../node-record/node-record.html">
+            
+                <a href="../node-record/node-record.html">
+            
+                    
+                    node-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" data-path="../shell-record/shell-record.html">
+            
+                <a href="../shell-record/shell-record.html">
+            
+                    
+                    shell-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.11" data-path="../regex-record/regex-record.html">
+            
+                <a href="../regex-record/regex-record.html">
+            
+                    
+                    regex-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.12" data-path="Swift-record.html">
+            
+                <a href="Swift-record.html">
+            
+                    
+                    Swift-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.13" data-path="../MacOS-record/MacOS-record.html">
+            
+                <a href="../MacOS-record/MacOS-record.html">
+            
+                    
+                    MacOS-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.14" data-path="../React-record/React-record.html">
+            
+                <a href="../React-record/React-record.html">
+            
+                    
+                    React-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.15" data-path="../wechat-record/wechat-record.html">
+            
+                <a href="../wechat-record/wechat-record.html">
+            
+                    
+                    wechat-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.16" data-path="../Ubantu-record/Ubantu-record.html">
+            
+                <a href="../Ubantu-record/Ubantu-record.html">
+            
+                    
+                    Ubantu-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.17" data-path="../python-record/python-record.html">
+            
+                <a href="../python-record/python-record.html">
+            
+                    
+                    python-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.18" data-path="../jQuery-record/jQuery-record.html">
+            
+                <a href="../jQuery-record/jQuery-record.html">
+            
+                    
+                    jQuery-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.19" data-path="../mongodb-record/mongodb-record.html">
+            
+                <a href="../mongodb-record/mongodb-record.html">
+            
+                    
+                    mongodb-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.20" data-path="../Typescript-record/Typescript-record.html">
+            
+                <a href="../Typescript-record/Typescript-record.html">
+            
+                    
+                    Typescript-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.21" data-path="../Objective-C-record/Objective-C-record.html">
+            
+                <a href="../Objective-C-record/Objective-C-record.html">
+            
+                    
+                    Objective-C-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.22" data-path="../applescript-record/applescript-record.html">
+            
+                <a href="../applescript-record/applescript-record.html">
+            
+                    
+                    applescript-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.23" data-path="../ECMAScript_6-record/ECMAScript_6-record.html">
+            
+                <a href="../ECMAScript_6-record/ECMAScript_6-record.html">
+            
+                    
+                    ECMAScript_6-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.24" data-path="../IntelliJ_IDEA-record/IntelliJ_IDEA-record.html">
+            
+                <a href="../IntelliJ_IDEA-record/IntelliJ_IDEA-record.html">
+            
+                    
+                    IntelliJ_IDEA-record
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Swift-record</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="swift-record">Swift-record</h1>
+<hr>
+<p><img src="1534524218892.png" alt="Alt text"></p>
+<pre><code class="lang-swift"><span class="hljs-type">SLog</span>(#file, #line, <span class="hljs-string">&quot;hello world&quot;</span>);
+</code></pre>
+<hr>
+<h2 id="swift&#x4F7F;&#x7528;&#x6781;&#x5149;&#x63A8;&#x9001;jpush&#x7684;demo">Swift&#x4F7F;&#x7528;&#x6781;&#x5149;&#x63A8;&#x9001;JPush&#x7684;Demo</h2>
+<hr>
+<h2 id="ios&#x6A21;&#x62DF;&#x5668;&#xFF1A;&#x53CC;&#x51FB;&#x4E3B;&#x9875;&#x6309;&#x94AE;&#x6709;&#x65F6;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;">iOS&#x6A21;&#x62DF;&#x5668;&#xFF1A;&#x53CC;&#x51FB;&#x4E3B;&#x9875;&#x6309;&#x94AE;&#x6709;&#x65F6;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;</h2>
+<p><a href="https://stackoverflow.com/questions/47256764/ios-simulator-double-click-home-button-does-not-work-sometimes" target="_blank">https://stackoverflow.com/questions/47256764/ios-simulator-double-click-home-button-does-not-work-sometimes</a></p>
+<pre><code>&#x5F53;&#x6211;&#x60F3;&#x5173;&#x95ED;&#x6211;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x6211;&#x4E5F;&#x6709;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x4EE3;&#x66FF;&#xFF1A;
+
+xcrun simctl list | grep Booted
+&#x7136;&#x540E;&#x590D;&#x5236;&#x6A21;&#x62DF;&#x5668;ID&#xFF0C;&#x5E76;&#x8FD0;&#x884C;&#x6B64;&#x547D;&#x4EE4;&#x4EE5;&#x5173;&#x95ED;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;
+
+xcrun simctl terminate &lt;simulator ID&gt; &lt;your app bundle ID&gt;
+
+...&#x6216;&#x8005;&#x5982;&#x679C;&#x60A8;&#x53EA;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x6A21;&#x62DF;&#x5668;&#xFF0C;&#x53EA;&#x9700;&#x952E;&#x5165;booted&#xFF1A;
+
+xcrun simctl terminate booted &lt;your app bundle ID&gt;
+</code></pre><p><img src="1537684402743.png" alt="Alt text"></p>
+<hr>
+<h2 id="swift&#x61D2;&#x52A0;&#x8F7D;&#xFF08;lazy-load&#xFF09;oc&#x61D2;&#x52A0;&#x8F7D;">swift&#x61D2;&#x52A0;&#x8F7D;&#xFF08;lazy load&#xFF09;&amp;OC&#x61D2;&#x52A0;&#x8F7D;</h2>
+<p><a href="https://cn.aliyun.com/jiaocheng/376270.html" target="_blank">https://cn.aliyun.com/jiaocheng/376270.html</a></p>
+<pre><code>swift lazy &#x53D8;&#x91CF;&#x53EA;&#x80FD;&#x7528;var&#x5173;&#x952E;&#x5B57;&#x6765;&#x4FEE;&#x9970;,&#x56E0;&#x4E3A;&#x5E38;&#x91CF;&#x5FC5;&#x987B;&#x5728;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x65F6;&#x8D4B;&#x503C; &#x3002;&#x4E0E;OC&#x4E2D;&#x4E0D;&#x540C;,OC&#x4E2D;&#x61D2;&#x52A0;&#x8F7D;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x7F6E; nil ,&#x5F53;&#x518D;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4F9D;&#x7136;&#x4F1A;&#x91CD;&#x65B0;&#x521D;&#x59CB;&#x5316;&#x3002;&#x56E0;&#x4E3A;swift &#x4E2D; nil &#x548C; OC nil &#x542B;&#x4E49;&#x4E0D;&#x540C;(OC&#x4E2D;&#x4EE3;&#x8868;&#x7A7A;&#x6307;&#x9488;,&#x5411;&#x7A7A;&#x6307;&#x9488;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x4E0D;&#x4F1A;&#x5D29;&#x6E83;,swift &#x4E2D; nil &#x4EE3;&#x8868;&#x7684;&#x662F; &#x503C;&#x7F3A;&#x5931; &#x3002;)&#x6240;&#x4EE5;swift &#x4E2D;&#x61D2;&#x52A0;&#x8F7D;&#x7684;&#x53D8;&#x91CF; = nil &#x65F6; &#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x76F4;&#x63A5;&#x7ED9;&#x4ED6;&#x8D4B;&#x503C;&#x6210; nil &#x4E86;,&#x518D;&#x6B21;&#x8C03;&#x7528;&#x8BE5;&#x53D8;&#x91CF;&#x65F6;&#x5176;&#x503C;&#x5C31;&#x662F; nil ,&#x800C;&#x4E0D;&#x4F1A;&#x50CF; OC &#x4E2D;&#x61D2;&#x52A0;&#x8F7D;&#x4E00;&#x6837;&#x518D;&#x6B21;&#x521D;&#x59CB;&#x5316;!
+</code></pre><h2 id="&#x5BF9;&#x8C61;&#x5C5E;&#x6027;-&#x5982;&#x679C;&#x662F;&#x53EF;&#x53D8;&#x7C7B;&#x578B;--&#x66FF;&#x6362;&#x6210;&#x53D8;&#x91CF;&#x4E4B;&#x540E;&#x5730;&#x5740;&#x6539;&#x53D8;&#x771F;&#x5751;">&#x5BF9;&#x8C61;&#x5C5E;&#x6027; &#x5982;&#x679C;&#x662F;&#x53EF;&#x53D8;&#x7C7B;&#x578B; , &#x66FF;&#x6362;&#x6210;&#x53D8;&#x91CF;&#x4E4B;&#x540E;&#x5730;&#x5740;&#x6539;&#x53D8;...&#x771F;&#x5751;...</h2>
+<pre><code>// &#x5199;&#x6CD5;1
+snmatch.group?.append(group)
+
+// &#x5199;&#x6CD5;2
+let group = snmatch.group
+group?.append(group)
+
+&#x5199;&#x6CD5;2 &#x5199;&#x6CD5;1 &#x6548;&#x679C;&#x4E0D;&#x76F8;&#x7B49;...
+</code></pre><h2 id="ios&#x5F00;&#x53D1;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x4E00;-iqkeyboardmanager">iOS&#x5F00;&#x53D1;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x4E00; IQKeyboardManager</h2>
+<p><a href="https://www.jianshu.com/p/01c0682003a9" target="_blank">https://www.jianshu.com/p/01c0682003a9</a></p>
+<h2 id="how-to-lose-marginpadding-in-uitextview">How to lose margin/padding in UITextView?</h2>
+<p><a href="https://stackoverflow.com/questions/746670/how-to-lose-margin-padding-in-uitextview" target="_blank">https://stackoverflow.com/questions/746670/how-to-lose-margin-padding-in-uitextview</a></p>
+<h2 id="mjrefresh-swift">MJRefresh swift</h2>
+<p><a href="https://www.jianshu.com/p/049bf3f58370" target="_blank">https://www.jianshu.com/p/049bf3f58370</a></p>
+<hr>
+<h2 id="&#x80FD;&#x5199;padding&#x7684;uilabel">&#x80FD;&#x5199;padding&#x7684;UILabel</h2>
+<p><a href="https://blog.csdn.net/l7022995/article/details/79092750" target="_blank">https://blog.csdn.net/l7022995/article/details/79092750</a></p>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SNPaddingLabel</span>: <span class="hljs-title">UILabel</span> </span>{
+
+  <span class="hljs-keyword">var</span> edgeInsets: <span class="hljs-type">UIEdgeInsets</span>!
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">drawText</span><span class="hljs-params">(<span class="hljs-keyword">in</span> rect: CGRect)</span></span> {
+    <span class="hljs-comment">//&#x5176;&#x4E2D;&#x7528;&#x5230;&#x7684;self.edgeInsets&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x521D;&#x59CB;&#x5316;UILabel&#x5B9E;&#x4F8B;&#x7684;&#x65F6;&#x5019;&#x5BF9;&#x5176;&#x8D4B;&#x503C;</span>
+    <span class="hljs-keyword">super</span>.drawText(<span class="hljs-keyword">in</span>: <span class="hljs-type">UIEdgeInsetsInsetRect</span>(rect, <span class="hljs-keyword">self</span>.edgeInsets))
+  }
+
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">var</span> intrinsicContentSize: <span class="hljs-type">CGSize</span> {
+    <span class="hljs-keyword">get</span> {
+      <span class="hljs-keyword">var</span> size = <span class="hljs-keyword">super</span>.intrinsicContentSize;
+      size.width += (<span class="hljs-keyword">self</span>.edgeInsets.<span class="hljs-keyword">left</span> + <span class="hljs-keyword">self</span>.edgeInsets.<span class="hljs-keyword">right</span>);
+      size.height += (<span class="hljs-keyword">self</span>.edgeInsets.top + <span class="hljs-keyword">self</span>.edgeInsets.bottom);
+      <span class="hljs-keyword">return</span> size;
+    }
+  }
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">sizeThatFits</span><span class="hljs-params">(<span class="hljs-number">_</span> size: CGSize)</span></span> -&gt; <span class="hljs-type">CGSize</span> {
+    <span class="hljs-keyword">let</span> superSizeThatFits = <span class="hljs-keyword">super</span>.sizeThatFits(size)
+    <span class="hljs-keyword">let</span> width             = superSizeThatFits.width + edgeInsets.<span class="hljs-keyword">left</span> + edgeInsets.<span class="hljs-keyword">right</span>
+    <span class="hljs-keyword">let</span> height            = superSizeThatFits.height + edgeInsets.top + edgeInsets.bottom
+    <span class="hljs-keyword">return</span> <span class="hljs-type">CGSize</span>(width: width, height: height)
+  }
+
+  <span class="hljs-keyword">required</span> <span class="hljs-keyword">init</span>?(coder aDecoder: <span class="hljs-type">NSCoder</span>) {
+    <span class="hljs-keyword">super</span>.<span class="hljs-keyword">init</span>(coder: aDecoder)
+    <span class="hljs-keyword">self</span>.edgeInsets = <span class="hljs-type">UIEdgeInsets</span>(top: <span class="hljs-number">0</span>, <span class="hljs-keyword">left</span>: <span class="hljs-number">15</span>, bottom: <span class="hljs-number">0</span>, <span class="hljs-keyword">right</span>: <span class="hljs-number">15</span>)
+    preferredMaxLayoutWidth = <span class="hljs-keyword">self</span>.frame.width - (<span class="hljs-keyword">self</span>.edgeInsets.<span class="hljs-keyword">left</span> + <span class="hljs-keyword">self</span>.edgeInsets.<span class="hljs-keyword">right</span>)
+  }
+}
+</code></pre>
+<hr>
+<h2 id="&#x4F7F;sdwebimage&#x4EE5;&#x6DE1;&#x5165;&#x6DE1;&#x51FA;&#x7684;&#x52A8;&#x753B;&#x663E;&#x793A;">&#x4F7F;SDWebImage&#x4EE5;&#x6DE1;&#x5165;&#x6DE1;&#x51FA;&#x7684;&#x52A8;&#x753B;&#x663E;&#x793A;</h2>
+<p><a href="https://stackoverflow.com/questions/49348675/making-sdwebimage-appear-with-fade-in-animation" target="_blank">https://stackoverflow.com/questions/49348675/making-sdwebimage-appear-with-fade-in-animation</a></p>
+<pre><code class="lang-swift"><span class="hljs-keyword">guard</span> <span class="hljs-keyword">let</span> photoUrlString = post?.photoUrl <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span>
+}
+
+<span class="hljs-keyword">let</span> photoUrl = <span class="hljs-type">URL</span>(string: photoUrlString)
+
+picImg.sd_imageTransition = .fade
+picImg.sd_setImage(with: photoUrl)
+</code></pre>
+<hr>
+<h2 id="swift-40-&#x4E2D;&#x7684;-open&#xFF0C;public&#xFF0C;internal&#xFF0C;fileprivate&#xFF0C;private">Swift 4.0 &#x4E2D;&#x7684; open&#xFF0C;public&#xFF0C;internal&#xFF0C;fileprivate&#xFF0C;private</h2>
+<p> <a href="https://blog.csdn.net/sun_cui_hua/article/details/78021804" target="_blank">https://blog.csdn.net/sun_cui_hua/article/details/78021804</a></p>
+<h2 id="&#x3010;ios-&#x5F00;&#x53D1;&#x3011;&#x7528;&#x6CDB;&#x578B;&#x7B80;&#x5316;-instantiateviewcontroller">&#x3010;iOS &#x5F00;&#x53D1;&#x3011;&#x7528;&#x6CDB;&#x578B;&#x7B80;&#x5316; instantiateViewController</h2>
+<p><a href="https://www.jianshu.com/p/7bc4526cab86" target="_blank">https://www.jianshu.com/p/7bc4526cab86</a></p>
+<pre><code>extension UIViewController {
+    func instantiateVC&lt;T: UIViewController&gt;(type: T.Type) -&gt; T? {
+        let id = String(describing: T.self)
+        return storyboard?.instantiateViewController(withIdentifier: id) as? T
+    }
+}
+
+// how to use
+guard let editVC = instantiateVC(type: EditVC.self) else { return }
+</code></pre><h2 id="swift-&#x4EE3;&#x7801;&#x5757;">Swift &#x4EE3;&#x7801;&#x5757;</h2>
+<p><a href="https://ericasadun.com/2015/06/18/swift-do-statements-and-labeled-breaks/" target="_blank">https://ericasadun.com/2015/06/18/swift-do-statements-and-labeled-breaks/</a></p>
+<pre><code>    labelpoint: do {
+      // Waits to execute until the scope ends
+      defer{ print(&quot;Leaving do scope&quot;) }
+
+      // This will always print
+      print(&quot;Always prints&quot;)
+
+      // Toss a coin and optionally leave the scope
+      // let coin = Int(arc4random_uniform(2))
+      let coin = 0
+
+      print(&quot;Coin toss: &quot; + (coin == 0 ? &quot;Heads&quot; : &quot;Tails&quot;))
+
+      if coin == 0 { break labelpoint }
+
+      // Prints if scope execution continues
+      print(&quot;Tails are lucky&quot;)
+    }
+    print(&quot;Ending&quot;)
+</code></pre><h2 id="xcode-source-kit&#x4E0D;&#x4F1A;&#x505C;&#x6B62;&#x4E0E;swift&#x5D29;&#x6E83;&#x91CD;&#x590D;">Xcode Source Kit&#x4E0D;&#x4F1A;&#x505C;&#x6B62;&#x4E0E;Swift&#x5D29;&#x6E83;[&#x91CD;&#x590D;]</h2>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x5C1D;&#x8BD5;&#x4E86;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#xFF0C;&#x4F46;&#x4EE5;&#x9632;&#x4E07;&#x4E00;&#xFF1A;</p>
+<p>&#x5173;&#x95ED;Xcode
+&#x53BB;&#x6389; &apos;~/Library/Developer/Xcode/DerivedData/&apos;
+&#x53BB;&#x6389; &apos;~/Library/Caches/com.apple.dt.Xcode&apos;
+&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x8BA1;&#x7B97;&#x673A;&#xFF08;&#x4EE5;&#x9632;&#x4E07;&#x4E00;&#xFF09;&#x3002;
+&#x8FD9;&#x5E94;&#x8BE5;&#x4F1A;&#x8BA9;&#x4F60;&#x5B8C;&#x6210;&#x4EE3;&#x7801;&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x95EE;&#x9898;&#x6700;&#x7EC8;&#x4F1A;&#x56DE;&#x6765;&#x3002;Xcode 6.1.1 beta&#xFF08;&#x6216;&#x73B0;&#x5728;&#x5E26;&#x6709;WatchKit&#x7684;6.2 beta&#xFF09;&#x5E94;&#x4FEE;&#x590D;&#x8BB8;&#x591A;&#x4E0E;SourceKit&#x76F8;&#x5173;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<pre><code>&#x597D;&#x5427;&#x6211;&#x8FD8;&#x6CA1;&#x6709;&#x5C1D;&#x8BD5;&#x6E05;&#x9664;&#x301C;/ Library / Caches / com.apple.dt.Xcode&apos;&#x6240;&#x4EE5;&#x6211;&#x4F1A;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;&#x3002;&#x8C22;&#x8C22; -  DBoyer 2014&#x5E74; 11&#x6708;23&#x65E5;2:36
+1
+&#x8FD9;&#x5DE5;&#x4F5C;&#x4E86;&#xFF01;&#x6CA1;&#x6709;&#x522B;&#x7684;&#xFF01;&#x4F60;&#x662F;&#x6211;&#x6700;&#x597D;&#x7684;&#x670B;&#x53CB;&#xFF01;:) -  &#x4EE3;&#x7801;&#x4E3A; &apos; 2014&#x5E74;11&#x6708;24&#x65E5;19:47&#x7F16;&#x7801;
+&#x6211;&#x7684;&#x65B0;&#x670B;&#x53CB;&#x4E5F;&#x662F;&#xFF0C;&#x8C22;&#x8C22;&#xFF01; -  Anna-Chiara Bellini 2014&#x5E74; 11&#x6708;26&#x65E5;10:25
+1
+&#x8C22;&#x8C22;&#x4F60;&#xFF0C;&#x4F60;&#x6551;&#x4E86;&#x6211;&#xFF0C;&#x4F60;&#x503C;&#x5F97;&#x4E00;&#x4E2A;&#x5965;&#x65AF;&#x5361;&#x3002; -  King-Wizard 2014&#x5E74;11&#x6708;28&#x65E5;20:04
+2
+&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x76F8;&#x5173;&#x6216;&#x4E0D;&#x76F8;&#x5173;&#x7684;&#x65C1;&#x6CE8;&#xFF0C;&#x4F46;&#x6211;&#x7ECF;&#x5E38;&#x53D1;&#x73B0;&#x4E0D;&#x4EC5;&#x8981;&#x5220;&#x9664;&#x9879;&#x76EE;&#xFF0C;&#x8FD8;&#x8981;&#x5C06;&#x5B83;&#x4EEC;&#x4ECE;&#x5783;&#x573E;&#x7BB1;&#x4E2D;&#x6E05;&#x7A7A;&#x3002;Xcode&#x6709;&#x4E00;&#x79CD;&#x8BA8;&#x538C;&#x7684;&#x4E60;&#x60EF;&#xFF0C;&#x5373;&#x5F53;&#x5B83;&#x4EEC;&#x5B9E;&#x9645;&#x4E0A;&#x5904;&#x4E8E;&#x5783;&#x573E;&#x7BB1;&#x4E2D;&#x65F6;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x67D0;&#x4E9B;&#x7269;&#x54C1;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5404;&#x79CD;&#x95EE;&#x9898;&#x3002;
+</code></pre><h2 id="sourcekit&#x4E0D;&#x5DE5;&#x4F5C;-&#x95EE;&#x9898;&#x89E3;&#x51B3;">SourceKit&#x4E0D;&#x5DE5;&#x4F5C;, &#x95EE;&#x9898;&#x89E3;&#x51B3;</h2>
+<p><a href="https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000035484-SourceKit-Not-Working" target="_blank">https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000035484-SourceKit-Not-Working</a></p>
+<p>Changing the target to a device, clean, rebuild-all seems to have fixed it! Even as I switched back to simulator again, it seems to be working again. Can you give some background so I understand if I have the same problem in the future why this worked?</p>
+<p>I will reply back to this thread if it stops working again.</p>
+<p>&#x5C06;&#x76EE;&#x6807;&#x66F4;&#x6539;&#x4E3A;&#x8BBE;&#x5907;&#xFF0C;&#x6E05;&#x7406;&#xFF0C;&#x91CD;&#x5EFA; - &#x6240;&#x6709;&#x4F3C;&#x4E4E;&#x5DF2;&#x4FEE;&#x590D;&#x5B83;&#xFF01;&#x5373;&#x4F7F;&#x6211;&#x518D;&#x6B21;&#x5207;&#x6362;&#x56DE;&#x6A21;&#x62DF;&#x5668;&#xFF0C;&#x5B83;&#x4F3C;&#x4E4E;&#x518D;&#x6B21;&#x8D77;&#x4F5C;&#x7528;&#x3002;&#x4F60;&#x80FD;&#x7ED9;&#x4E00;&#x4E9B;&#x80CC;&#x666F;&#x77E5;&#x8BC6;&#x5417;&#xFF1F;&#x5982;&#x679C;&#x6211;&#x5C06;&#x6765;&#x9047;&#x5230;&#x540C;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#xFF1F;</p>
+<p>&#x5982;&#x679C;&#x5B83;&#x518D;&#x6B21;&#x505C;&#x6B62;&#x5DE5;&#x4F5C;&#xFF0C;&#x6211;&#x4F1A;&#x56DE;&#x590D;&#x8FD9;&#x4E2A;&#x5E16;&#x5B50;&#x3002;</p>
+<hr>
+<h2 id="&#x611F;&#x53F9;&#x53F7;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x5E76;&#x6CA1;&#x6709;&#x9690;&#x5F0F;&#x89E3;&#x5305;-&#x4EC0;&#x4E48;&#x539F;&#x56E0;">&#x611F;&#x53F9;&#x53F7;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x5E76;&#x6CA1;&#x6709;&#x9690;&#x5F0F;&#x89E3;&#x5305;, &#x4EC0;&#x4E48;&#x539F;&#x56E0;?</h2>
+<p><a href="https://stackoverflow.com/questions/49609528/why-does-implicitly-unwrapped-optional-not-unwrap-in-dictionary-of-type-string" target="_blank">https://stackoverflow.com/questions/49609528/why-does-implicitly-unwrapped-optional-not-unwrap-in-dictionary-of-type-string</a></p>
+<pre><code>
+var b: String? = &quot;hello world&quot;
+var c: String! = &quot;hello world&quot;
+
+print(b)
+print(c)
+
+// &#x6253;&#x5370; Optional(&quot;hello world&quot;)
+// &#x6253;&#x5370; some(&quot;hello world&quot;)
+</code></pre><pre><code>&#x6839;&#x636E;SE-0054&#x89C4;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#xFF0C;IUO&#x4EC5;&#x5728;&#x8981;&#x6C42;&#x5176;&#x672A;&#x5305;&#x88C5;&#x7C7B;&#x578B;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x88AB;&#x5F3A;&#x884C;&#x6253;&#x5F00;&#x3002;&#x5728;&#x60A8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;IUO&#x4E0D;&#x9700;&#x8981;&#x5F3A;&#x5236;&#x89E3;&#x5305;&#x4EE5;&#x4FBF;&#x88AB;&#x5F3A;&#x5236;Any&#xFF08;Any&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4EFB;&#x4F55;&#x503C;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4E0D;&#x662F;&#x3002;
+
+&#x5728;&#x8FD9;&#x4E9B;&#x95EE;&#x7B54;&#x4E2D;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x8BA8;&#x8BBA;&#x4E86;&#x8FD9;&#x79CD;&#x884C;&#x4E3A;&#xFF1A;
+
+Swift 3&#x9519;&#x8BEF;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x63D2;&#x503C;&#x4E0E;&#x9690;&#x5F0F;&#x89E3;&#x5305;&#x7684;Optionals
+&#x5728;Xcode 8&#x4E2D;&#x9690;&#x5F0F;&#x89E3;&#x5305;&#x53EF;&#x9009;&#x8D4B;&#x503C;
+&#x60A8;&#x6700;&#x7EC8;ImplicitlyUnwrappedOptional&#x5728;&#x5B57;&#x5178;&#x4E2D;&#x83B7;&#x5F97;&#x503C;&#x7684;&#x4E8B;&#x5B9E;&#x662F;&#x5728;&#x6700;&#x65B0;&#x7684;Swift&#x5FEB;&#x7167;&#x4E2D;&#x5DF2;&#x5220;&#x9664;&#x7684;&#x9057;&#x7559;&#x884C;&#x4E3A;&#xFF0C;&#x5C06;&#x6765;&#x60A8;&#x5C06;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x4E00;&#x4E2A;Optional&#x503C;&#xFF08;&#x56E0;&#x4E3A;IUO&#x4E0D;&#x518D;&#x662F;&#x7C7B;&#x578B;&#xFF09;&#x3002;
+
+&#x7136;&#x800C;&#xFF0C;&#x8FD9;&#x91CC;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x4EF6;&#x91CD;&#x8981;&#x4E8B;&#x60C5;&#xFF08;&#x6211;&#x80AF;&#x5B9A;&#x4F1A;&#x7ECA;&#x5012;&#x4EBA;&#x4EEC;&#xFF09;&#x662F;IUO &#x7684;&#x6253;&#x5370;&#x5728;4.1&#x4E2D;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002;
+
+&#x5728;Swift 4.0.3&#x4E2D;&#xFF0C;&#x60A8;&#x7684;&#x793A;&#x4F8B;&#x6253;&#x5370;&#x5982;&#x4E0B;&#xFF1A;
+
+var aString: String! = &quot;hello&quot;
+var params : [String : Any] = [
+  &quot;myString&quot; : aString
+]
+print(params)
+// This prints [&quot;myString&quot;: hello]
+&#x7ED9;&#x4F60;&#x7684;&#x5E7B;&#x89C9;&#x662F;IUO&#x5728;&#x88AB;&#x80C1;&#x8FEB;&#x65F6;&#x88AB;&#x5F3A;&#x884C;&#x6253;&#x5F00;Any&#x3002;&#x7136;&#x800C;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x5728;Swift 4.0.3&#x4E2D;&#x6253;&#x5370;IUO - &#x5982;&#x679C;&#x5B83;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x4EEC;&#x5C06;&#x6253;&#x5370;&#x4E3A;&#x8BE5;&#x503C;&#xFF0C;&#x5426;&#x5219;&#x5B83;&#x4EEC;&#x5C06;&#x6253;&#x5370;&#x4E3A;nil&#xFF1A;
+
+var aString: String! = nil
+var params : [String : Any] = [
+  &quot;myString&quot; : aString
+]
+print(params)
+// This prints [&quot;myString&quot;: nil]
+&#x4E4B;&#x6240;&#x4EE5;&#x5728;Swift 4.1&#x4E2D;&#x6539;&#x53D8;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x6B64;&#x63D0;&#x4EA4;&#x4E2D;&#x5220;&#x9664;&#x4E86;ImplicitlyUnwrappedOptional&#x7B26;&#x5408;&#x6027;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x5220;&#x9664;&#x7C7B;&#x578B;&#x672C;&#x8EAB;&#x65B9;&#x9762;&#x53D6;&#x5F97;&#x8FDB;&#x5C55;&#x3002;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x4F7F;&#x7528;Swift&#x7684;&#x9ED8;&#x8BA4;&#x6253;&#x5370;&#x673A;&#x5236;&#xFF08;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#xFF09;&#x6253;&#x5370;&#x503C;&#x3002;Custom(Debug)StringConvertibleImplicitlyUnwrappedOptional
+
+&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x5B57;&#x5178;&#x4E2D;&#xFF0C;&#x60A8;&#x5C06;&#x83B7;&#x5F97;IUO&#x7684;&#x9ED8;&#x8BA4;&#x503C;debugDescription&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;
+
+let aString: String! = &quot;hello&quot;
+let params : [String : Any] = [
+  &quot;myString&quot; : aString
+]
+print(params)
+// This prints [&quot;myString&quot;: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;.some(&quot;hello&quot;)]
+&#x5982;&#x679C;&#x4F60;&#x81EA;&#x5DF1;&#x6253;&#x5370;&#x5B83;&#xFF0C;&#x4F60;&#x4F1A;&#x5F97;&#x5230;&#x5B83;&#x7684;&#x9ED8;&#x8BA4;&#x503C;description&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;
+
+let aString: String! = &quot;hello&quot;
+print(aString) // some(&quot;hello&quot;)
+&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5728;Swift 4.1&#x4E2D;&#xFF0C;ImplicitlyUnwrappedOptional&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;Optional&#x4E0E;&#x5305;&#x542B;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x679A;&#x4E3E;&#x76F8;&#x540C;&#xFF1A;
+
+public enum ImplicitlyUnwrappedOptional&lt;Wrapped&gt; : ExpressibleByNilLiteral {
+  // The compiler has special knowledge of the existence of
+  // `ImplicitlyUnwrappedOptional&lt;Wrapped&gt;`, but always interacts with it using
+  // the library intrinsics below.
+
+  /// The absence of a value. Typically written using the nil literal, `nil`.
+  case none
+
+  /// The presence of a value, stored as `Wrapped`.
+  case some(Wrapped)
+
+  // ...
+}
+&#x5BF9;&#x4E8E;&#x5177;&#x6709;&#x6709;&#x6548;&#x8D1F;&#x8F7D;&#x503C;&#x7684;IUO&#xFF0C;Swift&#x7684;&#x9ED8;&#x8BA4;&#x53CD;&#x5C04;&#x5C06;&#x56E0;&#x6B64;&#x5C06;&#x5176;&#x6253;&#x5370;&#x4E3A;some&#x5305;&#x542B;&#x5305;&#x88C5;&#x503C;&#x7684;&#x60C5;&#x51B5;&#x3002;
+
+&#x4F46;&#x8FD9;&#x53EA;&#x662F;&#x6682;&#x65F6;&#x7684;; IUO&#x7C7B;&#x578B;&#x76EE;&#x524D;&#xFF08;&#x5728;Swift 4.1&#x4E2D;&#xFF09;&#x5DF2;&#x5F03;&#x7528;&#xFF0C;&#x4F46;&#x5B83;&#x5C06;&#x5728;Swift 4.2&#x4E2D;&#x5220;&#x9664;&#x3002;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x5F88;&#x591A;&#x5730;&#x65B9;&#x5185;&#x90E8;&#x4F7F;&#x7528;IUO&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x9700;&#x8981;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x5DE5;&#x4F5C;&#x6765;&#x5220;&#x9664;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;4.2&#x4E2D;&#xFF0C;&#x60A8;&#x5C06;&#x5728;&#x5B57;&#x5178;&#x4E2D;&#x663E;&#x793A;&#x5B9E;&#x9645; Optional&#x503C;&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x5C06;&#x6253;&#x5370;&#x51FA;&#x6765;Optional(&quot;hello&quot;)&#x3002;
+</code></pre><h2 id="&#x83B7;&#x53D6;classname">&#x83B7;&#x53D6;classname</h2>
+<p><a href="https://stackoverflow.com/questions/24494784/get-class-name-of-object-as-string-in-swift" target="_blank">https://stackoverflow.com/questions/24494784/get-class-name-of-object-as-string-in-swift</a></p>
+<h2 id="ios-xpath">ios xpath</h2>
+<p><a href="https://stackoverflow.com/questions/31080818/what-is-the-best-practice-to-parse-html-in-swift" target="_blank">https://stackoverflow.com/questions/31080818/what-is-the-best-practice-to-parse-html-in-swift</a></p>
+<h2 id="&#x591A;&#x4E2A;&#x6CDB;&#x578B;&#x7EA6;&#x675F;&#x5199;&#x6CD5;">&#x591A;&#x4E2A;&#x6CDB;&#x578B;&#x7EA6;&#x675F;&#x5199;&#x6CD5;</h2>
+<p><a href="https://stackoverflow.com/questions/24089145/multiple-type-constraints-in-swift" target="_blank">https://stackoverflow.com/questions/24089145/multiple-type-constraints-in-swift</a></p>
+<h2 id="objcmembers">objcMembers</h2>
+<p><a href="http://www.cocoachina.com/bbs/read.php?tid-1726285.html" target="_blank">http://www.cocoachina.com/bbs/read.php?tid-1726285.html</a></p>
+<pre><code>&#x5728;swift3&#x4E2D;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x81EA;&#x52A8;&#x63A8;&#x65AD;@objc&#xFF0C;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5B83;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;@objc
+&#x5728;swift4&#x4E2D;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x518D;&#x81EA;&#x52A8;&#x63A8;&#x65AD;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x663E;&#x5F0F;&#x6DFB;&#x52A0;@objc
+&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x5FC5;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x6DFB;&#x52A0;,&#x4E0B;&#x9762;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;
+@objcMembers
+class Test {
+
+}
+</code></pre><h2 id="pod-install-&#x4E4B;&#x540E;&#x627E;&#x4E0D;&#x5230;&#x6A21;&#x5757;-&#x89E3;&#x51B3;&#x529E;&#x6CD5;">pod install &#x4E4B;&#x540E;&#x627E;&#x4E0D;&#x5230;&#x6A21;&#x5757;, &#x89E3;&#x51B3;&#x529E;&#x6CD5;</h2>
+<p><img src="1536618137163.png" alt="Alt text"></p>
+<p>&#x5220;&#x9664;&#x91CD;&#x65B0;&#x6DFB;&#x52A0;, &#x7F16;&#x8BD1;&#x4E00;&#x6B21;(build)&#x4E00;&#x6B21;...
+appcode &#x4F9D;&#x65E7;&#x62A5;&#x9519;, &#x9009;&#x4E2D; iOS Device &#x518D;&#x7F16;&#x8BD1;&#x4E00;&#x6B21;
+<img src="1536662037648.png" alt="Alt text"></p>
+<hr>
+<h2 id="swift-nspredicate&#x5B66;&#x4E60;&#x6574;&#x7406;">Swift-NSPredicate&#x5B66;&#x4E60;&#x6574;&#x7406;</h2>
+<p><a href="https://www.jianshu.com/p/bfdacbdf37a7" target="_blank">https://www.jianshu.com/p/bfdacbdf37a7</a></p>
+<hr>
+<h2 id="ios&#x4E2D;&#x5173;&#x4E8E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7C7B;&#x7684;&#x4F7F;&#x7528;">iOS&#x4E2D;&#x5173;&#x4E8E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7C7B;&#x7684;&#x4F7F;&#x7528;</h2>
+<p><a href="https://www.jianshu.com/p/09f66e89f071" target="_blank">https://www.jianshu.com/p/09f66e89f071</a></p>
+<hr>
+<h2 id="swift&#x7EC8;&#x7AEF;&#x6267;&#x884C;-python&#x51B2;&#x7A81;&#x89E3;&#x51B3;">Swift&#x7EC8;&#x7AEF;&#x6267;&#x884C;, python&#x51B2;&#x7A81;&#x89E3;&#x51B3;</h2>
+<p><a href="https://stackoverflow.com/questions/50081563/swift-throws-python-errors-from-terminal" target="_blank">https://stackoverflow.com/questions/50081563/swift-throws-python-errors-from-terminal</a></p>
+<h2 id="swift&#x4E2D;&#x7684;kvc&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">Swift&#x4E2D;&#x7684;KVC&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
+<p><a href="https://www.jianshu.com/p/54a66239b432" target="_blank">https://www.jianshu.com/p/54a66239b432</a></p>
+<h2 id="swift---defer&#x5173;&#x952E;&#x5B57;&#x63A8;&#x8FDF;&#x6267;&#x884C;">Swift - defer&#x5173;&#x952E;&#x5B57;(&#x63A8;&#x8FDF;&#x6267;&#x884C;)</h2>
+<p><a href="https://www.cnblogs.com/Rinpe/p/5221783.html" target="_blank">https://www.cnblogs.com/Rinpe/p/5221783.html</a></p>
+<h2 id="swift-&#x7684;-defer-&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;">swift &#x7684; defer &#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;</h2>
+<p><a href="http://www.cocoachina.com/ios/20180227/22369.html" target="_blank">http://www.cocoachina.com/ios/20180227/22369.html</a></p>
+<h2 id="swift&#x2014;&#x629B;&#x5F02;&#x5E38;docatch&#x4E0E;&#xFF08;trytrytry&#xFF09;&#x7684;&#x4F7F;&#x7528;">Swift&#x2014;&#x629B;&#x5F02;&#x5E38;(do..catch)&#x4E0E;&#xFF08;try,try?,try!&#xFF09;&#x7684;&#x4F7F;&#x7528;</h2>
+<p><a href="https://www.jianshu.com/p/50b3d40f1150" target="_blank">https://www.jianshu.com/p/50b3d40f1150</a></p>
+<h2 id="swift-&#x5BF9;&#x8C61;&#x6307;&#x9488;">swift &#x5BF9;&#x8C61;&#x6307;&#x9488;</h2>
+<p><a href="https://stackoverflow.com/questions/24058906/printing-a-variable-memory-address-in-swift/33548269" target="_blank">https://stackoverflow.com/questions/24058906/printing-a-variable-memory-address-in-swift/33548269</a></p>
+<hr>
+<h2 id="&#x989C;&#x8272;&#x6253;&#x5370;">&#x989C;&#x8272;&#x6253;&#x5370;</h2>
+<p><a href="https://stackoverflow.com/questions/27807925/color-ouput-with-swift-command-line-tool" target="_blank">https://stackoverflow.com/questions/27807925/color-ouput-with-swift-command-line-tool</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../regex-record/regex-record.html" class="navigation navigation-prev " aria-label="Previous page: regex-record">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../MacOS-record/MacOS-record.html" class="navigation navigation-next " aria-label="Next page: MacOS-record">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Swift-record","level":"1.1.12","depth":2,"next":{"title":"MacOS-record","level":"1.1.13","depth":2,"path":"records/MacOS-record/MacOS-record.md","ref":"records/MacOS-record/MacOS-record.md","articles":[]},"previous":{"title":"regex-record","level":"1.1.11","depth":2,"path":"records/regex-record/regex-record.md","ref":"records/regex-record/regex-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"编写gitbook电子书教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"records/Swift-record/Swift-record.md","mtime":"2019-02-12T12:20:06.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-12T12:24:15.986Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-packt-fontsettings/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
