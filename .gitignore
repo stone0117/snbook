@@ -1,4 +1,5 @@
 !.gitignore
+# 这个也被编译了???
 
 # ignore directories
 .idea/
@@ -14,13 +15,13 @@
 !lib.a
 
 # 表示仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
-/TODO           
+/TODO
 
 # 表示忽略 build/目录下的所有文件，过滤整个build文件夹；
 build/
 
 # 表示会忽略doc/notes.txt但不包括 doc/server/arch.txt
-doc/*.txt       
+doc/*.txt
 
 # 表示忽略当前路径下的bin文件夹，该文件夹下的所有内容都会被忽略，不忽略 bin 文件
 bin/:
