@@ -481,7 +481,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="shell-record">shell-record</h1>
+                                <p>@(&#x5DE5;&#x4F5C;&#x7B14;&#x8BB0;)</p>
+<h1 id="shell-record">shell-record</h1>
+<p>[TOC]</p>
 <hr>
 <p><img src="abc001.jpg" alt="Alt text"></p>
 <pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;hello world&apos;</span>
@@ -644,6 +646,28 @@ echo &quot;sqrt(100)&quot; | bc #Square root
 
 echo &quot;10^10&quot; | bc #Square
 &#x6253;&#x5370;: 10000000000
+</code></pre><hr>
+<h2 id="bash-4-associative-arrays-error-declare--a-invalid-option">Bash 4 associative arrays: error &#x201C;declare: -A: invalid option&#x201D;</h2>
+<p><a href="https://stackoverflow.com/questions/6047648/bash-4-associative-arrays-error-declare-a-invalid-option" target="_blank">https://stackoverflow.com/questions/6047648/bash-4-associative-arrays-error-declare-a-invalid-option</a></p>
+<p>&#x82F9;&#x679C;&#x7531;&#x4E8E;&#x8BB8;&#x53EF;&#x8BC1;&#x539F;&#x56E0;, &#x8FD8;&#x662F;&#x5728;&#x4F7F;&#x7528; 3.x&#x7684;&#x7248;&#x672C;... &#x7528;&#x6237;&#x624B;&#x52A8;&#x5347;&#x7EA7;&#x5427; - -</p>
+<blockquote>
+<p>mac &#x5347;&#x7EA7;bash, 
+GNU bash&#xFF0C;&#x7248;&#x672C; 5.0.2(1)-release (x86_64-apple-darwin17.7.0)
+Copyright (C) 2019 Free Software Foundation, Inc.
+&#x8BB8;&#x53EF;&#x8BC1; GPLv3+: GNU GPL &#x8BB8;&#x53EF;&#x8BC1;&#x7B2C;&#x4E09;&#x7248;&#x6216;&#x8005;&#x66F4;&#x65B0;&#x7248;&#x672C; <a href="http://gnu.org/licenses/gpl.html" target="_blank">http://gnu.org/licenses/gpl.html</a></p>
+<p>&#x672C;&#x8F6F;&#x4EF6;&#x662F;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x5730;&#x66F4;&#x6539;&#x548C;&#x91CD;&#x65B0;&#x53D1;&#x5E03;&#x3002;
+&#x5728;&#x6CD5;&#x5F8B;&#x8BB8;&#x53EF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x7279;&#x6B64;&#x660E;&#x793A;&#xFF0C;&#x672C;&#x8F6F;&#x4EF6;&#x4E0D;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x62C5;&#x4FDD;&#x3002;
+```bash
+/bin/bash --version<br>GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin14)</p>
+</blockquote>
+<p>brew install bash<br>... install</p>
+<p>$ /usr/local/bin/bash --version<br>GNU bash, version 4.3.46(1)-release (x86_64-apple-darwin14.5.0)</p>
+<pre><code>
+## Mac &#x5B89;&#x88C5;man&#x547D;&#x4EE4;&#x4E2D;&#x6587;&#x6587;&#x6863;
+https://www.jianshu.com/p/5e35202fc59c
+
+```bash
+man -t ls | open -a Preview -f
 </code></pre>
                                 
                                 </section>
@@ -687,7 +711,7 @@ echo &quot;10^10&quot; | bc #Square
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"shell-record","level":"1.1.12","depth":2,"next":{"title":"React-record","level":"1.1.13","depth":2,"path":"records/React-record/React-record.md","ref":"records/React-record/React-record.md","articles":[]},"previous":{"title":"MacOS-record","level":"1.1.11","depth":2,"path":"records/MacOS-record/MacOS-record.md","ref":"records/MacOS-record/MacOS-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"编写gitbook电子书教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"records/shell-record/shell-record.md","mtime":"2019-02-12T12:20:06.262Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-12T13:01:44.044Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shell-record","level":"1.1.12","depth":2,"next":{"title":"React-record","level":"1.1.13","depth":2,"path":"records/React-record/React-record.md","ref":"records/React-record/React-record.md","articles":[]},"previous":{"title":"MacOS-record","level":"1.1.11","depth":2,"path":"records/MacOS-record/MacOS-record.md","ref":"records/MacOS-record/MacOS-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"编写gitbook电子书教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"records/shell-record/shell-record.md","mtime":"2019-02-13T17:05:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T01:09:19.618Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
