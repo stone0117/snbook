@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Git-record · stone park gitbook</title>
+        <title>gulp-record · stone park gitbook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -62,10 +62,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../ssr-record/ssr-record.html" />
+    <link rel="next" href="../ruby-record/ruby-record.html" />
     
     
-    <link rel="prev" href="../vue-record/vue-record.html" />
+    <link rel="prev" href="../Koa2-record/Koa2-record.html" />
     
 
     <style>
@@ -132,9 +132,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.2" data-path="Git-record.html">
+        <li class="chapter " data-level="1.1.2" data-path="../Git-record/Git-record.html">
             
-                <a href="Git-record.html">
+                <a href="../Git-record/Git-record.html">
             
                     
                     Git-record
@@ -184,9 +184,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.6" data-path="../gulp-record/gulp-record.html">
+        <li class="chapter active" data-level="1.1.6" data-path="gulp-record.html">
             
-                <a href="../gulp-record/gulp-record.html">
+                <a href="gulp-record.html">
             
                     
                     gulp-record
@@ -505,7 +505,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Git-record</a>
+        <a href="../.." >gulp-record</a>
     </h1>
 </div>
 
@@ -520,38 +520,111 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git-record">Git-record</h1>
+                                <h1 id="gulp-record">gulp-record</h1>
 <hr>
-<p><img src="1549217949871.png" alt="Alt text"></p>
-<pre><code>/hello world/
----
-</code></pre><h2 id="git-&#x4E0A;&#x4F20;&#x592A;&#x6162;">git &#x4E0A;&#x4F20;&#x592A;&#x6162;</h2>
-<p><a href="https://help.github.com/articles/using-ssh-over-the-https-port/" target="_blank">https://help.github.com/articles/using-ssh-over-the-https-port/</a>
-<a href="https://blog.csdn.net/kkgbn/article/details/54351787" target="_blank">https://blog.csdn.net/kkgbn/article/details/54351787</a></p>
-<pre><code>&#x5B98;&#x65B9;&#x7684;&#x914D;&#x7F6E;
-Host github.com
-  Hostname ssh.github.com
-  Port 443
-</code></pre><pre><code>git &#x7279;&#x522B;&#x6162;
-
-&#x4EE5;&#x81F3;&#x4E8E;
-
-ssh -T git@github.com
-
-&#x90FD;&#x5F97;&#x5F88;&#x4E45;&#x624D;&#x54CD;&#x5E94;
-
-
-
-&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;
-
-vim  /etc/ssh/ssh_config &#x4FEE;&#x6539;&#x5982;&#x4E0B;
-
-Host github.com
-User git
-Hostname ssh.github.com
-PreferredAuthentications publickey
-IdentityFile /root/.ssh/id_rsa
+<p><img src="image-20190305012148319.png" alt="Alt text"></p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;hello world&apos;</span>)
 </code></pre>
+<hr>
+<h2 id="3-&#x70ED;&#x66F4;&#x65B0;">3.+ &#x70ED;&#x66F4;&#x65B0;</h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x4F9D;&#x8D56;&#x548C;&#x63D2;&#x4EF6;</span>
+<span class="hljs-keyword">var</span> gulp    = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>),
+    connect = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-connect&apos;</span>);<span class="hljs-comment">//livereload</span>
+
+<span class="hljs-keyword">var</span> jsSrc  = <span class="hljs-string">&apos;src/*.js&apos;</span>;
+<span class="hljs-keyword">var</span> jsDist = <span class="hljs-string">&apos;dist&apos;</span>;
+
+<span class="hljs-keyword">var</span> htmlSrc  = <span class="hljs-string">&apos;src/*.html&apos;</span>;
+<span class="hljs-keyword">var</span> htmlDist = <span class="hljs-string">&apos;dist&apos;</span>;
+
+<span class="hljs-comment">//&#x5B9A;&#x4E49;&#x540D;&#x4E3A;js&#x7684;&#x4EFB;&#x52A1;</span>
+gulp.task(<span class="hljs-string">&apos;js&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+
+  gulp.src(jsSrc)
+      .pipe(gulp.dest(jsDist))
+      .pipe(connect.reload());
+
+});
+
+<span class="hljs-comment">//&#x5B9A;&#x4E49;html&#x4EFB;&#x52A1;</span>
+gulp.task(<span class="hljs-string">&apos;html&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+
+  gulp.src(htmlSrc)
+      .pipe(gulp.dest(htmlDist))
+      .pipe(connect.reload());
+
+});
+
+<span class="hljs-comment">//&#x5B9A;&#x4E49;livereload&#x4EFB;&#x52A1;</span>
+gulp.task(<span class="hljs-string">&apos;connect&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  connect.server({
+    livereload: <span class="hljs-literal">true</span>,
+    root      : <span class="hljs-string">&apos;./src&apos;</span>,
+  });
+});
+
+<span class="hljs-comment">//&#x5B9A;&#x4E49;&#x770B;&#x5B88;&#x4EFB;&#x52A1;</span>
+gulp.task(<span class="hljs-string">&apos;watch&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+
+  gulp.watch(<span class="hljs-string">&apos;src/*.html&apos;</span>, [<span class="hljs-string">&apos;html&apos;</span>]);
+
+  gulp.watch(<span class="hljs-string">&apos;src/*.js&apos;</span>, [<span class="hljs-string">&apos;js&apos;</span>]);
+
+});
+
+<span class="hljs-comment">//&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x4EFB;&#x52A1;</span>
+gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hljs-string">&apos;js&apos;</span>, <span class="hljs-string">&apos;html&apos;</span>, <span class="hljs-string">&apos;watch&apos;</span>, <span class="hljs-string">&apos;connect&apos;</span>]);
+</code></pre>
+<h2 id="4-&#x70ED;&#x66F4;&#x65B0;">4.+ &#x70ED;&#x66F4;&#x65B0;</h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x4F9D;&#x8D56;&#x548C;&#x63D2;&#x4EF6;</span>
+<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
+
+<span class="hljs-keyword">var</span> connect = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-connect&apos;</span>);<span class="hljs-comment">//livereload</span>
+
+<span class="hljs-keyword">var</span> jsSrc  = <span class="hljs-string">&apos;src/*.js&apos;</span>;
+<span class="hljs-keyword">var</span> jsDist = <span class="hljs-string">&apos;dist&apos;</span>;
+
+<span class="hljs-keyword">var</span> htmlSrc  = <span class="hljs-string">&apos;src/*.html&apos;</span>;
+<span class="hljs-keyword">var</span> htmlDist = <span class="hljs-string">&apos;dist&apos;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsTask</span> (<span class="hljs-params">cb</span>) </span>{
+
+  gulp.src(jsSrc).pipe(gulp.dest(jsDist)).pipe(connect.reload());
+
+  cb();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">htmlTask</span> (<span class="hljs-params">cb</span>) </span>{
+  gulp.src(htmlSrc).pipe(gulp.dest(htmlDist)).pipe(connect.reload());
+  cb();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">connectTask</span> (<span class="hljs-params">cb</span>) </span>{
+  connect.server({
+    livereload: <span class="hljs-literal">true</span>,
+    root      : <span class="hljs-string">&apos;./src&apos;</span>,
+  });
+  cb();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watchTask</span> (<span class="hljs-params">cb</span>) </span>{
+  gulp.watch([<span class="hljs-string">&apos;src/*.html&apos;</span>], gulp.series(htmlTask, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;html &#x66F4;&#x65B0;&apos;</span>);
+    callback();
+  }));
+  gulp.watch([<span class="hljs-string">&apos;src/*.js&apos;</span>], gulp.series(jsTask, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;js &#x66F4;&#x65B0;&apos;</span>);
+    callback();
+  }));
+  cb();
+}
+
+exports.default = gulp.series(jsTask, htmlTask, watchTask, connectTask, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cb</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;&apos;</span>);
+  cb();
+});
+</code></pre>
+
                                 
                                 </section>
                             
@@ -578,12 +651,12 @@ IdentityFile /root/.ssh/id_rsa
 
             
                 
-                <a href="../vue-record/vue-record.html" class="navigation navigation-prev " aria-label="Previous page: vue-record">
+                <a href="../Koa2-record/Koa2-record.html" class="navigation navigation-prev " aria-label="Previous page: Koa2-record">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../ssr-record/ssr-record.html" class="navigation navigation-next " aria-label="Next page: ssr-record">
+                <a href="../ruby-record/ruby-record.html" class="navigation navigation-next " aria-label="Next page: ruby-record">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -594,7 +667,7 @@ IdentityFile /root/.ssh/id_rsa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git-record","level":"1.1.2","depth":2,"next":{"title":"ssr-record","level":"1.1.3","depth":2,"path":"records/ssr-record/ssr-record.md","ref":"records/ssr-record/ssr-record.md","articles":[]},"previous":{"title":"vue-record","level":"1.1.1","depth":2,"path":"records/vue-record/vue-record.md","ref":"records/vue-record/vue-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Git-record/Git-record.md","mtime":"2019-02-12T12:20:06.270Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-04T17:51:17.411Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gulp-record","level":"1.1.6","depth":2,"next":{"title":"ruby-record","level":"1.1.7","depth":2,"path":"records/ruby-record/ruby-record.md","ref":"records/ruby-record/ruby-record.md","articles":[]},"previous":{"title":"Koa2-record","level":"1.1.5","depth":2,"path":"records/Koa2-record/Koa2-record.md","ref":"records/Koa2-record/Koa2-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/gulp-record/gulp-record.md","mtime":"2019-03-04T17:49:39.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-04T17:51:17.411Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
