@@ -520,7 +520,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="vue-record">vue-record</h1>
+                                <p>@(&#x5DE5;&#x4F5C;&#x7B14;&#x8BB0;)</p>
+<h1 id="vue-record">vue-record</h1>
+<p>[TOC]</p>
 <hr>
 <p><img src="1527103132529.png" alt="Alt text"></p>
 <pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;hello vue&apos;</span>)
@@ -619,7 +621,419 @@ oc &#x534F;&#x8BAE;&#x4EA4;&#x4E92;&#x65B9;&#x5F0F;
 <h2 id="console&#x547D;&#x4EE4;&#x8BE6;&#x89E3;">console&#x547D;&#x4EE4;&#x8BE6;&#x89E3;</h2>
 <p><a href="https://www.cnblogs.com/pengfei25/p/6019525.html" target="_blank">https://www.cnblogs.com/pengfei25/p/6019525.html</a></p>
 <hr>
+<h2 id="vue-cli-30">vue cli 3.0</h2>
+<pre><code class="lang-bash">vue create vue_cli_<span class="hljs-built_in">test</span>
+</code></pre>
+<p><img src="1551733781051.png" alt="Alt text">
+<img src="1551733826617.png" alt="Alt text">
+<img src="1551733892415.png" alt="Alt text">
+<img src="1551733903105.png" alt="Alt text">
+<img src="1551733974424.png" alt="Alt text">
+<img src="1551734016689.png" alt="Alt text">
+<img src="1551734072259.png" alt="Alt text"></p>
+<p><strong>my eslint</strong></p>
+<pre><code class="lang-javascript">  rules        : {
+    <span class="hljs-comment">// allow async-await</span>
+    <span class="hljs-string">&apos;generator-star-spacing&apos;</span>            : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-comment">// allow debugger during development</span>
+    <span class="hljs-string">&apos;no-debugger&apos;</span>                       : process.env.NODE_ENV === <span class="hljs-string">&apos;production&apos;</span> ? <span class="hljs-string">&apos;error&apos;</span> : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-comment">// edit by stone</span>
+    <span class="hljs-string">&apos;no-multi-spaces&apos;</span>                   : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;key-spacing&apos;</span>                       : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;semi&apos;</span>                              : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;comma-dangle&apos;</span>                      : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;object-curly-spacing&apos;</span>              : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;indent&apos;</span>                            : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;no-unused-vars&apos;</span>                    : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;block-spacing&apos;</span>                     : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;no-multiple-empty-lines&apos;</span>           : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;no-trailing-spaces&apos;</span>                : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;standard/object-curly-even-spacing&apos;</span>: <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;spaced-comment&apos;</span>                    : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;camelcase&apos;</span>                         : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;func-call-spacing&apos;</span>                 : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;padded-blocks&apos;</span>                     : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;import/first&apos;</span>                      : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;space-before-function-paren&apos;</span>       : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;handle-callback-err&apos;</span>               : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;object-property-newline&apos;</span>           : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&apos;comma-spacing&apos;</span>                     : <span class="hljs-string">&apos;off&apos;</span>,
+    <span class="hljs-string">&quot;quotes&quot;</span>: <span class="hljs-string">&quot;off&quot;</span>,
+    <span class="hljs-string">&apos;no-unneeded-ternary&apos;</span>               : <span class="hljs-string">&apos;off&apos;</span>,
+  },
+</code></pre>
+<h2 id="&#x9884;&#x5904;&#x7406;&#x5668;">&#x9884;&#x5904;&#x7406;&#x5668;</h2>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x9009;&#x62E9;&#x9884;&#x5904;&#x7406;&#x5668; (Sass/Less/Stylus)&#x3002;&#x5982;&#x679C;&#x5F53;&#x65F6;&#x6CA1;&#x6709;&#x9009;&#x597D;&#xFF0C;&#x5185;&#x7F6E;&#x7684; webpack &#x4ECD;&#x7136;&#x4F1A;&#x88AB;&#x9884;&#x914D;&#x7F6E;&#x4E3A;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x6240;&#x6709;&#x7684;&#x5904;&#x7406;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x5B89;&#x88C5;&#x76F8;&#x5E94;&#x7684; webpack loader&#xFF1A;</p>
+<pre><code># Sass
+npm install -D sass-loader node-sass
 
+# Less
+npm install -D less-loader less
+
+# Stylus
+npm install -D stylus-loader stylus
+</code></pre><p>&#x7136;&#x540E;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5BFC;&#x5165;&#x76F8;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x6216;&#x5728; *.vue &#x6587;&#x4EF6;&#x4E2D;&#x8FD9;&#x6837;&#x6765;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code>&lt;style lang=&quot;scss&quot;&gt;
+$color: red;
+&lt;/style&gt;
+</code></pre><pre><code>&lt;style scoped lang=&quot;scss&quot; rel=&quot;stylesheet/scss&quot;&gt;
+  .Users {
+    /* important code */
+    height: 100%
+
+  }
+&lt;/style&gt;
+
+&lt;style scoped lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;
+  .Users {
+    /* important code */
+    height: 100%    
+  }
+&lt;/style&gt;
+
+&lt;style scoped lang=&quot;less&quot; rel=&quot;stylesheet/less&quot;&gt;
+  .Users {
+    /* important code */
+    height: 100%
+
+  }
+&lt;/style&gt;
+</code></pre><h2 id="vue-add-axios">vue add axios</h2>
+<p>vue 3.0 &#x63D2;&#x4EF6;&#x6DFB;&#x52A0;&#x65B9;&#x5F0F;</p>
+<h2 id="vueconfigjs">vue.config.js</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> eleme = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./data/eleme.json&apos;</span>)
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// &quot;baseUrl&quot; option in vue.config.js is deprecated now, please use &quot;publicPath&quot; instead.</span>
+  <span class="hljs-comment">// baseUrl  : &apos;/&apos;, // &#x6839;&#x8DEF;&#x5F84;</span>
+  publicPath: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// &#x76F8;&#x5BF9;&#x8DEF;&#x5F84;</span>
+  outputDir : <span class="hljs-string">&apos;dist&apos;</span>, <span class="hljs-comment">// &#x6784;&#x5EFA;&#x8F93;&#x51FA;&#x76EE;&#x5F55;</span>
+  assetsDir : <span class="hljs-string">&apos;assets&apos;</span>, <span class="hljs-comment">// &#x9759;&#x6001;&#x8D44;&#x6E90;&#x76EE;&#x5F55;(js,css,img,fonts)</span>
+  lintOnSave: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x662F;&#x5426;&#x5F00;&#x542F;eslint &#x4FDD;&#x5B58;&#x68C0;&#x6D4B;, &#x6709;&#x6548;&#x503C;: true || false || &apos;error&apos;</span>
+
+  devServer: {
+    <span class="hljs-comment">// open   : false, // &#x5F53;&#x542F;&#x52A8;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019; &#x662F;&#x5426;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;</span>
+    <span class="hljs-comment">// host   : &apos;0.0.0.0&apos;,</span>
+    <span class="hljs-comment">// port   : 9000,</span>
+    <span class="hljs-comment">// https  : false, // &#x4F1A;&#x6709;&#x8B66;&#x544A;..</span>
+    <span class="hljs-comment">// hotOnly: false, // webpack &#x67E5;&#x770B;&#x5177;&#x4F53;&#x4FE1;&#x606F; [hotOnly](https://webpack.js.org/configuration/dev-server/#devserverhotonly)</span>
+    proxy: {
+      <span class="hljs-comment">// proxy all requests starting with /api to jsonplaceholder</span>
+      <span class="hljs-string">&apos;/data&apos;</span>: {
+        target      : <span class="hljs-string">&apos;http://localhost:8080&apos;</span>,   <span class="hljs-comment">//&#x4EE3;&#x7406;&#x63A5;&#x53E3;</span>
+        changeOrigin: <span class="hljs-literal">true</span>,
+        pathRewrite : {
+          <span class="hljs-string">&apos;^/data&apos;</span>: <span class="hljs-string">&apos;&apos;</span>,    <span class="hljs-comment">//&#x4EE3;&#x7406;&#x7684;&#x8DEF;&#x5F84;</span>
+        },
+      },
+    },
+    <span class="hljs-comment">// &#x672C;&#x5730;&#x6570;&#x636E;, &#x6A21;&#x62DF;&#x8BF7;&#x6C42;</span>
+    before (app, server) {
+      <span class="hljs-comment">// http://localhost:8081/data/eleme</span>
+      app.get(<span class="hljs-string">&apos;/data/eleme&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        res.json(eleme)
+      })
+    },
+  },
+}
+</code></pre>
+<h2 id="&#x8DEF;&#x7531;">&#x8DEF;&#x7531;</h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">/* eslint-disable object-property-newline,comma-spacing */</span>
+<span class="hljs-keyword">import</span> Vue           <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> Router        <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-router&apos;</span>
+<span class="hljs-keyword">import</span> Home          <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Home&apos;</span>
+<span class="hljs-keyword">import</span> Menu          <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Menu&apos;</span>
+<span class="hljs-keyword">import</span> Login         <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Login&apos;</span>
+<span class="hljs-keyword">import</span> Register      <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Register&apos;</span>
+<span class="hljs-keyword">import</span> Admin         <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Admin&apos;</span>
+<span class="hljs-keyword">import</span> About         <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/about/About&apos;</span>
+<span class="hljs-comment">// &#x4E8C;&#x7EA7;&#x8DEF;&#x7531;</span>
+<span class="hljs-keyword">import</span> Contact       <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/about/Contact&apos;</span>
+<span class="hljs-keyword">import</span> Delivery      <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/about/Delivery&apos;</span>
+<span class="hljs-keyword">import</span> History       <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/about/History&apos;</span>
+<span class="hljs-keyword">import</span> OrderingGuide <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/about/OrderingGuide&apos;</span>
+<span class="hljs-comment">// &#x4E09;&#x7EA7;&#x8DEF;&#x7531;</span>
+<span class="hljs-keyword">import</span> Phone         <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/about/contact/Phone&apos;</span>
+<span class="hljs-keyword">import</span> PersonName    <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/about/contact/PersonName&apos;</span>
+
+Vue.use(Router)
+
+<span class="hljs-comment">// &#x8DEF;&#x7531;&#x72EC;&#x4EAB;&#x7684;&#x5B88;&#x536B;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">adminBeforeEnter</span> (<span class="hljs-params">to, from, next</span>) </span>{
+  next()
+  <span class="hljs-comment">// alert(&apos;&#x8BF7;&#x767B;&#x5F55;&#x7BA1;&#x7406;&#x5458;...&apos;)</span>
+  <span class="hljs-comment">// next(false)</span>
+
+  <span class="hljs-comment">// if (to.path === &apos;/login&apos; || to.path === &apos;/register&apos;) {</span>
+  <span class="hljs-comment">//   next()</span>
+  <span class="hljs-comment">// } else {</span>
+  <span class="hljs-comment">//   alert(&apos;&#x8BF7;&#x767B;&#x5F55;&#x7BA1;&#x7406;&#x5458;...&apos;)</span>
+  <span class="hljs-comment">//   // next(&apos;/login&apos;)</span>
+  <span class="hljs-comment">//   next({ name: &apos;login&apos; })</span>
+  <span class="hljs-comment">// }</span>
+}
+
+<span class="hljs-keyword">let</span> router = <span class="hljs-keyword">new</span> Router({
+  routes: [
+    {
+      path: <span class="hljs-string">&apos;/&apos;</span>, name: <span class="hljs-string">&apos;home&apos;</span>, components: {
+        <span class="hljs-keyword">default</span>      : Home,
+        orderingGuide: OrderingGuide,
+        delivery     : Delivery,
+        history      : History,
+      },
+    },
+    { path: <span class="hljs-string">&apos;/menu&apos;</span>, name: <span class="hljs-string">&apos;menu&apos;</span>, component: Menu },
+    { path: <span class="hljs-string">&apos;/login&apos;</span>, name: <span class="hljs-string">&apos;login&apos;</span>, component: Login },
+    { path: <span class="hljs-string">&apos;/register&apos;</span>, name: <span class="hljs-string">&apos;register&apos;</span>, component: Register },
+    <span class="hljs-comment">// { path: &apos;/admin&apos;, name: &apos;admin&apos;, component: Admin, beforeEnter: adminBeforeEnter },</span>
+    { path: <span class="hljs-string">&apos;/admin&apos;</span>, name: <span class="hljs-string">&apos;admin&apos;</span>, component: Admin },
+    {
+      path: <span class="hljs-string">&apos;/about&apos;</span>, name: <span class="hljs-string">&apos;about&apos;</span>, redirect: { name: <span class="hljs-string">&apos;contact&apos;</span> }, component: About, children: [
+        {
+          path: <span class="hljs-string">&apos;/about/contact&apos;</span>, name: <span class="hljs-string">&apos;contact&apos;</span>, redirect: { name: <span class="hljs-string">&apos;phone&apos;</span> }, component: Contact, children: [
+            { path: <span class="hljs-string">&apos;/phone&apos;</span>, name: <span class="hljs-string">&apos;phone&apos;</span>, component: Phone },
+            { path: <span class="hljs-string">&apos;/personname&apos;</span>, name: <span class="hljs-string">&apos;personName&apos;</span>, component: PersonName },
+          ],
+        },
+        { path: <span class="hljs-string">&apos;/delivery&apos;</span>, name: <span class="hljs-string">&apos;delivery&apos;</span>, component: Delivery },
+        { path: <span class="hljs-string">&apos;/history&apos;</span>, name: <span class="hljs-string">&apos;history&apos;</span>, component: History },
+        { path: <span class="hljs-string">&apos;/orderingGuide&apos;</span>, name: <span class="hljs-string">&apos;orderingGuide&apos;</span>, component: OrderingGuide },
+
+      ],
+    },
+
+    { path: <span class="hljs-string">&apos;*&apos;</span>, redirect: <span class="hljs-string">&apos;/&apos;</span> },
+
+    <span class="hljs-comment">// { path: &apos;/about&apos;, name: &apos;about&apos;, component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;./views/About.vue&apos;) },</span>
+    <span class="hljs-comment">// { path: &apos;/about&apos;, name: &apos;about&apos;, component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;./views/About.vue&apos;) },</span>
+    <span class="hljs-comment">// { path: &apos;/about&apos;, name: &apos;about&apos;, component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;./views/About.vue&apos;) },</span>
+    <span class="hljs-comment">// { path: &apos;/about&apos;, name: &apos;about&apos;, component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;./views/About.vue&apos;) },</span>
+    <span class="hljs-comment">// {</span>
+    <span class="hljs-comment">//   path     : &apos;/about&apos;,</span>
+    <span class="hljs-comment">//   name     : &apos;about&apos;,</span>
+    <span class="hljs-comment">//   // route level code-splitting</span>
+    <span class="hljs-comment">//   // this generates a separate chunk (about.[hash].js) for this route</span>
+    <span class="hljs-comment">//   // which is lazy-loaded when the route is visited.</span>
+    <span class="hljs-comment">//   component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;./views/About.vue&apos;),</span>
+    <span class="hljs-comment">// },</span>
+  ],
+  mode  : <span class="hljs-string">&apos;history&apos;</span>,
+
+  scrollBehavior (to, <span class="hljs-keyword">from</span>, savedPosition) {
+
+    <span class="hljs-comment">// return { x: 0, y: 100 }</span>
+    <span class="hljs-comment">// return { selector:&apos;.btn&apos; }</span>
+
+    <span class="hljs-keyword">if</span> (savedPosition) {
+      <span class="hljs-keyword">return</span> savedPosition
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> { x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span> }
+    }
+  },
+})
+
+<span class="hljs-comment">// &#x5168;&#x5C40;&#x5B88;&#x536B;</span>
+<span class="hljs-comment">// router.beforeEach(function (to, from, next) {</span>
+<span class="hljs-comment">//   // alert(&apos;&#x8FD8;&#x6CA1;&#x6709;&#x767B;&#x5F55;, &#x8BF7;&#x5148;&#x767B;&#x5F55;&apos;)</span>
+<span class="hljs-comment">//   // console.log(JSON.stringify(to, null, 2));</span>
+<span class="hljs-comment">//   // console.log(JSON.stringify(from, null, 2));</span>
+<span class="hljs-comment">//   // console.log(next);</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//   if (to.path === &apos;/login&apos; || to.path === &apos;/register&apos;) {</span>
+<span class="hljs-comment">//     next()</span>
+<span class="hljs-comment">//   } else {</span>
+<span class="hljs-comment">//     alert(&apos;&#x8FD8;&#x6CA1;&#x6709;&#x767B;&#x5F55;, &#x8BF7;&#x5148;&#x767B;&#x5F55;&apos;)</span>
+<span class="hljs-comment">//     // next(&apos;/login&apos;)</span>
+<span class="hljs-comment">//     next({ name: &apos;login&apos; })</span>
+<span class="hljs-comment">//   }</span>
+<span class="hljs-comment">// })</span>
+
+<span class="hljs-comment">// &#x540E;&#x7F6E;&#x94A9;&#x5B50;</span>
+<span class="hljs-comment">// router.afterEach(function (to,from) {</span>
+<span class="hljs-comment">//     alert(&apos;after each&apos;)</span>
+<span class="hljs-comment">// })</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router
+</code></pre>
+<h2 id="&#x540E;&#x9000;&#x4E0D;&#x5237;&#x65B0;&#x6570;&#x636E;">&#x540E;&#x9000;&#x4E0D;&#x5237;&#x65B0;&#x6570;&#x636E;</h2>
+<pre><code>&lt;template&gt;
+  &lt;div class=&quot;Home&quot;&gt;
+    &lt;div class=&quot;flex-column&quot; :style=&quot;{width: &apos;100%&apos;, height: &apos;100%&apos;}&quot;&gt;
+      &lt;Menu mode=&apos;horizontal&apos; :style=&quot;{fontSize: 13.5, backgroundColor: &apos;#000&apos;}&quot;&gt;
+        &lt;Menu.Item :style=&quot;{ marginLeft : 24, marginRight: 30, fontSize: 18, textAlign: &apos;center&apos;, color: &apos;#fff2e8 !important&apos;, float: &apos;left&apos; }&quot;&gt;
+          &lt;a href=&apos;/&apos; class=&apos;hover-scale logo-text&apos; :style=&quot;{color: &apos;#fff2e8&apos;}&quot;&gt;StonePark&#x9884;&#x544A;&#x7247;&#x7F51;&#x7AD9;&lt;/a&gt;
+        &lt;/Menu.Item&gt;
+        &lt;Menu.Item v-for=&quot;(e) in navRoutes&quot; :key=&quot;e.name&quot;&gt;
+          &lt;a :href=&quot;e.path&quot; :style=&quot;{color: &apos;#fff2e8&apos;}&quot;&gt;{{e.name}}&lt;/a&gt;
+        &lt;/Menu.Item&gt;
+      &lt;/Menu&gt;
+      &lt;!--&lt;Spin :spinning=&quot;spinning&quot; :tip=&quot;tip&quot; wrapperClassName=&quot;content-spin full&quot;&gt;--&gt;
+      &lt;Spin :spinning=&quot;spinning&quot; :tip=&quot;tip&quot; wrapperClassName=&quot;full&quot;&gt;
+        &lt;div class=&apos;flex-row full&apos;&gt;
+          &lt;div class=&apos;flex-1 scroll-y align-self-start&apos;&gt;
+            &lt;Content :movies=&quot;movies&quot;&gt;&lt;/Content&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/Spin&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script type=&quot;text/ecmascript-6&quot;&gt;
+  import request                from &apos;../../lib/request&apos;;
+  import { Menu, Spin, Switch } from &apos;ant-design-vue&apos;;
+  import navRoutes              from &apos;../../nav&apos;;
+  import axios                  from &apos;axios&apos;;
+  import Content                from &apos;../../components/Content&apos;;
+
+  export default {
+    // props     : [&apos;users&apos;],
+    // props     : {
+    //   users: {
+    //     type    : Array,
+    //     required: true,
+    //   },
+    // },
+    components: {
+      Menu,
+      &apos;Menu.Item&apos;     : Menu.Item,
+      &apos;Menu.ItemGroup&apos;: Menu.ItemGroup,
+      &apos;Menu.SubMenu&apos;  : Menu.SubMenu,
+      Spin,
+      &apos;a-switch&apos;      : Switch,
+      Content,
+    },
+    name      : &apos;Home&apos;,
+    data () {
+      return {
+        current  : [&apos;mail&apos;],
+        navRoutes: navRoutes,
+        tip      : &apos;wait for seconds&apos;,
+        movies   : [],
+        spinning : true,
+      };
+    },
+    /** methods */
+    methods   : {
+
+      changeSpinning () {
+        this.spinning = !this.spinning;
+      },
+      getMovies () {
+        axios({
+          timeout: 5000, method: &apos;get&apos;,
+          // url    : `/data/api/v0/movies`,
+          url    : `http://localhost:8080/api/v0/movies`,
+        }).then(res =&gt; {
+          const { success, data, err, code } = res.data;
+          if (code === 401) {
+            window.location.href = &apos;/&apos;;
+          } else if (success) {
+            this.changeSpinning();
+            this.movies = data;
+          } else {
+            throw err;
+          }
+        }).catch(err =&gt; {
+          throw err;
+        });
+      },
+    },
+    /** computed */
+    computed  : {},
+
+    mounted () {
+      this.getMovies();
+    },
+
+    beforeDestroy () {
+      // window.__LOADING__ = null
+    },
+    beforeRouteEnter (to, from, next) {
+      for (let key in from) {
+        console.log(key, from[key]);
+      }
+      console.log(&apos;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;&apos;);
+      if (from.name === &apos;detail&apos;) {
+        to.meta.needToRefresh = false;
+      }
+      next();
+      // next(function (vm) {
+      //   alert(&apos;hello &apos; + vm.name)
+      // })
+    },
+    beforeRouteLeave (to, from, next) {
+      next();
+      // if (confirm(&apos;&#x786E;&#x5B9A;&#x79BB;&#x5F00;&#x5417;?&apos;) === true) {
+      //   next()
+      // } else {
+      //   next(false)
+      // }
+    },
+    activated () {
+      //&#x5F00;&#x542F;&#x4E86;keepAlive:true&#x540E;&#x518D;&#x6B21;&#x8FDB;&#x5165;&#xFF0C;&#x4EE5;&#x524D;&#x7684;&#x641C;&#x7D22;&#x6761;&#x4EF6;&#x548C;&#x9875;&#x6570;&#x90FD;&#x4E0D;&#x4F1A;&#x53D8;&#xFF0C;&#x65E0;&#x8BBA;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x90FD;&#x8C03;&#x7528;&#x4E00;&#x4E0B;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x5F97;&#x5230;&#x5F53;&#x524D;&#x641C;&#x7D22;&#x6761;&#x4EF6;&#x548C;&#x9875;&#x6570;&#x7684;&#x6700;&#x65B0;&#x6570;&#x636E;
+      if (this.$route.meta.needToRefresh) {
+        //&#x91CD;&#x7F6E;ifDoFresh
+        this.$route.meta.needToRefresh = false;
+        this.getMovies();
+      } else {
+
+      }
+    },
+  };
+&lt;/script&gt;
+
+&lt;!--cnpm i -D less less-loader stylus stylus-loader node-sass sass-loader--&gt;
+&lt;!--&lt;style scoped lang=&quot;less&quot; rel=&quot;stylesheet/less&quot;&gt;--&gt;
+&lt;!--&lt;style scoped lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;--&gt;
+&lt;style lang=&quot;scss&quot; rel=&quot;stylesheet/scss&quot;&gt;
+
+  .Home {
+    /*a {*/
+    /*color : #fff !important;*/
+    /*}*/
+  }
+
+&lt;/style&gt;
+
+
+# router.js
+
+import Vue    from &apos;vue&apos;;
+import Router from &apos;vue-router&apos;;
+
+Vue.use(Router);
+
+let router = new Router({
+  // mode: &apos;history&apos;,
+  // base: process.env.BASE_URL,
+  routes: [
+    {
+      path: &apos;/&apos;, name: &apos;home&apos;, component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;./views/home/Home.vue&apos;),
+      meta: {
+        keepAlive    : true,
+        needToRefresh: false,
+      },
+    },
+    {
+      path: &apos;/detail/:id&apos;, name: &apos;detail&apos;, component: () =&gt; import(/* webpackChunkName: &quot;detail&quot; */ &apos;./views/movie/Detail.vue&apos;),
+    },
+    {
+      path: &apos;/admin&apos;, name: &apos;admin&apos;, component: () =&gt; import(/* webpackChunkName: &quot;admin&quot; */ &apos;./views/admin/Admin.vue&apos;),
+    },
+    {
+      path: &apos;/admin/list&apos;, name: &apos;list&apos;, component: () =&gt; import(/* webpackChunkName: &quot;list&quot; */ &apos;./views/admin/List.vue&apos;),
+    },
+    {
+      path: &apos;/about&apos;, name: &apos;about&apos;, component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;./views/About.vue&apos;),
+    },
+    { path: &apos;*&apos;, redirect: &apos;/&apos; },
+  ],
+});
+
+export default router;
+</code></pre>
                                 
                                 </section>
                             
@@ -662,7 +1076,7 @@ oc &#x534F;&#x8BAE;&#x4EA4;&#x4E92;&#x65B9;&#x5F0F;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vue-record","level":"1.1.1","depth":2,"next":{"title":"Git-record","level":"1.1.2","depth":2,"path":"records/Git-record/Git-record.md","ref":"records/Git-record/Git-record.md","articles":[]},"previous":{"title":"records","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"vue-record","level":"1.1.1","depth":2,"path":"records/vue-record/vue-record.md","ref":"records/vue-record/vue-record.md","articles":[]},{"title":"Git-record","level":"1.1.2","depth":2,"path":"records/Git-record/Git-record.md","ref":"records/Git-record/Git-record.md","articles":[]},{"title":"ssr-record","level":"1.1.3","depth":2,"path":"records/ssr-record/ssr-record.md","ref":"records/ssr-record/ssr-record.md","articles":[]},{"title":"PHP-record","level":"1.1.4","depth":2,"path":"records/PHP-record/PHP-record.md","ref":"records/PHP-record/PHP-record.md","articles":[]},{"title":"Koa2-record","level":"1.1.5","depth":2,"path":"records/Koa2-record/Koa2-record.md","ref":"records/Koa2-record/Koa2-record.md","articles":[]},{"title":"gulp-record","level":"1.1.6","depth":2,"path":"records/gulp-record/gulp-record.md","ref":"records/gulp-record/gulp-record.md","articles":[]},{"title":"ruby-record","level":"1.1.7","depth":2,"path":"records/ruby-record/ruby-record.md","ref":"records/ruby-record/ruby-record.md","articles":[]},{"title":"trap-record","level":"1.1.8","depth":2,"path":"records/trap-record/trap-record.md","ref":"records/trap-record/trap-record.md","articles":[]},{"title":"node-record","level":"1.1.9","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},{"title":"React-record","level":"1.1.11","depth":2,"path":"records/React-record/React-record.md","ref":"records/React-record/React-record.md","articles":[]},{"title":"MacOS-record","level":"1.1.12","depth":2,"path":"records/MacOS-record/MacOS-record.md","ref":"records/MacOS-record/MacOS-record.md","articles":[]},{"title":"Swift-record","level":"1.1.13","depth":2,"path":"records/Swift-record/Swift-record.md","ref":"records/Swift-record/Swift-record.md","articles":[]},{"title":"shell-record","level":"1.1.14","depth":2,"path":"records/shell-record/shell-record.md","ref":"records/shell-record/shell-record.md","articles":[]},{"title":"regex-record","level":"1.1.15","depth":2,"path":"records/regex-record/regex-record.md","ref":"records/regex-record/regex-record.md","articles":[]},{"title":"jQuery-record","level":"1.1.16","depth":2,"path":"records/jQuery-record/jQuery-record.md","ref":"records/jQuery-record/jQuery-record.md","articles":[]},{"title":"Alfred-record","level":"1.1.17","depth":2,"path":"records/Alfred-record/Alfred-record.md","ref":"records/Alfred-record/Alfred-record.md","articles":[]},{"title":"wechat-record","level":"1.1.18","depth":2,"path":"records/wechat-record/wechat-record.md","ref":"records/wechat-record/wechat-record.md","articles":[]},{"title":"Ubantu-record","level":"1.1.19","depth":2,"path":"records/Ubantu-record/Ubantu-record.md","ref":"records/Ubantu-record/Ubantu-record.md","articles":[]},{"title":"python-record","level":"1.1.20","depth":2,"path":"records/python-record/python-record.md","ref":"records/python-record/python-record.md","articles":[]},{"title":"mongodb-record","level":"1.1.21","depth":2,"path":"records/mongodb-record/mongodb-record.md","ref":"records/mongodb-record/mongodb-record.md","articles":[]},{"title":"javascript-record","level":"1.1.22","depth":2,"path":"records/javascript-record/javascript-record.md","ref":"records/javascript-record/javascript-record.md","articles":[]},{"title":"Typescript-record","level":"1.1.23","depth":2,"path":"records/Typescript-record/Typescript-record.md","ref":"records/Typescript-record/Typescript-record.md","articles":[]},{"title":"Objective-C-record","level":"1.1.24","depth":2,"path":"records/Objective-C-record/Objective-C-record.md","ref":"records/Objective-C-record/Objective-C-record.md","articles":[]},{"title":"applescript-record","level":"1.1.25","depth":2,"path":"records/applescript-record/applescript-record.md","ref":"records/applescript-record/applescript-record.md","articles":[]},{"title":"ECMAScript_6-record","level":"1.1.26","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},{"title":"IntelliJ_IDEA-record","level":"1.1.27","depth":2,"path":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","ref":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/vue-record/vue-record.md","mtime":"2019-03-04T21:09:44.197Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T01:02:48.465Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vue-record","level":"1.1.1","depth":2,"next":{"title":"Git-record","level":"1.1.2","depth":2,"path":"records/Git-record/Git-record.md","ref":"records/Git-record/Git-record.md","articles":[]},"previous":{"title":"records","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"vue-record","level":"1.1.1","depth":2,"path":"records/vue-record/vue-record.md","ref":"records/vue-record/vue-record.md","articles":[]},{"title":"Git-record","level":"1.1.2","depth":2,"path":"records/Git-record/Git-record.md","ref":"records/Git-record/Git-record.md","articles":[]},{"title":"ssr-record","level":"1.1.3","depth":2,"path":"records/ssr-record/ssr-record.md","ref":"records/ssr-record/ssr-record.md","articles":[]},{"title":"PHP-record","level":"1.1.4","depth":2,"path":"records/PHP-record/PHP-record.md","ref":"records/PHP-record/PHP-record.md","articles":[]},{"title":"Koa2-record","level":"1.1.5","depth":2,"path":"records/Koa2-record/Koa2-record.md","ref":"records/Koa2-record/Koa2-record.md","articles":[]},{"title":"gulp-record","level":"1.1.6","depth":2,"path":"records/gulp-record/gulp-record.md","ref":"records/gulp-record/gulp-record.md","articles":[]},{"title":"ruby-record","level":"1.1.7","depth":2,"path":"records/ruby-record/ruby-record.md","ref":"records/ruby-record/ruby-record.md","articles":[]},{"title":"trap-record","level":"1.1.8","depth":2,"path":"records/trap-record/trap-record.md","ref":"records/trap-record/trap-record.md","articles":[]},{"title":"node-record","level":"1.1.9","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},{"title":"React-record","level":"1.1.11","depth":2,"path":"records/React-record/React-record.md","ref":"records/React-record/React-record.md","articles":[]},{"title":"MacOS-record","level":"1.1.12","depth":2,"path":"records/MacOS-record/MacOS-record.md","ref":"records/MacOS-record/MacOS-record.md","articles":[]},{"title":"Swift-record","level":"1.1.13","depth":2,"path":"records/Swift-record/Swift-record.md","ref":"records/Swift-record/Swift-record.md","articles":[]},{"title":"shell-record","level":"1.1.14","depth":2,"path":"records/shell-record/shell-record.md","ref":"records/shell-record/shell-record.md","articles":[]},{"title":"regex-record","level":"1.1.15","depth":2,"path":"records/regex-record/regex-record.md","ref":"records/regex-record/regex-record.md","articles":[]},{"title":"jQuery-record","level":"1.1.16","depth":2,"path":"records/jQuery-record/jQuery-record.md","ref":"records/jQuery-record/jQuery-record.md","articles":[]},{"title":"Alfred-record","level":"1.1.17","depth":2,"path":"records/Alfred-record/Alfred-record.md","ref":"records/Alfred-record/Alfred-record.md","articles":[]},{"title":"wechat-record","level":"1.1.18","depth":2,"path":"records/wechat-record/wechat-record.md","ref":"records/wechat-record/wechat-record.md","articles":[]},{"title":"Ubantu-record","level":"1.1.19","depth":2,"path":"records/Ubantu-record/Ubantu-record.md","ref":"records/Ubantu-record/Ubantu-record.md","articles":[]},{"title":"python-record","level":"1.1.20","depth":2,"path":"records/python-record/python-record.md","ref":"records/python-record/python-record.md","articles":[]},{"title":"mongodb-record","level":"1.1.21","depth":2,"path":"records/mongodb-record/mongodb-record.md","ref":"records/mongodb-record/mongodb-record.md","articles":[]},{"title":"javascript-record","level":"1.1.22","depth":2,"path":"records/javascript-record/javascript-record.md","ref":"records/javascript-record/javascript-record.md","articles":[]},{"title":"Typescript-record","level":"1.1.23","depth":2,"path":"records/Typescript-record/Typescript-record.md","ref":"records/Typescript-record/Typescript-record.md","articles":[]},{"title":"Objective-C-record","level":"1.1.24","depth":2,"path":"records/Objective-C-record/Objective-C-record.md","ref":"records/Objective-C-record/Objective-C-record.md","articles":[]},{"title":"applescript-record","level":"1.1.25","depth":2,"path":"records/applescript-record/applescript-record.md","ref":"records/applescript-record/applescript-record.md","articles":[]},{"title":"ECMAScript_6-record","level":"1.1.26","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},{"title":"IntelliJ_IDEA-record","level":"1.1.27","depth":2,"path":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","ref":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/vue-record/vue-record.md","mtime":"2019-03-06T01:41:00.244Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T01:41:09.522Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
