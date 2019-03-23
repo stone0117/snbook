@@ -720,7 +720,37 @@ https://www.jianshu.com/p/5e35202fc59c
 
 ```bash
 man -t ls | open -a Preview -f
+</code></pre><hr>
+<h2 id="&#x5BF9;find&#x53C2;&#x6570;-prune&#x7684;&#x7406;&#x89E3;">&#x5BF9;find&#x53C2;&#x6570;-prune&#x7684;&#x7406;&#x89E3;</h2>
+<p><a href="https://blog.csdn.net/xiaofei0859/article/details/52511010" target="_blank">https://blog.csdn.net/xiaofei0859/article/details/52511010</a></p>
+<pre><code class="lang-plain">&#x5BF9;find&#x53C2;&#x6570;-prune&#x7684;&#x7406;&#x89E3;
+(PS:&#x5BF9;find&#x53C2;&#x6570;-prune&#x7684;&#x7406;&#x89E3;
+-prune&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x5224;&#x65AD;&#x8BED; &#x53E5;,&#x5F53;&#x53D1;&#x73B0;-prune&#x524D;&#x9762;&#x7684;&#x8868;&#x8FBE;&#x5F0F;math&#x65F6;,&#x6267;&#x884C;&#x5230;-prune&#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;1&#x7ED3;&#x679C;,&#x5982;&#x679C;shell&#x7684;&#x8BDD;,
+&#x53EF;&#x4EE5;&#x4F7F;&#x7528;echo $?&#x6765;&#x770B;&#x7ED3;&#x679C;,&#x5982;&#x679C;-prune&#x540E;&#x9762;&#x8DDF;&#x7684;&#x662F;-o&#x9009;&#x9879;,&#x7528;c&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x6CD5;&#x6765;&#x8BB2;&#x7684;&#x8BDD;&#x5C31;&#x662F;1 || -print,&#x6240;&#x4EE5;&#x660E;&#x663E;&#x53EF;&#x4EE5;&#x770B;&#x5230;
+&#x5F53;-prune&#x524D;&#x9762;&#x7684; &#x8868;&#x8FBE;&#x5F0F;&#x6210;&#x7ACB;&#x7684;&#x8BDD;,&#x5C31;&#x4E0D;&#x4F1A;&#x6267;&#x884C;-o&#x540E;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x4E86;,&#x5982;&#x679C;&#x4E0D;&#x6210;&#x7ACB;,&#x5373;0 || -print,&#x90A3;&#x4E48;&#x5C06;&#x6253;&#x5370;&#x8F93;&#x51FA;,
+&#x53E6;&#x5916;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;-path&#x8DEF;&#x5F84;&#x4E0D;&#x80FD;&#x52A0;&#x5165; &#x7ED3;&#x5C3E;&#x7684;/,
+&#x6BD4;&#x5982;&#x8DEF;&#x5F84;/vobs/gliethttp/signature,&#x4E0D;&#x80FD;&#x5199;&#x6210;/vobs/gliethttp/signature/,&#x8FD9;&#x662F; &#x786C;&#x6027;&#x89C4;&#x5B9A;
+find /vobs/tmp/ -path /vobs/tmp/signature -a -print
+&#x5982;&#x679C;find .&#x90A3;&#x4E48;&#x540E;&#x9762;-path&#x7684;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;./gliethttp
+&#x9664; find&#x4E2D;.&#x4E4B;&#x5916;,&#x5176;&#x4ED6;&#x6240;&#x6709;&#x67E5;&#x627E;,&#x6BD4;&#x5982;find tmp&#x6216;&#x8005;find /vobs&#x7B49;,-path&#x90FD;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+)
 </code></pre>
+<blockquote>
+<p>&#x539F;&#x7406;: true || xxx , &#x53EA;&#x6267;&#x884C;&#x5230;true &#x5C31;&#x8FD4;&#x56DE;,  || &#x4F7F;&#x7528; -o &#x53C2;&#x6570;&#x8868;&#x793A;
+true &amp;&amp; xxx , &#x6267;&#x884C;&#x5230; true&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C;  &amp;&amp; &#x4F7F;&#x7528; -a &#x53C2;&#x6570;&#x8868;&#x793A;</p>
+</blockquote>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x663E;&#x793A;&#x9664;hid_uart&#x5F00;&#x5934;&#x7684;&#x6240;&#x6709;&#x76EE;&#x5F55;&#x6216;&#x6587;&#x4EF6;,&#x4EE5;&#x53CA;&#x540D;&#x4E3A; signature&#x7684;&#x76EE;&#x5F55;&#x6216;&#x6587;&#x4EF6;&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;</span>
+find . &#x2212;namehiduart&#x2217;&#x2212;o&#x2212;namesignature -prune -o -print
+<span class="hljs-comment"># &#x663E;&#x793A;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;./signature&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;</span>
+find . -path ./signature -prune -o -print
+<span class="hljs-comment"># &#x53EA;&#x6253;&#x5370;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;./signature&#x76EE;&#x5F55;</span>
+find . -path ./signature -prune <span class="hljs-_">-a</span> -print
+<span class="hljs-comment"># &#x6253;&#x5370;&#x9664;.svn&#x4E0B;&#x7684;&#x6240;&#x6709;.c&#x6587;&#x4EF6;</span>
+find . -name .svn -prune -o -iname <span class="hljs-string">&apos;*.c&apos;</span> <span class="hljs-_">-a</span> -print
+<span class="hljs-comment"># &#x6216;&#x8005;&#x4F7F;&#x7528;-path&#x53C2;&#x6570;</span>
+find . -path ./.svn -prune -o -print
+</code></pre>
+
                                 
                                 </section>
                             
@@ -763,7 +793,7 @@ man -t ls | open -a Preview -f
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"shell-record","level":"1.1.11","depth":2,"next":{"title":"Swift-record","level":"1.1.12","depth":2,"path":"records/Swift-record/Swift-record.md","ref":"records/Swift-record/Swift-record.md","articles":[]},"previous":{"title":"ruby-record","level":"1.1.10","depth":2,"path":"records/ruby-record/ruby-record.md","ref":"records/ruby-record/ruby-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/shell-record/shell-record.md","mtime":"2019-02-13T17:05:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-23T12:38:32.185Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shell-record","level":"1.1.11","depth":2,"next":{"title":"Swift-record","level":"1.1.12","depth":2,"path":"records/Swift-record/Swift-record.md","ref":"records/Swift-record/Swift-record.md","articles":[]},"previous":{"title":"ruby-record","level":"1.1.10","depth":2,"path":"records/ruby-record/ruby-record.md","ref":"records/ruby-record/ruby-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/shell-record/shell-record.md","mtime":"2019-03-23T14:38:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-23T14:40:17.962Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
