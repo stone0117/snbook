@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>applescript-record · stone park gitbook</title>
+        <title>Applescript-record · stone park gitbook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -431,12 +431,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.25" data-path="applescript-record.html">
+        <li class="chapter active" data-level="1.1.25" data-path="Applescript-record.html">
             
-                <a href="applescript-record.html">
+                <a href="Applescript-record.html">
             
                     
-                    applescript-record
+                    Applescript-record
             
                 </a>
             
@@ -518,7 +518,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >applescript-record</a>
+        <a href="../.." >Applescript-record</a>
     </h1>
 </div>
 
@@ -533,9 +533,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="applescript-record">applescript-record</h1>
+                                <p>@(&#x5DE5;&#x4F5C;&#x7B14;&#x8BB0;)</p>
+<h1 id="applescript-record">Applescript-record</h1>
+<p>[TOC]</p>
 <hr>
-<p><img src="1549246129850.png" alt="Alt text"></p>
+<p><img src="1553342490350.png" alt="Alt text"></p>
 <pre><code>/hello world/
 ---
 </code></pre><hr>
@@ -612,6 +614,59 @@
 
 <span class="hljs-keyword">end</span> <span class="hljs-keyword">tell</span>
 </code></pre>
+<hr>
+<h2 id="open-many-images-in-preview-from-terminal">Open many images in Preview from Terminal</h2>
+<p><a href="http://hints.macworld.com/article.php?story=20040514133013713" target="_blank">http://hints.macworld.com/article.php?story=20040514133013713</a></p>
+<p>&#x6539;&#x826F;&#x811A;&#x672C;, &#x76F4;&#x63A5;&#x4F7F;&#x7528;applescript&#x539F;&#x751F;&#x8DEF;&#x5F84;&#x6253;&#x5F00;&#x6709;&#x6743;&#x9650;&#x95EE;&#x9898;...
+&#x53C2;&#x8003;: <a href="https://apple.stackexchange.com/questions/132544/mavericks-tell-application-preview-open-pdf-strange-permission-issue" target="_blank">https://apple.stackexchange.com/questions/132544/mavericks-tell-application-preview-open-pdf-strange-permission-issue</a></p>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/usr/local/bin/bash
+</span>
+<span class="hljs-keyword">if</span> [[ -z <span class="hljs-string">&quot;$*&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;: <span class="hljs-variable">$0</span> [FILE(S)]&quot;</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;example: <span class="hljs-variable">$0</span> *.jpg&quot;</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;example: <span class="hljs-variable">$0</span> *.png&quot;</span>
+    <span class="hljs-built_in">exit</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> $*; <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span> [[ -n <span class="hljs-string">&quot;<span class="hljs-variable">$FILES</span>&quot;</span> ]]; <span class="hljs-keyword">then</span>
+        FILES=<span class="hljs-string">&quot;<span class="hljs-variable">$FILES</span> &amp; POSIX file \&quot;<span class="hljs-variable">$PWD</span>/<span class="hljs-variable">$file</span>\&quot;&quot;</span>
+    <span class="hljs-keyword">else</span>
+        FILES=<span class="hljs-string">&quot;POSIX file \&quot;<span class="hljs-variable">$PWD</span>/<span class="hljs-variable">$file</span>\&quot;&quot;</span>
+    <span class="hljs-keyword">fi</span>
+<span class="hljs-keyword">done</span>;
+
+<span class="hljs-comment">## &#x6743;&#x9650;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</span>
+<span class="hljs-comment">#&#x6B64;&#x95EE;&#x9898;&#x662F;&#x7531;Apple&#x7684;&#x9884;&#x89C8;&#x6C99;&#x76D2;&#xFF08;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF09;&#x5F15;&#x8D77;&#x7684;&#x3002;&#x5982;&#x679C;&#x60A8;&#x53EA;&#x662F;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x4F20;&#x9012;&#x7ED9;&#x6253;&#x5F00;&#xFF0C;&#x5219;&#x9884;&#x89C8;&#x4E0D;&#x4F1A;&#x83B7;&#x5F97;&#x8BBF;&#x95EE;PDF&#x7684;&#x6743;&#x5229;&#x3002;&#x6765;&#x81EA;Apple&#x7684;&#x53D1;&#x884C;&#x8BF4;&#x660E;&#xFF1A;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#&#x517C;&#x5BB9;&#x6027;&#x8BF4;&#x660E;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#&#x5C06;&#x547D;&#x4EE4;&#x53D1;&#x9001;&#x5230;&#x6C99;&#x76D2;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF08;&#x4F8B;&#x5982;OS X Mountain Lion&#x4E2D;&#x7684;TextEdit&#xFF09;&#x65F6;&#xFF0C;&#x5F15;&#x7528;&#x6587;&#x4EF6;&#x7684;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x660E;&#x786E;&#x7684;&#x7C7B;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x800C;&#x4E0D;&#x662F;&#x88F8;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5426;&#x5219;&#x76EE;&#x6807;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x8BE5;&#x6587;&#x4EF6;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6587;&#x4EF6;&#x201C;Macintosh HD&#xFF1A;Users&#xFF1A;me&#xFF1A;sample.txt&#x201D;&#xFF0C;POSIX&#x6587;&#x4EF6;&#x201C;/Users/me/sample.txt&#x201D;&#x6216;&#x9009;&#x62E9;&#x6587;&#x4EF6;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#xFF0C;&#x4F46;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x201C;/ Users / me / sample.txt&#x201C;&#x4E0D;&#x4F1A;&#x3002;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x9002;&#x7528;&#x4E8E;Downloads&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#xFF1F;&#x5F53;&#x60A8;&#x624B;&#x52A8;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x4FDD;&#x7559;&#x6253;&#x5F00;&#x5B83;&#x7684;&#x6743;&#x5229;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x201C;&#x6700;&#x8FD1;&#x201D;&#x4E2D;&#xFF09;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x5C1D;&#x8BD5;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#x7684;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x6548;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x9002;&#x7528;&#x4E8E;&#x65B0;&#x6587;&#x4EF6;&#x3002;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#&#x8981;&#x4FEE;&#x590D;&#xFF0C;&#x8BF7;&#x5C06;&#x4EE3;&#x7801;&#x66F4;&#x6539;&#x4E3A;&#xFF1A;</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#tell application &quot;Preview&quot;</span>
+<span class="hljs-comment">#activate</span>
+<span class="hljs-comment">#open POSIX file &quot;/Users/me/Desktop/test.pdf&quot;</span>
+<span class="hljs-comment">#end tell</span>
+
+
+<span class="hljs-comment">#cat &lt;&lt; EOF</span>
+<span class="hljs-comment">#tell application &quot;Preview&quot;</span>
+<span class="hljs-comment">#  activate</span>
+<span class="hljs-comment">#  open $FILES</span>
+<span class="hljs-comment">#end tell</span>
+<span class="hljs-comment">#EOF</span>
+
+osascript &lt;&lt; EOF
+tell application <span class="hljs-string">&quot;Preview&quot;</span>
+  activate
+  open <span class="hljs-variable">${FILES}</span>
+end tell
+EOF
+</code></pre>
 
                                 
                                 </section>
@@ -655,7 +710,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"applescript-record","level":"1.1.25","depth":2,"next":{"title":"Objective-C-record","level":"1.1.26","depth":2,"path":"records/Objective-C-record/Objective-C-record.md","ref":"records/Objective-C-record/Objective-C-record.md","articles":[]},"previous":{"title":"Typescript-record","level":"1.1.24","depth":2,"path":"records/Typescript-record/Typescript-record.md","ref":"records/Typescript-record/Typescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/applescript-record/applescript-record.md","mtime":"2019-03-01T01:20:41.719Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-22T16:47:17.991Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Applescript-record","level":"1.1.25","depth":2,"next":{"title":"Objective-C-record","level":"1.1.26","depth":2,"path":"records/Objective-C-record/Objective-C-record.md","ref":"records/Objective-C-record/Objective-C-record.md","articles":[]},"previous":{"title":"Typescript-record","level":"1.1.24","depth":2,"path":"records/Typescript-record/Typescript-record.md","ref":"records/Typescript-record/Typescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Applescript-record/Applescript-record.md","mtime":"2019-03-23T12:36:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-23T12:38:32.185Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
