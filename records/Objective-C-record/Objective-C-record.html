@@ -1017,6 +1017,62 @@ UIImage *img2 = [UIImage imageWithContentsOfFile:file2];
 <hr>
 <h2 id="&#x5DF2;&#x6709;&#x9879;&#x76EE;&#x6DFB;&#x52A0;&#x5355;&#x5143;&#x6D4B;&#x8BD5;">&#x5DF2;&#x6709;&#x9879;&#x76EE;&#x6DFB;&#x52A0;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</h2>
 <p><a href="http://www.cocoachina.com/ios/20151125/14415.html" target="_blank">http://www.cocoachina.com/ios/20151125/14415.html</a></p>
+<h2 id="ios-&#x7F16;&#x7A0B;&#x4E4B;&#x4F7F;&#x7528;precompile-prefix-header">iOS &#x7F16;&#x7A0B;&#x4E4B;&#x4F7F;&#x7528;Precompile Prefix Header</h2>
+<p><img src="1553936564047.png" alt="Alt text">
+<a href="https://www.cnblogs.com/FightingLuoYin/p/4487291.html" target="_blank">https://www.cnblogs.com/FightingLuoYin/p/4487291.html</a></p>
+<pre><code class="lang-plain">&#x4E00;&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;Xcode6&#x6CA1;&#x6709;&#x81EA;&#x52A8;&#x521B;&#x5EFA;Precompile Prefix Header
+
+     &#x6211;&#x4EEC;&#x5728;&#x5199;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x5B8F;&#x5B9A;&#x4E49;&#xFF0C;&#x5934;&#x6587;&#x4EF6;&#x5BFC;&#x5165;&#x90FD;&#x5728;Precompile Prefix Header&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x3002;&#x5728;Xcode 4, 5&#x7684;&#x6A21;&#x677F;&#x5DE5;&#x7A0B;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;Precompile Prefix Header&#xFF0C;&#x4F46;&#x662F;&#x5728;Xcode 6&#x88AB;&#x9609;&#x5272;&#x6389;&#x4E86;&#xFF0C;&#x539F;&#x56E0;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x94FE;&#x63A5;&#xFF1A;
+
+http://stackoverflow.com/questions/24158648/why-isnt-projectname-prefix-pch-created-automatically-in-xcode-6
+
+&#x3000;Xcode 6&#x53BB;&#x6389;Precompile Prefix Header&#x7684;&#x4E3B;&#x8981;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#xFF1A;
+
+&#xFF08;1&#xFF09;&#x53BB;&#x6389;&#x81EA;&#x52A8;&#x5BFC;&#x5165;&#x7684;&#x7CFB;&#x7EDF;&#x6846;&#x67B6;&#x7C7B;&#x5E93;&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x539F;&#x6587;&#x4EF6;&#x7684;&#x590D;&#x7528;&#x6027;&#xFF0C;&#x4FBF;&#x4E8E;&#x8FC1;&#x79FB;&#x3002;
+
+&#xFF08;2&#xFF09;&#x4E00;&#x4E2A;&#x80A5;&#x80D6;&#x65E0;&#x6BD4;&#x7684;Prefix Header&#x4F1A;&#x5927;&#x5927;&#x589E;&#x52A0;Build Time&#x3002;
+
+
+
+&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;Precompile Prefix Header&#x7684;&#x597D;&#x5904;
+
+&#x3000;&#x3000;&#x4E3A;&#x4E86;&#x53D6;&#x4EE3;&#x5728;Prefix Header&#x4E2D;&#x81EA;&#x52A8;&#x5BFC;&#x5165;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x5BFC;&#x5165;&#x7CFB;&#x7EDF;&#x6846;&#x67B6;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x901A;&#x8FC7;@import&#x6765;&#x624B;&#x52A8;&#x5BFC;&#x5165;&#x3002;&#x5982;&#x679C;&#x5728;Prefix Header&#x4E2D;&#x5BFC;&#x5165;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5728;&#x5DE5;&#x7A0B;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x83B7;&#x5F97;&#x4F7F;&#x7528;&#x7684;&#x6743;&#x5229;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x624B;&#x52A8;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;.h/.m&#x6587;&#x4EF6;&#x4E2D;&#x5BFC;&#x5165;&#x3002;&#x8BE5;&#x6587;&#x4EF6;&#x786E;&#x6709;&#x5176;&#x65B9;&#x4FBF;&#x4E4B;&#x5904;&#x3002;
+
+
+
+&#x4E09;&#xFF1A;&#x7ED9;&#x5DE5;&#x7A0B;&#x4E2D;&#x6DFB;&#x52A0;Precompile Prefix Header
+
+&#x3000;&#x3000;&#x5982;&#x679C;&#x4E00;&#x5B9A;&#x8981;&#x7528;&#x5230;Precompile Prefix Header&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;Xcode 5&#x7684;&#x914D;&#x7F6E;&#x6765;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;&#x3002;
+
+&#xFF08;1&#xFF09;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;pch&#x6587;&#x4EF6;&#xFF1A; Command+N&#xFF0C;&#x6253;&#x5F00;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x7A97;&#x53E3;&#xFF1A;ios-&gt;other-&gt;PCH file
+
+
+
+&#xFF08;2&#xFF09;&#x7ED9;pch&#x6587;&#x4EF6;&#x547D;&#x540D;
+
+&#x3000;&#x3000;&#x5728;&#x5DE5;&#x7A0B;&#x4E2D;&#x589E;&#x52A0;&#x4E00;&#x4E2A;pch&#x6587;&#x4EF6;&#xFF0C;&#x547D;&#x540D;&#x8FD8;&#x662F;&#x6309;&#x7167;Xcode 5&#x7684;&#x6A21;&#x677F;&#x6BD4;&#x8F83;&#x597D;&#xFF1A;&#x5DE5;&#x7A0B;&#x540D;-Prefix.pch&#xFF0C;&#x4F8B;&#x5982;a-Prefx.pch
+
+&#x3000; &#x3000;
+
+&#xFF08;3&#xFF09;&#x4FEE;&#x6539;&#x5DE5;&#x7A0B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5C06;&#x521A;&#x521A;&#x521B;&#x5EFA;&#x7684;PCH file&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;building setting&#x4E2D;&#x7684;precompile header&#x9009;&#x9879;&#x4E2D;&#x53BB;&#xFF0C;&#x6CE8;&#x610F;debug&#x548C;release&#x4E24;&#x680F;&#x90FD;&#x8981;&#x6DFB;&#x52A0;&#xFF1A;
+
+
+
+&#x3000;&#x3000;&#x6CE8;&#x610F;&#xFF1A;
+
+&#x5C06;Precompile Prefix Header&#x4E3A;YES&#xFF0C;&#x9884;&#x7F16;&#x8BD1;&#x540E;&#x7684;pch&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x7F16;&#x8BD1;&#x901F;&#x5EA6;&#x3000;&#x3000;
+&#x4FEE;&#x6539;pch&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x683C;&#x5F0F;&#xFF1A;&#x5C06;building setting&#x4E2D;&#x7684;precompile header&#x9009;&#x9879;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x201C;$(SRCROOT)/&#x9879;&#x76EE;&#x540D;&#x79F0;/pch&#x6587;&#x4EF6;&#x540D;&#x201D;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;$(SRCROOT)/&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x5B57;&#x952E;&#x76D8;/&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x5B57;&#x952E;&#x76D8;-Prefix.pch&#xFF09;
+
+&#xFF08;4&#xFF09;&#x5411;pch&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;
+
+
+
+&#x603B;&#x7ED3;&#xFF1A;Apple&#x6807;&#x90FD;&#x5EFA;&#x8BAE;&#x6211;&#x4EEC;&#x4E0D;&#x7528;pch&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x8FD8;&#x662F;&#x5C3D;&#x91CF;&#x5C11;&#x7528;&#x5427;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x5B9A;&#x8981;&#x7528;&#xFF0C;&#x8FD8;&#x662F;&#x5C3D;&#x91CF;&#x51CF;&#x5C11;pch&#x6587;&#x4EF6;&#x4E2D;
+
+&#x3000;&#x3000;  &#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x964D;&#x4F4E;&#x5DE5;&#x7A0B;&#x5BF9;pch&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#xFF0C;&#x4FBF;&#x4E8E;&#x65E5;&#x540E;&#x7684;&#x8FC1;&#x79FB;&#x548C;&#x89E3;&#x8026;&#x3002;
+</code></pre>
+<h2 id="&#x61D2;&#x52A0;&#x8F7D;&#x6539;&#x5199;">&#x61D2;&#x52A0;&#x8F7D;&#x6539;&#x5199;</h2>
+<p><img src="1554210697534.png" alt="Alt text"></p>
 
                                 
                                 </section>
@@ -1060,7 +1116,7 @@ UIImage *img2 = [UIImage imageWithContentsOfFile:file2];
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Objective-C-record","level":"1.1.26","depth":2,"next":{"title":"ECMAScript_6-record","level":"1.1.27","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},"previous":{"title":"Applescript-record","level":"1.1.25","depth":2,"path":"records/Applescript-record/Applescript-record.md","ref":"records/Applescript-record/Applescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Objective-C-record/Objective-C-record.md","mtime":"2019-03-29T15:59:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-29T16:00:23.820Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Objective-C-record","level":"1.1.26","depth":2,"next":{"title":"ECMAScript_6-record","level":"1.1.27","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},"previous":{"title":"Applescript-record","level":"1.1.25","depth":2,"path":"records/Applescript-record/Applescript-record.md","ref":"records/Applescript-record/Applescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Objective-C-record/Objective-C-record.md","mtime":"2019-04-02T13:11:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T13:12:34.148Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
