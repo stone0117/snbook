@@ -1146,11 +1146,168 @@ lipoLibs
 <span class="hljs-comment">#cp -Rf &quot;${SRCROOT}/ios_libs/Frameworks/${productName}.framework&quot; &quot;${SRCROOT}/../ios_libs/Frameworks/${productName}.framework&quot;</span>
 </code></pre>
 <p><strong>&#x5751;</strong>
+<a href="https://stackoverflow.com/questions/32687105/framework-not-found-in-xcode" target="_blank">https://stackoverflow.com/questions/32687105/framework-not-found-in-xcode</a>
 &#x6709;&#x65F6;&#x5019;&#x7F16;&#x8BD1;&#x62A5;&#x9519;
 &#x53BB; build settings &#x91CC; &#x641C;&#x7D22; Framework Search Path
 &#x78B0;&#x4E00;&#x4E0B; 
 <img src="1554548041303.png" alt="Alt text">
 &#x6539;&#x6210;&#x9012;&#x5F52;, &#x518D;&#x6539;&#x56DE;&#x6765;</p>
+<p><strong>&#x81EA;&#x5B9A;&#x4E49;&#x7684;framework &#x62A5;&#x6587;&#x4EF6;&#x627E;&#x4E0D;&#x5230;</strong>
+&#x5173;&#x95ED;xcode &#x91CD;&#x5F00;&#x5C31;&#x597D;&#x4E86;, &#x8349; &#x4EC0;&#x4E48;&#x73A9;&#x610F;&#x513F;</p>
+<h2 id="&#x5751;&#x554A;">&#x5751;&#x554A;</h2>
+<pre><code>xcrun xcodebuild \                                                                                                                                                                                                        stone@bogon
+  -scheme Framework_test \
+  -workspace Framework_test.xcworkspace \
+  -configuration Debug \
+  -destination &apos;platform=iOS Simulator,name=iPhone 6 Plus,OS=9.1&apos; \
+  -derivedDataPath \
+  build
+</code></pre><h2 id="cocoapods-&#x672C;&#x5730;&#x79C1;&#x6709;&#x5E93;&#x521B;&#x5EFA;">cocoapods &#x672C;&#x5730;&#x79C1;&#x6709;&#x5E93;&#x521B;&#x5EFA;</h2>
+<p><a href="https://www.zybuluo.com/Sweetfish/note/836091" target="_blank">https://www.zybuluo.com/Sweetfish/note/836091</a></p>
+<pre><code class="lang-ruby"><span class="hljs-comment">#</span>
+<span class="hljs-comment">#  Be sure to run `pod spec lint SNLib.podspec&apos; to ensure this is a</span>
+<span class="hljs-comment">#  valid spec and to remove all comments including this before submitting the spec.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#  To learn more about Podspec attributes see https://docs.cocoapods.org/specification.html</span>
+<span class="hljs-comment">#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/</span>
+<span class="hljs-comment">#</span>
+
+<span class="hljs-symbol">Pod:</span><span class="hljs-symbol">:Spec</span>.new <span class="hljs-keyword">do</span> |spec|
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015;  Spec Metadata  &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  These will help people to find your library, and whilst it</span>
+  <span class="hljs-comment">#  can feel like a chore to fill in it&apos;s definitely to your advantage. The</span>
+  <span class="hljs-comment">#  summary should be tweet-length, and the description more in depth.</span>
+  <span class="hljs-comment">#</span>
+
+  spec.name         = <span class="hljs-string">&quot;SNLib&quot;</span>
+  spec.version      = <span class="hljs-string">&quot;0.0.2&quot;</span>
+  spec.summary      = <span class="hljs-string">&quot;A short description of SNLib.&quot;</span>
+
+  <span class="hljs-comment"># This description is used to generate tags and improve search results.</span>
+  <span class="hljs-comment">#   * Think: What does it do? Why did you write it? What is the focus?</span>
+  <span class="hljs-comment">#   * Try to keep it short, snappy and to the point.</span>
+  <span class="hljs-comment">#   * Write the description between the DESC delimiters below.</span>
+  <span class="hljs-comment">#   * Finally, don&apos;t worry about the indent, CocoaPods strips it!</span>
+  spec.description  = <span class="hljs-string">&quot;SNLib git test&quot;</span>
+
+  spec.homepage     = <span class="hljs-string">&quot;http://EXAMPLE/SNLib&quot;</span>
+  <span class="hljs-comment"># spec.screenshots  = &quot;www.example.com/screenshots_1.gif&quot;, &quot;www.example.com/screenshots_2.gif&quot;</span>
+
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015;  Spec License  &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  Licensing your code is important. See https://choosealicense.com for more info.</span>
+  <span class="hljs-comment">#  CocoaPods will detect a license file if there is a named LICENSE*</span>
+  <span class="hljs-comment">#  Popular ones are &apos;MIT&apos;, &apos;BSD&apos; and &apos;Apache License, Version 2.0&apos;.</span>
+  <span class="hljs-comment">#</span>
+
+  spec.license      = <span class="hljs-string">&quot;MIT&quot;</span>
+  <span class="hljs-comment"># spec.license      = { :type =&gt; &quot;MIT&quot;, :file =&gt; &quot;FILE_LICENSE&quot; }</span>
+
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015; Author Metadata  &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  Specify the authors of the library, with email addresses. Email addresses</span>
+  <span class="hljs-comment">#  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also</span>
+  <span class="hljs-comment">#  accepts just a name if you&apos;d rather not provide an email address.</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  Specify a social_media_url where others can refer to, for example a twitter</span>
+  <span class="hljs-comment">#  profile URL.</span>
+  <span class="hljs-comment">#</span>
+
+  spec.author             = { <span class="hljs-string">&quot;StonePark&quot;</span> =&gt; <span class="hljs-string">&quot;blueone009@163.com&quot;</span> }
+  <span class="hljs-comment"># Or just: spec.author    = &quot;StonePark&quot;</span>
+  <span class="hljs-comment"># spec.authors            = { &quot;StonePark&quot; =&gt; &quot;blueone009@163.com&quot; }</span>
+  <span class="hljs-comment"># spec.social_media_url   = &quot;https://twitter.com/StonePark&quot;</span>
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015; Platform Specifics &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  If this Pod runs only on iOS or OS X, then specify the platform and</span>
+  <span class="hljs-comment">#  the deployment target. You can optionally include the target after the platform.</span>
+  <span class="hljs-comment">#</span>
+
+  <span class="hljs-comment"># spec.platform     = :ios</span>
+  spec.platform     = <span class="hljs-symbol">:ios</span>, <span class="hljs-string">&quot;9.0&quot;</span>
+
+  <span class="hljs-comment">#  When using multiple platforms</span>
+  <span class="hljs-comment"># spec.ios.deployment_target = &quot;5.0&quot;</span>
+  <span class="hljs-comment"># spec.osx.deployment_target = &quot;10.7&quot;</span>
+  <span class="hljs-comment"># spec.watchos.deployment_target = &quot;2.0&quot;</span>
+  <span class="hljs-comment"># spec.tvos.deployment_target = &quot;9.0&quot;</span>
+
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015; Source Location &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  Specify the location from where the source should be retrieved.</span>
+  <span class="hljs-comment">#  Supports git, hg, bzr, svn and HTTP.</span>
+  <span class="hljs-comment">#</span>
+
+  spec.source       = { <span class="hljs-symbol">:git</span> =&gt; <span class="hljs-string">&quot;https://github.com/stone0117/SNLib.git&quot;</span>, <span class="hljs-symbol">:tag</span> =&gt; <span class="hljs-string">&quot;<span class="hljs-subst">#{spec.version}</span>&quot;</span> }
+
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015; Source Code &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  CocoaPods is smart about how it includes source code. For source files</span>
+  <span class="hljs-comment">#  giving a folder will include any swift, h, m, mm, c &amp; cpp files.</span>
+  <span class="hljs-comment">#  For header files it will include any header in the folder.</span>
+  <span class="hljs-comment">#  Not including the public_header_files will make all headers public.</span>
+  <span class="hljs-comment">#</span>
+
+  spec.source_files  = <span class="hljs-string">&quot;SNLib&quot;</span>, <span class="hljs-string">&quot;SNLib/**/*.{h,m}&quot;</span>
+  <span class="hljs-comment">#spec.exclude_files = &quot;Classes/Exclude&quot;</span>
+
+  <span class="hljs-comment"># spec.public_header_files = &quot;Classes/**/*.h&quot;</span>
+
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015; Resources &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  A list of resources included with the Pod. These are copied into the</span>
+  <span class="hljs-comment">#  target bundle with a build phase script. Anything else will be cleaned.</span>
+  <span class="hljs-comment">#  You can preserve files from being cleaned, please don&apos;t preserve</span>
+  <span class="hljs-comment">#  non-essential files like tests, examples and documentation.</span>
+  <span class="hljs-comment">#</span>
+
+  <span class="hljs-comment"># spec.resource  = &quot;icon.png&quot;</span>
+  <span class="hljs-comment"># spec.resources = &quot;Resources/*.png&quot;</span>
+
+  <span class="hljs-comment"># spec.preserve_paths = &quot;FilesToSave&quot;, &quot;MoreFilesToSave&quot;</span>
+
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015; Project Linking &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  Link your library with frameworks, or libraries. Libraries do not include</span>
+  <span class="hljs-comment">#  the lib prefix of their name.</span>
+  <span class="hljs-comment">#</span>
+
+  <span class="hljs-comment"># spec.framework  = &quot;SomeFramework&quot;</span>
+  <span class="hljs-comment"># spec.frameworks = &quot;SomeFramework&quot;, &quot;AnotherFramework&quot;</span>
+
+  <span class="hljs-comment"># spec.library   = &quot;iconv&quot;</span>
+  <span class="hljs-comment"># spec.libraries = &quot;iconv&quot;, &quot;xml2&quot;</span>
+
+
+  <span class="hljs-comment"># &#x2015;&#x2015;&#x2015; Project Settings &#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015; #</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment">#  If your library depends on compiler flags you can set them in the xcconfig hash</span>
+  <span class="hljs-comment">#  where they will only apply to your library. If you depend on other Podspecs</span>
+  <span class="hljs-comment">#  you can include multiple dependencies to ensure it works.</span>
+
+  spec.requires_arc = <span class="hljs-keyword">true</span>
+
+  <span class="hljs-comment"># spec.xcconfig = { &quot;HEADER_SEARCH_PATHS&quot; =&gt; &quot;$(SDKROOT)/usr/include/libxml2&quot; }</span>
+  spec.dependency <span class="hljs-string">&quot;Masonry&quot;</span>, <span class="hljs-string">&quot;~&gt; 1.1.0&quot;</span>
+  spec.dependency <span class="hljs-string">&quot;MBProgressHUD&quot;</span>, <span class="hljs-string">&quot;~&gt; 1.1.0&quot;</span>
+  spec.dependency <span class="hljs-string">&quot;SSZipArchive&quot;</span>, <span class="hljs-string">&quot;~&gt; 2.1.4&quot;</span>
+  spec.dependency <span class="hljs-string">&quot;SDWebImage&quot;</span>, <span class="hljs-string">&quot;~&gt; 4.4.6&quot;</span>
+  spec.dependency <span class="hljs-string">&quot;AFNetworking&quot;</span>, <span class="hljs-string">&quot;~&gt; 3.2.1&quot;</span>
+
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>framework&#x4E2D;&#x5F15;&#x7528;&#x7684;&#x4E09;&#x65B9;&#x5E93;&#x548C; , spec&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x7248;&#x672C;&#x53EF;&#x80FD;&#x8981;&#x4E00;&#x81F4;, &#x4E0D;&#x7136;&#x53EF;&#x80FD;&#x62A5;&#x9519;...
+<img src="1554567720721.png" alt="Alt text">
+<img src="1554567746307.png" alt="Alt text"></p>
 
                                 
                                 </section>
@@ -1194,7 +1351,7 @@ lipoLibs
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Objective-C-record","level":"1.1.26","depth":2,"next":{"title":"ECMAScript_6-record","level":"1.1.27","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},"previous":{"title":"Applescript-record","level":"1.1.25","depth":2,"path":"records/Applescript-record/Applescript-record.md","ref":"records/Applescript-record/Applescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Objective-C-record/Objective-C-record.md","mtime":"2019-04-06T10:55:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-06T10:55:35.481Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Objective-C-record","level":"1.1.26","depth":2,"next":{"title":"ECMAScript_6-record","level":"1.1.27","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},"previous":{"title":"Applescript-record","level":"1.1.25","depth":2,"path":"records/Applescript-record/Applescript-record.md","ref":"records/Applescript-record/Applescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Objective-C-record/Objective-C-record.md","mtime":"2019-04-06T16:23:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-06T16:23:55.285Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
