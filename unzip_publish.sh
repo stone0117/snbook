@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 
-cd ./records/
+cd $HOME/git_repository/snbook_edit/records
 
 for item in *.zip; do
     #    echo "item = ${item}"
@@ -11,6 +11,8 @@ for item in *.zip; do
 done
 
 echo -e "\033[0;32;1m=============================================\033[0m"
+
+cd $HOME/git_repository/snbook_edit
 
 gitbook build
 
