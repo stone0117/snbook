@@ -1322,6 +1322,46 @@ lipoLibs
 <p>framework&#x4E2D;&#x5F15;&#x7528;&#x7684;&#x4E09;&#x65B9;&#x5E93;&#x548C; , spec&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x7248;&#x672C;&#x53EF;&#x80FD;&#x8981;&#x4E00;&#x81F4;, &#x4E0D;&#x7136;&#x53EF;&#x80FD;&#x62A5;&#x9519;...
 <img src="1554567720721.png" alt="Alt text">
 <img src="1554567746307.png" alt="Alt text"></p>
+<hr>
+<h2 id="&#x4F7F;&#x7528;agvtool&#x66F4;&#x6539;app-version&#xFF0F;build">&#x4F7F;&#x7528;agvtool&#x66F4;&#x6539;app version&#xFF0F;build</h2>
+<p><a href="https://segmentfault.com/a/1190000008570439" target="_blank">https://segmentfault.com/a/1190000008570439</a></p>
+<p><strong>step1:</strong>
+Build Settings &#x641C;&#x7D22; current 
+Current Project Version &#x6539;&#x6210;&#x5F53;&#x524D;&#x7248;&#x672C;&#x53F7; , e.g 1.0.0
+Version System &#x6539;&#x6210; Apple Generic
+<img src="1555138274635.png" alt="Alt text"></p>
+<p>Build Settings &#x641C;&#x7D22; Info.plist
+<img src="1555138337368.png" alt="Alt text"></p>
+<p>&#x628A; $(SRCROOT) &#x5220;&#x6389;...</p>
+<p>&#x7EC8;&#x7AEF;cd&#x5230; &#x6709; .xcodeproj &#x76EE;&#x5F55;&#x4E0B; , &#x5373; &#x5DE5;&#x7A0B;&#x76EE;&#x5F55;&#x4E0B;</p>
+<p><strong>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7248;&#x672C;</strong></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># build</span>
+agvtool what-version
+<span class="hljs-comment"># version</span>
+agvtool what-marketing-version
+<span class="hljs-comment"># build</span>
+agvtool vers
+<span class="hljs-comment"># version</span>
+agvtool mvers
+</code></pre>
+<p><strong>&#x81EA;&#x52A8;&#x589E;&#x52A0;&#x7248;&#x672C;&#x53F7;</strong></p>
+<pre><code class="lang-bash">agvtool next-version -all
+agvtool bump -all
+</code></pre>
+<blockquote>
+<p>&#x4E8C;&#x8005;&#x90FD;&#x662F;&#x7ED9;build&#x9012;&#x589E;&#x3002;version&#x7684;&#x8BDD;&#xFF0C;&#x6CA1;&#x6709;&#x9012;&#x589E;&#x7684;&#x547D;&#x4EE4;&#x3002;-all &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7248;&#x672C;&#x53F7;&#x4E5F;&#x53D8;</p>
+</blockquote>
+<p><strong>&#x8BBE;&#x7F6E;&#x65B0;&#x7248;&#x672C;&#x53F7;</strong></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># build</span>
+<span class="hljs-comment"># &#x7ED9;&#x82F9;&#x679C;&#x770B;&#x7684;&#x7248;&#x672C;&#x53F7; , &#x5373; &#x6784;&#x5EFA;&#x7248;&#x672C;, test flight &#x7248;&#x672C;&#x53F7;</span>
+agvtool new-version -all 1.0.0
+<span class="hljs-comment"># version</span>
+<span class="hljs-comment"># &#x7ED9;&#x7528;&#x6237;&#x770B;&#x7684;&#x7248;&#x672C;&#x53F7; , &#x5373; app-store &#x4EA7;&#x54C1;&#x4E0A;&#x7EBF;&#x7684; &#x80FD;&#x663E;&#x793A;&#x5728;&#x5386;&#x53F2;&#x7248;&#x672C;&#x8BB0;&#x5F55;&#x7684;&#x7248;&#x672C;&#x53F7;</span>
+agvtool new-marketing-version 1.0.0
+</code></pre>
+<p><strong>help</strong></p>
+<pre><code class="lang-bash">agvtool <span class="hljs-built_in">help</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1365,7 +1405,7 @@ lipoLibs
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Objective-C-record","level":"1.1.27","depth":2,"next":{"title":"ECMAScript_6-record","level":"1.1.28","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},"previous":{"title":"Applescript-record","level":"1.1.26","depth":2,"path":"records/Applescript-record/Applescript-record.md","ref":"records/Applescript-record/Applescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Objective-C-record/Objective-C-record.md","mtime":"2019-04-06T16:33:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-13T05:20:26.356Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Objective-C-record","level":"1.1.27","depth":2,"next":{"title":"ECMAScript_6-record","level":"1.1.28","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},"previous":{"title":"Applescript-record","level":"1.1.26","depth":2,"path":"records/Applescript-record/Applescript-record.md","ref":"records/Applescript-record/Applescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Objective-C-record/Objective-C-record.md","mtime":"2019-04-13T06:59:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-13T07:01:13.300Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
