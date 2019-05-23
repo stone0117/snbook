@@ -1491,6 +1491,102 @@ iOS 10&#xFF0C;&#x628A;RevealServer.framework &#x52A8;&#x6001;&#x5E93;&#x62F7;&#x
 <p>-ObjC&#x7528;&#x6CD5;:
 Unix&#x7684;&#x6807;&#x51C6;&#x9759;&#x6001;&#x5E93;&#x5B9E;&#x73B0;&#x548C;Objective-C&#x7684;&#x52A8;&#x6001;&#x7279;&#x6027;&#x4E4B;&#x95F4;&#x6709;&#x4E00;&#x4E9B;&#x51B2;&#x7A81;&#xFF1A;Objective-C&#x6CA1;&#x6709;&#x4E3A;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#xFF08;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#xFF09;&#x5B9A;&#x4E49;&#x94FE;&#x63A5;&#x7B26;&#x53F7;&#xFF0C;&#x5B83;&#x53EA;&#x4E3A;&#x6BCF;&#x4E2A;&#x7C7B;&#x521B;&#x5EFA;&#x94FE;&#x63A5;&#x7B26;&#x53F7;&#x3002;&#x8FD9;&#x6837;&#x5F53;&#x5728;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x5E93;&#x4E2D;&#x4F7F;&#x7528;&#x7C7B;&#x522B;&#x6765;&#x6269;&#x5C55;&#x5DF2;&#x6709;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x94FE;&#x63A5;&#x5668;&#x4E0D;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x628A;&#x7C7B;&#x539F;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x522B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x6574;&#x5408;&#x8D77;&#x6765;&#xFF0C;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x4F60;&#x8C03;&#x7528;&#x7C7B;&#x522B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x51FA;&#x73B0;&#x201D;selector not recognized&#x201D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x627E;&#x4E0D;&#x5230;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5F15;&#x5165;&#x4E86;-ObjC&#x6807;&#x5FD7;&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;&#x9759;&#x6001;&#x5E93;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x548C;&#x5BF9;&#x8C61;&#x76F8;&#x5173;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x52A0;&#x8F7D;&#x8FDB;&#x6765;</p>
 </blockquote>
+<hr>
+<h2 id="node-des--aes-&#x52A0;&#x5BC6;--&#x5BF9;&#x5E94;-ios-&#x52A0;&#x5BC6;">node des | aes &#x52A0;&#x5BC6;  &#x5BF9;&#x5E94; iOS &#x52A0;&#x5BC6;</h2>
+<p><a href="https://www.jianshu.com/p/bb4ce4296612" target="_blank">https://www.jianshu.com/p/bb4ce4296612</a>
+<a href="https://www.jianshu.com/p/8896ed432dff" target="_blank">https://www.jianshu.com/p/8896ed432dff</a></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> CryptoJS = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;crypto-js&quot;</span>);
+
+<span class="hljs-comment">// &#x52A0;&#x5BC6;</span>
+
+<span class="hljs-keyword">var</span> str = <span class="hljs-string">&apos;12345&apos;</span>;
+<span class="hljs-comment">// &#x5BC6;&#x94A5; 16 &#x4F4D;</span>
+<span class="hljs-keyword">var</span> key = <span class="hljs-string">&apos;1234567890123456&apos;</span>;
+<span class="hljs-comment">// &#x521D;&#x59CB;&#x5411;&#x91CF; initial vector 16 &#x4F4D;</span>
+<span class="hljs-keyword">var</span> iv = <span class="hljs-string">&apos;1234567890123456&apos;</span>;
+<span class="hljs-comment">// key &#x548C; iv &#x53EF;&#x4EE5;&#x4E00;&#x81F4;</span>
+
+key = CryptoJS.enc.Utf8.parse(key);
+iv = CryptoJS.enc.Utf8.parse(iv);
+
+<span class="hljs-keyword">var</span> encrypted = CryptoJS.DES.encrypt(str, key, {
+  iv: iv,
+  mode: CryptoJS.mode.CBC,
+  padding: CryptoJS.pad.AnsiX923
+});
+
+<span class="hljs-comment">// &#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</span>
+encrypted = encrypted.toString();
+
+<span class="hljs-built_in">console</span>.log(encrypted);
+
+<span class="hljs-comment">// mode &#x652F;&#x6301; CBC&#x3001;CFB&#x3001;CTR&#x3001;ECB&#x3001;OFB, &#x9ED8;&#x8BA4; CBC</span>
+<span class="hljs-comment">// padding &#x652F;&#x6301; Pkcs7&#x3001;AnsiX923&#x3001;Iso10126</span>
+<span class="hljs-comment">// NoPadding&#x3001;ZeroPadding, &#x9ED8;&#x8BA4; Pkcs7, &#x5373; Pkcs5</span>
+
+<span class="hljs-comment">// &#x89E3;&#x5BC6;</span>
+<span class="hljs-keyword">var</span> decrypted = CryptoJS.DES.decrypt(encrypted, key, {
+  iv: iv,
+  mode: CryptoJS.mode.CBC,
+  padding: CryptoJS.pad.AnsiX923
+});
+
+<span class="hljs-comment">// &#x8F6C;&#x6362;&#x4E3A; utf8 &#x5B57;&#x7B26;&#x4E32;</span>
+decrypted = CryptoJS.enc.Utf8.stringify(decrypted);
+
+<span class="hljs-built_in">console</span>.log(decrypted);
+</code></pre>
+<pre><code class="lang-objectivec"><span class="hljs-comment">//</span>
+<span class="hljs-comment">//  ViewController.m</span>
+<span class="hljs-comment">//  CommonCrypto</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//  Created by Harry_L on 2018/5/27.</span>
+<span class="hljs-comment">//  Copyright &#xA9; 2018&#x5E74; Harry_L. All rights reserved.</span>
+<span class="hljs-comment">//</span>
+
+<span class="hljs-meta">#import <span class="hljs-meta-string">&quot;ViewController.h&quot;</span></span>
+<span class="hljs-meta">#import <span class="hljs-meta-string">&quot;NSData+CommomCryptor.h&quot;</span></span>
+<span class="hljs-meta">#import <span class="hljs-meta-string">&quot;NSData+CustomPadding.h&quot;</span></span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">ViewController</span> ()</span>
+
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">ViewController</span></span>
+
+- (<span class="hljs-keyword">void</span>)viewDidLoad {
+    [<span class="hljs-keyword">super</span> viewDidLoad];
+    <span class="hljs-comment">//for example</span>
+
+    <span class="hljs-built_in">NSString</span> *key = <span class="hljs-string">@&quot;1234567890123456&quot;</span>;
+    <span class="hljs-built_in">NSString</span> *iv = <span class="hljs-string">@&quot;1234567890123456&quot;</span>;
+    <span class="hljs-built_in">NSString</span> *source = <span class="hljs-string">@&quot;12345&quot;</span>;
+
+    <span class="hljs-comment">//String -&gt; Data</span>
+    <span class="hljs-built_in">NSData</span> *sourceData = [source dataUsingEncoding:<span class="hljs-built_in">NSUTF8StringEncoding</span>];
+    <span class="hljs-comment">// Data -&gt; AESEncrypt</span>
+    <span class="hljs-built_in">NSData</span> *ansix923Data = [sourceData cc_encryptUsingAlgorithm:CcCryptoAlgorithmDES key:key InitializationVector:iv Mode:CcCryptorCBCMode Padding:CcCryptorA<span class="hljs-built_in">NSIX923</span>];
+    <span class="hljs-built_in">NSString</span> *ansix923String = [ansix923Data base64EncodedStringWithOptions:<span class="hljs-built_in">NSDataBase64Encoding64CharacterLineLength</span>];
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%@&quot;</span>,ansix923String);
+
+    <span class="hljs-comment">// Data -&gt; AESDecrypt</span>
+    <span class="hljs-built_in">NSData</span> *decryptAnsix923Data = [ansix923Data cc_decryptUsingAlgorithm:CcCryptoAlgorithmDES key:key InitializationVector:iv Mode:CcCryptorCBCMode Padding:CcCryptorA<span class="hljs-built_in">NSIX923</span>];
+    <span class="hljs-built_in">NSString</span> *decryptString = [[<span class="hljs-built_in">NSString</span> alloc] initWithData:decryptAnsix923Data  encoding:<span class="hljs-built_in">NSUTF8StringEncoding</span>];
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%@&quot;</span>,decryptString);
+
+    <span class="hljs-comment">// Do any additional setup after loading the view, typically from a nib.</span>
+}
+
+
+- (<span class="hljs-keyword">void</span>)didReceiveMemoryWarning {
+    [<span class="hljs-keyword">super</span> didReceiveMemoryWarning];
+    <span class="hljs-comment">// Dispose of any resources that can be recreated.</span>
+}
+
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x4F7F;&#x7528; DES , &#x586B;&#x5145;&#x4F7F;&#x7528; CcCryptorANSIX923 ,  node &#x548C; iOS &#x5F97;&#x5230;&#x76F8;&#x540C;&#x7ED3;&#x679C;, &#x6210;&#x529F;...
+&#x586B;&#x5145;&#x4F7F;&#x7528; CcCryptorPKCS7Padding&#x4E4B;&#x540E; iOS &#x8FD4;&#x56DE;&#x7A7A;.... &#x5E26;&#x7814;&#x7A76;...</p>
 
                                 
                                 </section>
@@ -1534,7 +1630,7 @@ Unix&#x7684;&#x6807;&#x51C6;&#x9759;&#x6001;&#x5E93;&#x5B9E;&#x73B0;&#x548C;Obje
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Objective-C-record","level":"1.1.25","depth":2,"next":{"title":"Applescript-record","level":"1.1.26","depth":2,"path":"records/Applescript-record/Applescript-record.md","ref":"records/Applescript-record/Applescript-record.md","articles":[]},"previous":{"title":"xcodebuild-record","level":"1.1.24","depth":2,"path":"records/xcodebuild-record/xcodebuild-record.md","ref":"records/xcodebuild-record/xcodebuild-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Objective-C-record/Objective-C-record.md","mtime":"2019-05-23T09:02:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-23T09:02:35.574Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Objective-C-record","level":"1.1.25","depth":2,"next":{"title":"Applescript-record","level":"1.1.26","depth":2,"path":"records/Applescript-record/Applescript-record.md","ref":"records/Applescript-record/Applescript-record.md","articles":[]},"previous":{"title":"xcodebuild-record","level":"1.1.24","depth":2,"path":"records/xcodebuild-record/xcodebuild-record.md","ref":"records/xcodebuild-record/xcodebuild-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Objective-C-record/Objective-C-record.md","mtime":"2019-05-23T20:28:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-23T20:28:56.360Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
