@@ -559,110 +559,105 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="gulp-record">gulp-record</h1>
+                                <p>@(&#x5DE5;&#x4F5C;&#x7B14;&#x8BB0;)</p>
+<h1 id="gulp-record">Gulp-record</h1>
+<p>[TOC]</p>
 <hr>
-<p><img src="image-20190305012148319.png" alt="Alt text"></p>
-<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;hello world&apos;</span>)
-</code></pre>
-<hr>
-<h2 id="3-&#x70ED;&#x66F4;&#x65B0;">3.+ &#x70ED;&#x66F4;&#x65B0;</h2>
-<pre><code class="lang-javascript"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x4F9D;&#x8D56;&#x548C;&#x63D2;&#x4EF6;</span>
-<span class="hljs-keyword">var</span> gulp    = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>),
-    connect = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-connect&apos;</span>);<span class="hljs-comment">//livereload</span>
+<h2 id="&#x70ED;&#x4E2A;&#x65B0;-gulpfilejs">&#x70ED;&#x4E2A;&#x65B0; gulpfile.js</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> gulp     = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>)
+<span class="hljs-keyword">const</span> uglify   = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-uglify&apos;</span>)
+<span class="hljs-keyword">const</span> sass     = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-sass&apos;</span>)
+<span class="hljs-keyword">const</span> connect  = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-connect&apos;</span>)
+<span class="hljs-keyword">const</span> htmlmin  = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-htmlmin&apos;</span>)
+<span class="hljs-keyword">const</span> babel    = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-babel&apos;</span>)
+<span class="hljs-keyword">const</span> plumber  = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-plumber&apos;</span>)
+<span class="hljs-keyword">const</span> rootPath = <span class="hljs-string">&apos;dist&apos;</span>
 
-<span class="hljs-keyword">var</span> jsSrc  = <span class="hljs-string">&apos;src/*.js&apos;</span>;
-<span class="hljs-keyword">var</span> jsDist = <span class="hljs-string">&apos;dist&apos;</span>;
+<span class="hljs-comment">// &#x542F;&#x52A8;&#x670D;&#x52A1;&#x5668;</span>
+gulp.task(<span class="hljs-string">&apos;server&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  connect.server({
+    root      : rootPath,
+    livereload: <span class="hljs-literal">true</span>,
+  })
+})
 
-<span class="hljs-keyword">var</span> htmlSrc  = <span class="hljs-string">&apos;src/*.html&apos;</span>;
-<span class="hljs-keyword">var</span> htmlDist = <span class="hljs-string">&apos;dist&apos;</span>;
-
-<span class="hljs-comment">//&#x5B9A;&#x4E49;&#x540D;&#x4E3A;js&#x7684;&#x4EFB;&#x52A1;</span>
+<span class="hljs-comment">// &#x538B;&#x7F29;JS</span>
 gulp.task(<span class="hljs-string">&apos;js&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  gulp.src(<span class="hljs-string">&apos;src/js/**/*.js&apos;</span>)
+      .pipe(plumber())
+      .pipe(babel({
+        presets: [<span class="hljs-string">&apos;env&apos;</span>],
+      }))
+      .pipe(uglify())
+      .pipe(gulp.dest(<span class="hljs-string">&apos;dist/js&apos;</span>))
+      .pipe(connect.reload())
+})
 
-  gulp.src(jsSrc)
-      .pipe(gulp.dest(jsDist))
-      .pipe(connect.reload());
-
-});
-
-<span class="hljs-comment">//&#x5B9A;&#x4E49;html&#x4EFB;&#x52A1;</span>
+<span class="hljs-comment">// &#x5B9A;&#x4E49; gulp &#x4EFB;&#x52A1;&#xFF0C;&#x538B;&#x7F29; HTML</span>
 gulp.task(<span class="hljs-string">&apos;html&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  gulp.src([<span class="hljs-string">&apos;src/**/*.html&apos;</span>])
+      .pipe(htmlmin({ collapseWhitespace: <span class="hljs-literal">true</span>, minifyCSS: <span class="hljs-literal">true</span>, minifyJS: <span class="hljs-literal">true</span> }))
+      .pipe(gulp.dest(<span class="hljs-string">&apos;dist&apos;</span>))
+      .pipe(connect.reload())
+})
 
-  gulp.src(htmlSrc)
-      .pipe(gulp.dest(htmlDist))
-      .pipe(connect.reload());
+<span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4EFB;&#x52A1;&#xFF0C;&#x7F16;&#x8BD1; sass</span>
+gulp.task(<span class="hljs-string">&apos;sass&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  gulp.src(<span class="hljs-string">&apos;src/sass/**/*.scss&apos;</span>)
+      .pipe(plumber())
+      .pipe(sass({ outputStyle: <span class="hljs-string">&apos;compressed&apos;</span> }))
+      .pipe(gulp.dest(rootPath + <span class="hljs-string">&apos;/css&apos;</span>))
+      .pipe(connect.reload())
+})
 
-});
+<span class="hljs-comment">// &#x5C06;&#x56FE;&#x7247;&#x3001;&#x5E93;&#x3001;&#x6A21;&#x62DF;&#x7684;&#x5047;&#x6570;&#x636E;&#x590D;&#x5236;&#x5230; dist &#x4E0B;</span>
+gulp.task(<span class="hljs-string">&apos;images&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  gulp.src(<span class="hljs-string">&apos;src/images/**/*.*&apos;</span>)
+      .pipe(gulp.dest(<span class="hljs-string">&apos;dist/images&apos;</span>))
+})
+gulp.task(<span class="hljs-string">&apos;lib&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  gulp.src(<span class="hljs-string">&apos;src/lib/**/*.*&apos;</span>)
+      .pipe(gulp.dest(<span class="hljs-string">&apos;dist/lib&apos;</span>))
+})
+gulp.task(<span class="hljs-string">&apos;mock&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  gulp.src(<span class="hljs-string">&apos;src/mock/**/*.*&apos;</span>)
+      .pipe(gulp.dest(<span class="hljs-string">&apos;dist/mock&apos;</span>))
+})
+gulp.task(<span class="hljs-string">&apos;copyfile&apos;</span>, [<span class="hljs-string">&apos;images&apos;</span>, <span class="hljs-string">&apos;mock&apos;</span>, <span class="hljs-string">&apos;lib&apos;</span>])
 
-<span class="hljs-comment">//&#x5B9A;&#x4E49;livereload&#x4EFB;&#x52A1;</span>
-gulp.task(<span class="hljs-string">&apos;connect&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  connect.server({
-    livereload: <span class="hljs-literal">true</span>,
-    root      : <span class="hljs-string">&apos;./src&apos;</span>,
-  });
-});
-
-<span class="hljs-comment">//&#x5B9A;&#x4E49;&#x770B;&#x5B88;&#x4EFB;&#x52A1;</span>
 gulp.task(<span class="hljs-string">&apos;watch&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  gulp.watch(<span class="hljs-string">&apos;src/sass/**/*.scss&apos;</span>, [<span class="hljs-string">&apos;sass&apos;</span>])
+  gulp.watch(<span class="hljs-string">&apos;src/js/**/*.js&apos;</span>, [<span class="hljs-string">&apos;js&apos;</span>])
+  gulp.watch([<span class="hljs-string">&apos;src/**/*.html&apos;</span>], [<span class="hljs-string">&apos;html&apos;</span>])
+})
 
-  gulp.watch(<span class="hljs-string">&apos;src/*.html&apos;</span>, [<span class="hljs-string">&apos;html&apos;</span>]);
-
-  gulp.watch(<span class="hljs-string">&apos;src/*.js&apos;</span>, [<span class="hljs-string">&apos;js&apos;</span>]);
-
-});
-
-<span class="hljs-comment">//&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x4EFB;&#x52A1;</span>
-gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hljs-string">&apos;js&apos;</span>, <span class="hljs-string">&apos;html&apos;</span>, <span class="hljs-string">&apos;watch&apos;</span>, <span class="hljs-string">&apos;connect&apos;</span>]);
+gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hljs-string">&apos;html&apos;</span>, <span class="hljs-string">&apos;js&apos;</span>, <span class="hljs-string">&apos;sass&apos;</span>, <span class="hljs-string">&apos;copyfile&apos;</span>, <span class="hljs-string">&apos;server&apos;</span>, <span class="hljs-string">&apos;watch&apos;</span>])
 </code></pre>
-<h2 id="4-&#x70ED;&#x66F4;&#x65B0;">4.+ &#x70ED;&#x66F4;&#x65B0;</h2>
-<pre><code class="lang-javascript"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x4F9D;&#x8D56;&#x548C;&#x63D2;&#x4EF6;</span>
-<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
-
-<span class="hljs-keyword">var</span> connect = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-connect&apos;</span>);<span class="hljs-comment">//livereload</span>
-
-<span class="hljs-keyword">var</span> jsSrc  = <span class="hljs-string">&apos;src/*.js&apos;</span>;
-<span class="hljs-keyword">var</span> jsDist = <span class="hljs-string">&apos;dist&apos;</span>;
-
-<span class="hljs-keyword">var</span> htmlSrc  = <span class="hljs-string">&apos;src/*.html&apos;</span>;
-<span class="hljs-keyword">var</span> htmlDist = <span class="hljs-string">&apos;dist&apos;</span>;
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsTask</span> (<span class="hljs-params">cb</span>) </span>{
-
-  gulp.src(jsSrc).pipe(gulp.dest(jsDist)).pipe(connect.reload());
-
-  cb();
+<h2 id="packagejson">package.json</h2>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;vue-practice&quot;</span>,
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+  <span class="hljs-string">&quot;main&quot;</span>: <span class="hljs-string">&quot;gulpfile.js&quot;</span>,
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;test&quot;</span>: <span class="hljs-string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+  },
+  <span class="hljs-string">&quot;keywords&quot;</span>: [],
+  <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+  <span class="hljs-string">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
+  <span class="hljs-string">&quot;dependencies&quot;</span>: {
+    <span class="hljs-string">&quot;gulp&quot;</span>: <span class="hljs-string">&quot;^3.9.1&quot;</span>,
+    <span class="hljs-string">&quot;gulp-babel&quot;</span>: <span class="hljs-string">&quot;^8.0.0&quot;</span>,
+    <span class="hljs-string">&quot;gulp-connect&quot;</span>: <span class="hljs-string">&quot;^5.7.0&quot;</span>,
+    <span class="hljs-string">&quot;gulp-htmlmin&quot;</span>: <span class="hljs-string">&quot;^5.0.1&quot;</span>,
+    <span class="hljs-string">&quot;gulp-plumber&quot;</span>: <span class="hljs-string">&quot;^1.2.1&quot;</span>,
+    <span class="hljs-string">&quot;gulp-sass&quot;</span>: <span class="hljs-string">&quot;^4.0.2&quot;</span>,
+    <span class="hljs-string">&quot;gulp-uglify&quot;</span>: <span class="hljs-string">&quot;^3.0.2&quot;</span>
+  }
 }
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">htmlTask</span> (<span class="hljs-params">cb</span>) </span>{
-  gulp.src(htmlSrc).pipe(gulp.dest(htmlDist)).pipe(connect.reload());
-  cb();
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">connectTask</span> (<span class="hljs-params">cb</span>) </span>{
-  connect.server({
-    livereload: <span class="hljs-literal">true</span>,
-    root      : <span class="hljs-string">&apos;./src&apos;</span>,
-  });
-  cb();
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watchTask</span> (<span class="hljs-params">cb</span>) </span>{
-  gulp.watch([<span class="hljs-string">&apos;src/*.html&apos;</span>], gulp.series(htmlTask, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;html &#x66F4;&#x65B0;&apos;</span>);
-    callback();
-  }));
-  gulp.watch([<span class="hljs-string">&apos;src/*.js&apos;</span>], gulp.series(jsTask, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;js &#x66F4;&#x65B0;&apos;</span>);
-    callback();
-  }));
-  cb();
-}
-
-exports.default = gulp.series(jsTask, htmlTask, watchTask, connectTask, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cb</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;&apos;</span>);
-  cb();
-});
 </code></pre>
+<h2 id="dir-tree">dir tree</h2>
+<p><img src="1558888809054.png" alt="Alt text"></p>
 
                                 
                                 </section>
@@ -706,7 +701,7 @@ exports.default = gulp.series(jsTask, htmlTask, watchTask, connectTask, <span cl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"gulp-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/gulp-record/gulp-record.md","mtime":"2019-03-04T17:49:39.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-23T20:31:27.742Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gulp-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/gulp-record/gulp-record.md","mtime":"2019-05-26T16:40:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-26T16:40:39.632Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
