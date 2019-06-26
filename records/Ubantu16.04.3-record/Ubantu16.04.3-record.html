@@ -873,31 +873,30 @@ IdentityFile ~/.ssh/id_rsa.ubantu
 
 &#x4E4B;&#x540E;&#x4F7F;&#x7528; ssh rootubantu &#x5C31;&#x80FD;&#x65E0;&#x5BC6;&#x7801;&#x767B;&#x5F55;&#x4E86;...
 </code></pre><hr>
-<h2 id="ubuntu-&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x56FA;&#x5B9A;-ip">ubuntu &#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x56FA;&#x5B9A; ip</h2>
-<pre><code class="lang-plain">ubuntu &#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x56FA;&#x5B9A; ip
-&#x8F93;&#x5165; sudo vim /etc/network/interfaces
-&#x5728;&#x91CC;&#x9762;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;(&#x539F;&#x6709;&#x5185;&#x5BB9;&#x9700;&#x8981;&#x6E05;&#x7A7A;)
-auto ens33
-iface ens33 inet static
-address 192.168.219.100
+<h2 id="ubuntu-1604-&#x8BBE;&#x7F6E;&#x56FA;&#x5B9A;ip">ubuntu 16.04 &#x8BBE;&#x7F6E;&#x56FA;&#x5B9A;IP</h2>
+<pre><code class="lang-plain">&#x914D;&#x7F6E;&#x56FA;&#x5B9A;IP
+sudo vim /etc/network/interfaces
+# &#x4FEE;&#x6539;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6; The primary network interface&#x4E0B;&#x7684;&#x914D;&#x7F6E;
+auto enp0s3
+# &#x8BBE;&#x7F6E;&#x9759;&#x6001;&#x65B9;&#x5F0F;
+iface enp0s3 inet static
+# &#x8BBE;&#x7F6E;IP&#x5730;&#x5740;
+address 192.168.0.88
+# &#x8BBE;&#x7F6E;&#x5B50;&#x7F51;&#x63A9;&#x7801;
 netmask 255.255.255.0
-gateway 192.168.219.2
-dns-nameservers 192.168.219.2
+# &#x8BBE;&#x7F6E;&#x7F51;&#x5173;&#x5730;&#x5740;
+gateway 192.168.0.1
 
-&#x4E0B;&#x9762;&#x6765;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;
-auto ens33
-iface ens33 inet static
-# &#x5206;&#x914D;&#x7684; &#x56FA;&#x5B9A; ip  192.168.219&#x662F;&#x6839;&#x636E;&#x4F60;&#x7684;&#x865A;&#x62DF;&#x7F51;&#x5361;&#x6765;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x6B65;&#x91CC;&#x9762;&#x5DF2;&#x7ECF;&#x5206;&#x914D;&#x4E86;
-address 192.168.219.100
-# &#x5B50;&#x7F51;&#x63A9;&#x7801; &#x56FA;&#x5B9A;&#x7684;
-netmask 255.255.255.0
-# &#x7F51;&#x5173;  &#x9ED8;&#x8BA4;&#x90FD;&#x662F; x.x.x.2  &#x4F46;&#x662F; windows &#x4E0B;&#x7684; vm &#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x8BBE;&#x7F6E;&#xFF0C;mac &#x4E0A;&#x6211;&#x6CA1;&#x6709;&#x627E;&#x5230;
-gateway 192.168.219.2
-# dns &#x8F93;&#x5165;&#x548C;&#x7F51;&#x5173;&#x4E00;&#x6837;&#x7684;&#x5373;&#x53EF;
-dns-nameservers 192.168.219.2
+2.&#x914D;&#x7F6E;DNS
 
-&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x53EA;&#x9700;&#x8981;&#x91CD;&#x542F;&#x7F51;&#x7EDC;&#x5373;&#x53EF;
-sudo /etc/init.d/networking restart
+sudo vim /etc/resolvconf/resolv.conf.d/base
+# &#x5199;&#x5165;DNS&#x914D;&#x7F6E; &#x914D;&#x7F6E;&#x4E3A;&#x4F60;&#x7684;DNS &#x4FDD;&#x5B58;&#x9000;&#x51FA;
+nameserver 8.8.8.8
+nameserver 114.114.114.114
+
+3.&#x91CD;&#x542F;
+
+reboot
 </code></pre>
 
                                 
@@ -942,7 +941,7 @@ sudo /etc/init.d/networking restart
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ubantu16.04.3-record","level":"1.1.31","depth":2,"next":{"title":"xcodebuild-record.html","level":"1.1.32","depth":2,"path":"records/xcodebuild-record.html/xcodebuild-record.html.md","ref":"records/xcodebuild-record.html/xcodebuild-record.html.md","articles":[]},"previous":{"title":"IntelliJ_IDEA-record","level":"1.1.30","depth":2,"path":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","ref":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Ubantu16.04.3-record/Ubantu16.04.3-record.md","mtime":"2019-06-26T02:54:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-26T02:54:51.242Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ubantu16.04.3-record","level":"1.1.31","depth":2,"next":{"title":"xcodebuild-record.html","level":"1.1.32","depth":2,"path":"records/xcodebuild-record.html/xcodebuild-record.html.md","ref":"records/xcodebuild-record.html/xcodebuild-record.html.md","articles":[]},"previous":{"title":"IntelliJ_IDEA-record","level":"1.1.30","depth":2,"path":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","ref":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Ubantu16.04.3-record/Ubantu16.04.3-record.md","mtime":"2019-06-26T03:07:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-26T03:08:02.992Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
