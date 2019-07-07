@@ -802,6 +802,54 @@ AndroidStudio&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x
 <p>&#x5982;&#x679C;80&#x7AEF;&#x53E3; &#x8FD8;&#x662F;&#x9519;&#x8BEF;, &#x628A;&#x7AEF;&#x53E3;&#x4E0A;&#x7684;&#x5E94;&#x7528;&#x5E72;&#x6389;...</p>
 <pre><code class="lang-bash">snkill 80
 </code></pre>
+<hr>
+<h2 id="&#x5982;&#x4F55;&#x4ECE;maven&#x8D44;&#x6E90;&#x5E93;&#x4E0B;&#x8F7D;jar&#x5305;">&#x5982;&#x4F55;&#x4ECE;maven&#x8D44;&#x6E90;&#x5E93;&#x4E0B;&#x8F7D;jar&#x5305;</h2>
+<p><a href="https://www.cnblogs.com/Marydon20170307/p/9149256.html" target="_blank">https://www.cnblogs.com/Marydon20170307/p/9149256.html</a></p>
+<ol>
+<li>&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;maven&#x73AF;&#x5883;&#x3000;&#x3000;</li>
+</ol>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">which</span> mvn                                                                                                             
+/Users/stone/soft/apache-maven-3.5.2/bin/mvn
+</code></pre>
+<ol>
+<li>windows &#x811A;&#x672C; &amp; mac &#x811A;&#x672C;</li>
+</ol>
+<p>windows</p>
+<pre><code class="lang-bash">::&#x4F7F;&#x7528;dos&#x547D;&#x4EE4;&#x6267;&#x884C;mvn&#x547D;&#x4EE4;&#xFF1A;&#x5C06;pom.xml&#x6587;&#x4EF6;&#x6240;&#x4F9D;&#x8D56;&#x7684;jar&#x5305;&#x4ECE;maven&#x4E2D;&#x592E;&#x4ED3;&#x5E93;&#x62F7;&#x8D1D;&#x5230;&#x672C;&#x5730;
+call mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
+@pause
+</code></pre>
+<p>mac</p>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/usr/bin/env bash</span>
+mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
+</code></pre>
+<ol>
+<li>&#x5236;&#x4F5C;pom.xml
+&#x4E0B;&#x8F7D; JSON Library &#xBB; 2.4 &#x4E3A;&#x4F8B;</li>
+</ol>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>temp.download<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>temp-download<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- &#x5C06;&#x9700;&#x8981;&#x4E0B;&#x8F7D;&#x7684;jar&#x5305;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7C98;&#x8D34;&#x5230;dependencies&#x6807;&#x7B7E;&#x4E2D; --&gt;</span>
+    <span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.sf.json-lib<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>json-lib<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.4<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+      <span class="hljs-comment">&lt;!--classifier : &#xBD84;&#xB958;&#xAE30; &#x5206;&#x7C7B;&#x5668;--&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">classifier</span>&gt;</span>jdk15<span class="hljs-tag">&lt;/<span class="hljs-name">classifier</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span>
+</code></pre>
+<p><code>&#x4E0B;&#x8F7D;json-2.4jar&#x5305;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#xFF0C;&lt;classifier&gt;jdk15&lt;/classifier&gt;&#xFF0C;&#x5426;&#x5219;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&#x3002;</code></p>
+<p>&#x76EE;&#x5F55;&#x7ED3;&#x6784;
+<img src="1562525431605.png" alt="Alt text"></p>
 
                                 
                                 </section>
@@ -845,7 +893,7 @@ AndroidStudio&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2019-07-07T16:54:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-07T16:54:53.237Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2019-07-07T18:51:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-07T18:51:25.774Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
