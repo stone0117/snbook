@@ -1072,6 +1072,37 @@ mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
 
 }
 </code></pre>
+<hr>
+<h2 id="tomcat-8529&#x542F;&#x52A8;&#x62A5;tldscannerscanjars&#x9519;&#x8BEF;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x529E;&#x6CD5;">Tomcat 8.5.29&#x542F;&#x52A8;&#x62A5;TldScanner.scanJars&#x9519;&#x8BEF;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x529E;&#x6CD5;</h2>
+<p>&#x7F51;&#x4E0A;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x9047;&#x5230;&#xFF0C;&#x5F53;&#x65F6;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x89E3;&#x51B3;&#x7684;&#x529E;&#x6CD5;&#x3002;&#x8FD9;&#x91CC;&#x89E3;&#x51B3;&#x4E5F;&#x4EC5;&#x4EC5;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x6574;tocmat&#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x6765;&#x63A7;&#x5236;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5728;apache-tomcat-8.5.29\conf&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230;logging.properties&#x6587;&#x4EF6;&#xFF0C;&#x5BF9;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x7F16;&#x8F91;&#xFF0C;&#x5728;&#x6700;&#x540E;&#x4E00;&#x884C;&#x52A0;&#x5165;&#xFF1A;</p>
+<p>org.apache.jasper.servlet.TldScanner.level = FINE
+&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x518D;&#x663E;&#x793A;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x4E86;&#x3002;</p>
+<p><strong>&#x8B66;&#x544A;&#x662F;&#x6CA1;&#x4E86; - - &#x4F46;&#x66F4;&#x591A;&#x7684;&#x4FE1;&#x606F;&#x6253;&#x5370;&#x51FA;&#x6765;&#x4E86; &#x86CB;&#x75BC;...</strong></p>
+<hr>
+<h2 id="orgapachetomcatutildescriptorwebwebxmlsetversion-unknown-version-string-40">org.apache.tomcat.util.descriptor.web.WebXml.setVersion Unknown version string [4.0]</h2>
+<p><a href="https://blog.csdn.net/qq_32483145/article/details/80292463" target="_blank">https://blog.csdn.net/qq_32483145/article/details/80292463</a></p>
+<p>&#x9519;&#x8BEF;&#xFF1A; 
+&#x2003;&#x2003;&#x2003;&#x5728;idea&#x521B;&#x5EFA;WEB&#x9879;&#x76EE;&#x4E4B;&#x540E;&#xFF0C;&#x6253;&#x5370;&#x51FA;&#x7684;&#x65E5;&#x5FD7;&#x4E2D;&#x603B;&#x662F;&#x51FA;&#x73B0;&#xFF1A; 
+12-May-2018 15:52:30.692 &#x8B66;&#x544A; [RMI TCP Connection(3)-127.0.0.1] org.apache.tomcat.util.descriptor.web.WebXml.setVersion Unknown version string [4.0].Default version will be used. 
+&#x867D;&#x7136;&#x53EA;&#x662F;&#x8B66;&#x544A;&#x4E0D;&#x5F71;&#x54CD;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x7740;&#x603B;&#x6709;&#x4E9B;&#x4E0D;&#x723D;&#xFF0C;&#x5927;&#x6982;&#x770B;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x5F53;&#x524D;Tomcat8.5&#x4E0D;&#x652F;&#x6301;Web4.0&#x7248;&#x672C;&#xFF0C;&#x90A3;&#x8981;&#x4E48;&#x964D;&#x4F4E;Web&#x7248;&#x672C;&#xFF0C;&#x8981;&#x4E48;&#x63D0;&#x9AD8;Tomcat&#x7248;&#x672C;&#x5C31;&#x597D;&#x4E86;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x5206;&#x522B;&#x4ECB;&#x7ECD;&#x4E86;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#x3002;
+&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A; 
+&#x2160;.&#x964D;&#x4F4E;web&#x7248;&#x672C;&#x4E3A;3.1</p>
+<p>&#x2003;&#x2003;1.&#x4FEE;&#x6539;web.xml&#x6587;&#x4EF6;&#x5934;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">web-app</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span>
+         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span>
+         <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.1&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--&#x5C06;web&#x7248;&#x672C;4.0&#x4FEE;&#x6539;&#x4E3A;3.1&#xFF0C;&#x6CE8;&#x610F;&#x4E0A;&#x4E00;&#x884C;&#x7EA6;&#x675F;&#x6587;&#x4EF6;&#x4E5F;&#x8981;&#x4FEE;&#x6539;--&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">web-app</span>&gt;</span>
+</code></pre>
+<p>&#x2161;.&#x63D0;&#x9AD8;Tomcat&#x7248;&#x672C;&#x4E3A;9.0 
+&#x2003;&#x2003;1.&#x70B9;&#x51FB;Edit Configurations&#x8FDB;&#x5165;Tomcat&#x914D;&#x7F6E;&#x754C;&#x9762; 
+<img src="1562599938196.png" alt="Alt text"></p>
+<p>2.&#x70B9;&#x51FB;Defaults&#x4E0B;&#x6ED1;&#x627E;&#x5230;Tomcat Server </p>
+<p><img src="1562599949047.png" alt="Alt text"></p>
+<p>3.&#x70B9;&#x51FB;Local&#xFF0C;&#x6309;&#x7167;&#x5982;&#x56FE;&#x754C;&#x9762;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Tomcat&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x786E;&#x8BA4;&#x8FD4;&#x56DE;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x9009;&#x62E9;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x9AD8;&#x7248;&#x672C;&#x7684;Tomcat9.0&#x5C31;&#x53EF;&#x4EE5;&#x6D88;&#x9664;&#x8FD9;&#x4E2A;&#x8B66;&#x544A;&#x4E86;&#x3002; </p>
+<p><img src="1562599958126.png" alt="Alt text"></p>
 
                                 
                                 </section>
@@ -1115,7 +1146,7 @@ mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2019-07-07T21:12:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-07T21:12:24.718Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2019-07-08T15:33:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-08T15:33:19.984Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
