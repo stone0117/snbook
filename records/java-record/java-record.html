@@ -1103,6 +1103,96 @@ mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
 <p><img src="1562599949047.png" alt="Alt text"></p>
 <p>3.&#x70B9;&#x51FB;Local&#xFF0C;&#x6309;&#x7167;&#x5982;&#x56FE;&#x754C;&#x9762;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Tomcat&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x786E;&#x8BA4;&#x8FD4;&#x56DE;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x9009;&#x62E9;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x9AD8;&#x7248;&#x672C;&#x7684;Tomcat9.0&#x5C31;&#x53EF;&#x4EE5;&#x6D88;&#x9664;&#x8FD9;&#x4E2A;&#x8B66;&#x544A;&#x4E86;&#x3002; </p>
 <p><img src="1562599958126.png" alt="Alt text"></p>
+<hr>
+<h2 id="servlet-30-&#x4E4B;webfilter&#x600E;&#x4E48;&#x63A7;&#x5236;&#x591A;&#x4E2A;filter&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;">Servlet 3.0 &#x4E4B;@WebFilter&#x600E;&#x4E48;&#x63A7;&#x5236;&#x591A;&#x4E2A;filter&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;</h2>
+<p><a href="https://www.cnblogs.com/tfgzs/p/4571137.html" target="_blank">https://www.cnblogs.com/tfgzs/p/4571137.html</a></p>
+<p>&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x63A7;&#x5236;&#x591A;&#x4E2A;filter&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#x901A;&#x8FC7;web.xml&#x4E2D;&#x63A7;&#x5236;filter&#x7684;&#x4F4D;&#x7F6E;&#x6765;&#x63A7;&#x5236;&#x7684;&#xFF0C;&#x653E;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F1A;&#x6BD4;&#x653E;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x5148;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x4E0B;&#x201C;&#x7528;&#x6237;&#x767B;&#x5F55;&#x68C0;&#x67E5;&#x8FC7;&#x6EE4;&#x5668;&#x201D;&#x4F1A;&#x6BD4;&#x201C;&#x63A5;&#x53E3;&#x65E5;&#x5FD7;&#x8FC7;&#x6EE4;&#x5668;&#x201D;&#x5148;&#x6267;&#x884C;</p>
+<pre><code class="lang-xml"><span class="hljs-comment">&lt;!-- &#x7528;&#x6237;&#x767B;&#x5F55;&#x68C0;&#x6D4B;&#x8FC7;&#x6EE4;&#x5668; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>UserLoginFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>net.tfgzs.demo.filter.UserLoginFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-mapping</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>UserLoginFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/*<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">filter-mapping</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&#x63A5;&#x53E3;&#x65E5;&#x5FD7;&#x8FC7;&#x6EE4;&#x5668;--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>ApiLog<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>net.tfgzs.demo.filter.ApiLog<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-mapping</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>ApiLog<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/*<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">filter-mapping</span>&gt;</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;@WebFilter&#x6CE8;&#x89E3;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x73B0;&#x6CE8;&#x89E3;&#x91CC;&#x9762;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x7684;&#x53C2;&#x6570;</p>
+<p>@WebFilter &#x7684;&#x5C5E;&#x6027;</p>
+<table class="ibm-data-table" border="0" cellspacing="0" cellpadding="0">
+<thead>
+<tr><th><span style="font-size: 14px;"><strong>&#x5C5E;&#x6027;&#x540D;</strong></span></th><th><span style="font-size: 14px;"><strong>&#x7C7B;&#x578B;</strong></span></th><th><span style="font-size: 14px;"><strong>&#x63CF;&#x8FF0;</strong></span></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="font-size: 14px;">filterName</span></td>
+<td><span style="font-size: 14px;">String</span></td>
+<td><span style="font-size: 14px;">&#x6307;&#x5B9A;&#x8FC7;&#x6EE4;&#x5668;&#x7684; name &#x5C5E;&#x6027;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; &lt;filter-name&gt;</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 14px;">value</span></td>
+<td><span style="font-size: 14px;">String[]</span></td>
+<td><span style="font-size: 14px;">&#x8BE5;&#x5C5E;&#x6027;&#x7B49;&#x4EF7;&#x4E8E; urlPatterns &#x5C5E;&#x6027;&#x3002;&#x4F46;&#x662F;&#x4E24;&#x8005;&#x4E0D;&#x5E94;&#x8BE5;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x3002;</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 14px;">urlPatterns</span></td>
+<td><span style="font-size: 14px;">String[]</span></td>
+<td><span style="font-size: 14px;">&#x6307;&#x5B9A;&#x4E00;&#x7EC4;&#x8FC7;&#x6EE4;&#x5668;&#x7684; URL &#x5339;&#x914D;&#x6A21;&#x5F0F;&#x3002;&#x7B49;&#x4EF7;&#x4E8E; &lt;url-pattern&gt; &#x6807;&#x7B7E;&#x3002;</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 14px;">servletNames</span></td>
+<td><span style="font-size: 14px;">String[]</span></td>
+<td><span style="font-size: 14px;">&#x6307;&#x5B9A;&#x8FC7;&#x6EE4;&#x5668;&#x5C06;&#x5E94;&#x7528;&#x4E8E;&#x54EA;&#x4E9B; Servlet&#x3002;&#x53D6;&#x503C;&#x662F; @WebServlet &#x4E2D;&#x7684; name &#x5C5E;&#x6027;&#x7684;&#x53D6;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x662F; web.xml &#x4E2D; &lt;servlet-name&gt; &#x7684;&#x53D6;&#x503C;&#x3002;</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 14px;">dispatcherTypes</span></td>
+<td><span style="font-size: 14px;">DispatcherType</span></td>
+<td><span style="font-size: 14px;">&#x6307;&#x5B9A;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x8F6C;&#x53D1;&#x6A21;&#x5F0F;&#x3002;&#x5177;&#x4F53;&#x53D6;&#x503C;&#x5305;&#x62EC;&#xFF1A; ASYNC&#x3001;ERROR&#x3001;FORWARD&#x3001;INCLUDE&#x3001;REQUEST&#x3002;</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 14px;">initParams</span></td>
+<td><span style="font-size: 14px;">WebInitParam[]</span></td>
+<td><span style="font-size: 14px;">&#x6307;&#x5B9A;&#x4E00;&#x7EC4;&#x8FC7;&#x6EE4;&#x5668;&#x521D;&#x59CB;&#x5316;&#x53C2;&#x6570;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; &lt;init-param&gt; &#x6807;&#x7B7E;&#x3002;</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 14px;">asyncSupported</span></td>
+<td><span style="font-size: 14px;">boolean</span></td>
+<td><span style="font-size: 14px;">&#x58F0;&#x660E;&#x8FC7;&#x6EE4;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x6A21;&#x5F0F;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; &lt;async-supported&gt; &#x6807;&#x7B7E;&#x3002;</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 14px;">description</span></td>
+<td><span style="font-size: 14px;">String</span></td>
+<td><span style="font-size: 14px;">&#x8BE5;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; &lt;description&gt; &#x6807;&#x7B7E;&#x3002;</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 14px;">displayName</span></td>
+<td><span style="font-size: 14px;">String</span></td>
+<td><span style="font-size: 14px;">&#x8BE5;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x663E;&#x793A;&#x540D;&#xFF0C;&#x901A;&#x5E38;&#x914D;&#x5408;&#x5DE5;&#x5177;&#x4F7F;&#x7528;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; &lt;display-name&gt; &#x6807;&#x7B7E;&#x3002;</span></td>
+</tr>
+</tbody>
+</table>
+
+
+<p>&#x901A;&#x8FC7;&#x5B9E;&#x8DF5;&#x53D1;&#x73B0;&#x5982;&#x679C;&#x60F3;&#x8981;&#x63A7;&#x5236;filer&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63A7;&#x5236;filter&#x7684;&#x6587;&#x4EF6;&#x540D;&#x6765;&#x63A7;&#x5236;</p>
+<p>&#x6BD4;&#x5982;&#xFF1A;</p>
+<p><code>UserLoginFilter.java &#x548C; ApiLog.java &#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x5206;&#x522B;&#x662F;&#x201C;&#x7528;&#x6237;&#x767B;&#x5F55;&#x68C0;&#x67E5;&#x8FC7;&#x6EE4;&#x5668;&#x201D;&#x548C;&#x201C;&#x63A5;&#x53E3;&#x65E5;&#x5FD7;&#x8FC7;&#x6EE4;&#x5668;&#x201D;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x9996;&#x5B57;&#x6BCD;A&#x6392;U&#x4E4B;&#x524D;&#xFF0C;&#x5BFC;&#x81F4;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x662F;&#x5148;&#x6267;&#x884C;&#x201C;&#x63A5;&#x53E3;&#x65E5;&#x5FD7;&#x8FC7;&#x6EE4;&#x5668;&#x201D;&#x518D;&#x6267;&#x884C;&#x201C;&#x7528;&#x6237;&#x767B;&#x5F55;&#x68C0;&#x67E5;&#x8FC7;&#x6EE4;&#x5668;&#x201D;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x4FEE;&#x6539;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x5206;&#x522B;&#x4E3A;</code></p>
+<p>Filter0_UserLogin.java</p>
+<p>Filter1_ApiLog.java</p>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x5148;&#x6267;&#x884C;&#x201C;&#x7528;&#x6237;&#x767B;&#x5F55;&#x68C0;&#x67E5;&#x8FC7;&#x6EE4;&#x5668;&#x201D;&#x518D;&#x6267;&#x884C;&#x201C;&#x63A5;&#x53E3;&#x65E5;&#x5FD7;&#x8FC7;&#x6EE4;&#x5668;&#x201D;</p>
+<hr>
+<h2 id="&#x5BF9;&#x9F50;-get-set-&#x65B9;&#x6CD5;">&#x5BF9;&#x9F50; get set &#x65B9;&#x6CD5;</h2>
+<p><img src="1562999273878.png" alt="Alt text"></p>
+<hr>
+<h2 id="web-&#x4E2D;&#x7684;-js-&#x6587;&#x4EF6;&#x8FD8;&#x6709;&#x547D;&#x540D;&#x8981;&#x6C42;-&#x86CB;&#x75BC;-mock-minjs-&#x8FD9;&#x6837;&#x5199;-404--mockminjs-&#x5199;&#x5C31;&#x6CA1;&#x4E8B;-&#x597D;&#x50CF;&#x662F;-tomcat8-&#x4E0D;&#x80FD;&#x89E3;&#x6790;---&#x7684;&#x539F;&#x56E0;&#x5427;">web &#x4E2D;&#x7684; js &#x6587;&#x4EF6;&#x8FD8;&#x6709;&#x547D;&#x540D;&#x8981;&#x6C42;? &#x86CB;&#x75BC;... mock-min.js &#x8FD9;&#x6837;&#x5199; 404 , mock.min.js &#x5199;&#x5C31;&#x6CA1;&#x4E8B;, &#x597D;&#x50CF;&#x662F; tomcat8 &#x4E0D;&#x80FD;&#x89E3;&#x6790; - &#x7684;&#x539F;&#x56E0;&#x5427;...</h2>
 
                                 
                                 </section>
@@ -1146,7 +1236,7 @@ mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2019-07-08T15:33:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-13T06:28:13.269Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2019-07-13T07:53:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-13T07:53:33.423Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
