@@ -1193,6 +1193,54 @@ mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
 <p><img src="1562999273878.png" alt="Alt text"></p>
 <hr>
 <h2 id="web-&#x4E2D;&#x7684;-js-&#x6587;&#x4EF6;&#x8FD8;&#x6709;&#x547D;&#x540D;&#x8981;&#x6C42;-&#x86CB;&#x75BC;-mock-minjs-&#x8FD9;&#x6837;&#x5199;-404--mockminjs-&#x5199;&#x5C31;&#x6CA1;&#x4E8B;-&#x597D;&#x50CF;&#x662F;-tomcat8-&#x4E0D;&#x80FD;&#x89E3;&#x6790;---&#x7684;&#x539F;&#x56E0;&#x5427;">web &#x4E2D;&#x7684; js &#x6587;&#x4EF6;&#x8FD8;&#x6709;&#x547D;&#x540D;&#x8981;&#x6C42;? &#x86CB;&#x75BC;... mock-min.js &#x8FD9;&#x6837;&#x5199; 404 , mock.min.js &#x5199;&#x5C31;&#x6CA1;&#x4E8B;, &#x597D;&#x50CF;&#x662F; tomcat8 &#x4E0D;&#x80FD;&#x89E3;&#x6790; - &#x7684;&#x539F;&#x56E0;&#x5427;...</h2>
+<hr>
+<h2 id="webxml--param-value--struts2-&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;">web.xml  param-value , struts2 &#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;</h2>
+<p>config - &#x8981;&#x52A0;&#x8F7D;&#x7684;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;XML&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x3002;</p>
+<p><a href="https://stackoverflow.com/questions/30620190/change-default-location-of-struts-xml-in-struts2" target="_blank">https://stackoverflow.com/questions/30620190/change-default-location-of-struts-xml-in-struts2</a>
+<a href="https://stackoverflow.com/questions/870279/where-to-put-struts-xml" target="_blank">https://stackoverflow.com/questions/870279/where-to-put-struts-xml</a></p>
+<pre><code class="lang-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>struts2<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>config<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>
+        struts-default.xml,
+        struts-plugin.xml,
+        /com/test/t045/struts.xml
+      <span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-xml">&#x6211;&#x8FDF;&#x5230;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x7C7B;&#x8DEF;&#x5F84;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x76EE;&#x5F55;&#x4E2D;&#x914D;&#x7F6E;struts.xml&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;web.xml&#x4E2D;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x914D;&#x7F6E;&#x7684;&#x201C;config&#x201D;init&#x53C2;&#x6570;&#x63D0;&#x4F9B;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x7684;struts .xml&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;&#x201C;/ com / resources /&#x201D;&#x76EE;&#x5F55;&#x4E2D;&#x3002;
+
+   <span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>action<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>config<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>struts-default.xml,struts-plugin.xml,/com/resources/struts.xml<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-xml">  <span class="hljs-comment">&lt;!--&#x2014;&#x2014;&#x2014; struts2 &#x2014;&#x2014;&#x2014; servlet &#x80FD;&#x505A;&#x7684; &#x8FC7;&#x6EE4;&#x5668;&#x90FD;&#x80FD;&#x505A;, &#x5E76;&#x4E14;&#x591A;&#x4E86;&#x4E2A;&#x4E00;&#x4E2A;chain, &#x548C;express next&#x4E00;&#x6837;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>struts2<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>config<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>
+        struts-default.xml,
+        struts-plugin.xml,
+        /com/test/t045/struts.xml
+      <span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">filter-mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>struts2<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/*<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">filter-mapping</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1236,7 +1284,7 @@ mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2019-07-13T07:53:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-13T07:53:33.423Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.9","depth":2,"next":{"title":"html-record","level":"1.1.10","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"node-record","level":"1.1.8","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2019-07-13T10:55:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-13T10:55:52.070Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
