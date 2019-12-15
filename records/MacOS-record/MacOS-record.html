@@ -727,6 +727,49 @@ ls
 <p>&#x7B80;&#x5355;&#x7C97;&#x66B4;&#x7684;&#x65B9;&#x6CD5;, &#x538B;&#x7F29;&#x6587;&#x4EF6;&#x5939;&#x53D1;&#x9001;&#x7ED9;&#x522B;&#x4EBA;</p>
 <p><img src="1562075758555.png" alt="Alt text"></p>
 <hr>
+<h2 id="xcode-&#x5347;&#x7EA7;&#x5230;-xcode103-&#x9879;&#x76EE;&#x62A5;&#x9519;">XCode &#x5347;&#x7EA7;&#x5230; XCode10.3 &#x9879;&#x76EE;&#x62A5;&#x9519;</h2>
+<p><a href="https://www.xingcheng.me/2019/07/26/XCode10-3-error/" target="_blank">https://www.xingcheng.me/2019/07/26/XCode10-3-error/</a></p>
+<pre><code>&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF1A;
+Failed to find or create execution context for description &#x2018;&lt;IBCocoaTouchPlatformToolDescription: 0x7fe0ddceada0&gt; System content for IBCocoaTouchFramework-ElevenAndLater &lt;IBScaleFactorDeviceTypeDescription: 0x7fe0dd8606b0&gt; scaleFactor=2x&#x2019;. These intermediate objects were non-nil: (
+</code></pre><pre><code class="lang-plain">CompileStoryboard /Users/xingcheng/Git/XDemo/XDemo/Launch\ Screen.storyboard (in target: XDemo)
+    cd /Users/xingcheng/Git/XDemo
+    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..
+    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module XDemo --output-partial-info-plist /Users/xingcheng/Library/Developer/Xcode/DerivedData/XDemo-aeprheuvgyqhvydumnpjaqtvqwtq/Build/Intermediates.noindex/XDemo.build/Debug-iphonesimulator/XDemo.build/Launch\ Screen-SBPartialInfo.plist --auto-activate-custom-fonts --target-device iphone --target-device ipad --minimum-deployment-target 9.0 --output-format human-readable-text --compilation-directory /Users/xingcheng/Library/Developer/Xcode/DerivedData/XDemo-aeprheuvgyqhvydumnpjaqtvqwtq/Build/Intermediates.noindex/XDemo.build/Debug-iphonesimulator/XDemo.build /Users/xingcheng/Git/XDemo/XDemo/Launch\ Screen.storyboard
+
+2019-07-26 11:15:26.166 ibtoold[35829:13410674] [MT] IBPlatformTool: *** Failed to launch tool with description &lt;IBCocoaTouchPlatformToolDescription: 0x7fe0ddceada0&gt; System content for IBCocoaTouchFramework-ElevenAndLater &lt;IBScaleFactorDeviceTypeDescription: 0x7fe0dd8606b0&gt; scaleFactor=2x: Failed to find or create execution context for description &apos;&lt;IBCocoaTouchPlatformToolDescription: 0x7fe0ddceada0&gt; System content for IBCocoaTouchFramework-ElevenAndLater &lt;IBScaleFactorDeviceTypeDescription: 0x7fe0dd8606b0&gt; scaleFactor=2x&apos;. These intermediate objects were non-nil: (
+    &quot;IBSimDeviceTypeiPad2x (com.apple.dt.Xcode.IBSimDeviceType.iPad-2x)&quot;,
+    &quot;iOS 12.4 (12.4 - 16G73) - com.apple.CoreSimulator.SimRuntime.iOS-12-4&quot;
+): Failed to find a suitable device for the type IBSimDeviceTypeiPad2x (com.apple.dt.Xcode.IBSimDeviceType.iPad-2x) with runtime iOS 12.4 (12.4 - 16G73) - com.apple.CoreSimulator.SimRuntime.iOS-12-4 (Failure reason: Failed to create new simulator device that matches IBSimDeviceTypeiPad2x (com.apple.dt.Xcode.IBSimDeviceType.iPad-2x) for runtime iOS 12.4 (12.4 - 16G73) - com.apple.CoreSimulator.SimRuntime.iOS-12-4 (Invalid runtime: com.apple.CoreSimulator.SimRuntime.iOS-12-4)): Invalid runtime: com.apple.CoreSimulator.SimRuntime.iOS-12-4
+/* com.apple.ibtool.errors */
+/Users/xingcheng/Git/XDemo/XDemo/Launch Screen.storyboard: error: Failed to find or create execution context for description &apos;&lt;IBCocoaTouchPlatformToolDescription: 0x7fe0ddceada0&gt; System content for IBCocoaTouchFramework-ElevenAndLater &lt;IBScaleFactorDeviceTypeDescription: 0x7fe0dd8606b0&gt; scaleFactor=2x&apos;. These intermediate objects were non-nil: (
+    &quot;IBSimDeviceTypeiPad2x (com.apple.dt.Xcode.IBSimDeviceType.iPad-2x)&quot;,
+    &quot;iOS 12.4 (12.4 - 16G73) - com.apple.CoreSimulator.SimRuntime.iOS-12-4&quot;
+)
+    Underlying Errors:
+        Description: Failed to find a suitable device for the type IBSimDeviceTypeiPad2x (com.apple.dt.Xcode.IBSimDeviceType.iPad-2x) with runtime iOS 12.4 (12.4 - 16G73) - com.apple.CoreSimulator.SimRuntime.iOS-12-4
+        Failure Reason: Failed to create new simulator device that matches IBSimDeviceTypeiPad2x (com.apple.dt.Xcode.IBSimDeviceType.iPad-2x) for runtime iOS 12.4 (12.4 - 16G73) - com.apple.CoreSimulator.SimRuntime.iOS-12-4 (Invalid runtime: com.apple.CoreSimulator.SimRuntime.iOS-12-4)
+        Underlying Errors:
+        Description: Invalid runtime: com.apple.CoreSimulator.SimRuntime.iOS-12-4
+</code></pre>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</strong>
+Kill all simulator processes</p>
+<pre><code class="lang-bash">sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
+</code></pre>
+<p>Set the correct Xcode path</p>
+<pre><code class="lang-bash">sudo xcode-select <span class="hljs-_">-s</span>  /Applications/Xcode.app/Contents/Developer
+</code></pre>
+<p>If that doesn&#x2019;t work, reset all simulators</p>
+<pre><code class="lang-bash">xcrun simctl erase all
+</code></pre>
+<h2 id="&#x5173;&#x4E8E;mac&#x5171;&#x4EAB;wifi&#x7F51;&#x7EDC;&#xFF0C;&#x770B;&#x8FD9;&#x91CC;&#x5C31;&#x591F;&#x4E86;24g&#xFF0C;5g-&#xFF0C;-ipv6">&#x5173;&#x4E8E;Mac&#x5171;&#x4EAB;WiFi&#x7F51;&#x7EDC;&#xFF0C;&#x770B;&#x8FD9;&#x91CC;&#x5C31;&#x591F;&#x4E86;(2.4G&#xFF0C;5G &#xFF0C; ipv6)</h2>
+<p><a href="https://www.jianshu.com/p/7a3d3005b0c9" target="_blank">https://www.jianshu.com/p/7a3d3005b0c9</a></p>
+<hr>
+<h2 id="option--e&#x4E0D;&#x8D77;&#x4F5C;&#x7528;">Option + E&#x4E0D;&#x8D77;&#x4F5C;&#x7528;</h2>
+<p>&#x6700;&#x8FD1;&#xFF0C;&#x5F53;&#x6211;&#x6309;Option + e&#x65F6;&#xFF0C;&#x6211;&#x7684;Macbook&#x505C;&#x6B62;&#x663E;&#x793A;&#xB4;&#x3002;&#x6211;&#x4EC0;&#x81F3;&#x65E0;&#x6CD5;&#x5728;&#x952E;&#x76D8;&#x67E5;&#x770B;&#x5668;&#x4E2D;&#x6309;&#xB4;&#x3002;</p>
+<p>&#x5176;&#x4ED6;&#x7684;&#x53E3;&#x97F3;&#x5DE5;&#x4F5C;&#x6B63;&#x5E38;&#x3002;</p>
+<p>&#x4EFB;&#x4F55;&#x4EBA;&#x6709;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;&#x7684;&#x60F3;&#x6CD5;&#xFF1F;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5728;Mac&#x4E0A;&#x91CD;&#x7F6E;&#x6240;&#x6709;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF1F;</p>
+<p><strong>&#x89E3;&#x51B3;&#x529E;&#x6CD5;</strong>
+&#x6211;&#x7684;&#x8BBE;&#x7F6E;&#x4ECE;&#x7F8E;&#x56FD;&#x952E;&#x76D8;&#x66F4;&#x6539;&#x4E3A;Unicode&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8F93;&#x5165;&#x3002;&#x5C06;&#x5176;&#x66F4;&#x6539;&#x56DE;&#x56FA;&#x5B9A;&#x6211;&#x7684;&#x9009;&#x9879;&#x952E;</p>
 
                                 
                                 </section>
@@ -770,7 +813,7 @@ ls
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MacOS-record","level":"1.1.12","depth":2,"next":{"title":"React-record","level":"1.1.13","depth":2,"path":"records/React-record/React-record.md","ref":"records/React-record/React-record.md","articles":[]},"previous":{"title":"gulp-record","level":"1.1.11","depth":2,"path":"records/gulp-record/gulp-record.md","ref":"records/gulp-record/gulp-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/MacOS-record/MacOS-record.md","mtime":"2019-07-02T13:56:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-26T01:23:51.360Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MacOS-record","level":"1.1.12","depth":2,"next":{"title":"React-record","level":"1.1.13","depth":2,"path":"records/React-record/React-record.md","ref":"records/React-record/React-record.md","articles":[]},"previous":{"title":"gulp-record","level":"1.1.11","depth":2,"path":"records/gulp-record/gulp-record.md","ref":"records/gulp-record/gulp-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/MacOS-record/MacOS-record.md","mtime":"2019-12-15T16:34:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-15T16:34:35.112Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
