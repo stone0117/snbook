@@ -857,6 +857,24 @@ apt-get install -y wget
 <hr>
 <p>ping &#x67E5;&#x770B;IP&#x65F6; &#x5339;&#x914D;&#x7701;&#x5185;IP ???</p>
 <p>&#x89E3;&#x51B3;&#x529E;&#x6CD5;, &#x4FEE;&#x6539; &#x5F53;&#x524D;IP&#x7684; DNS&#x89E3;&#x6790; &#x6539;&#x6210; 114.114.114.114 &#x6216;&#x8005; 8.8.8.8</p>
+<hr>
+<pre><code class="lang-bash">root@localhost:~<span class="hljs-comment"># ps -ef | grep caddy</span>
+www-data 13977     1  0 04:10 ?        00:00:09 /usr/<span class="hljs-built_in">local</span>/bin/caddy -log stdout -log-timestamps=<span class="hljs-literal">false</span> -agree=<span class="hljs-literal">true</span> -conf=/etc/caddy/Caddyfile -root=/var/tmp
+root     14697 14623  0 05:42 pts/0    00:00:00 grep --color=auto caddy
+root@localhost:~<span class="hljs-comment"># cat /etc/caddy/Caddyfile</span>
+bbs.stonehongkong.xyz {
+    gzip
+timeouts none
+    proxy / https://www.guokr.com/ {
+        except /guokr
+    }
+    proxy /guokr 127.0.0.1:30363 {
+        without /guokr
+        websocket
+    }
+}
+import sites/*
+</code></pre>
 
                                 
                                 </section>
@@ -900,7 +918,7 @@ apt-get install -y wget
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"v2ray-record","level":"1.1.12","depth":2,"next":{"title":"shell-record","level":"1.1.13","depth":2,"path":"records/shell-record/shell-record.md","ref":"records/shell-record/shell-record.md","articles":[]},"previous":{"title":"gulp-record","level":"1.1.11","depth":2,"path":"records/gulp-record/gulp-record.md","ref":"records/gulp-record/gulp-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/v2ray-record/v2ray-record.md","mtime":"2020-04-19T21:02:40.947Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-19T21:02:55.132Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"v2ray-record","level":"1.1.12","depth":2,"next":{"title":"shell-record","level":"1.1.13","depth":2,"path":"records/shell-record/shell-record.md","ref":"records/shell-record/shell-record.md","articles":[]},"previous":{"title":"gulp-record","level":"1.1.11","depth":2,"path":"records/gulp-record/gulp-record.md","ref":"records/gulp-record/gulp-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/v2ray-record/v2ray-record.md","mtime":"2020-04-19T21:47:08.350Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-19T21:47:53.884Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
