@@ -1367,6 +1367,31 @@ mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
 <hr>
 <h2 id="exploded-&#x80FD;&#x70ED;&#x90E8;&#x7F72;">exploded &#x80FD;&#x70ED;&#x90E8;&#x7F72;</h2>
 <p><img src="1591213506458.png" alt="Alt text"></p>
+<h2 id="maven-&#x914D;&#x7F6E;ali&#x955C;&#x50CF;">maven &#x914D;&#x7F6E;ali&#x955C;&#x50CF;</h2>
+<p><a href="https://maven.aliyun.com/mvn/view" target="_blank">https://maven.aliyun.com/mvn/view</a></p>
+<p><a href="https://www.freesion.com/article/5979292418/" target="_blank">https://www.freesion.com/article/5979292418/</a></p>
+<pre><code>&lt;mirror&gt;
+        &lt;id&gt;nexus-aliyun&lt;/id&gt;
+        &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+        &lt;name&gt;Nexus aliyun&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;
+    &lt;/mirror&gt;
+</code></pre><h2 id="idea&#x6253;&#x5305;&#x53D1;&#x51FA;&#x8B66;&#x544A;using-platform-encoding-utf-8-actually-to-copy-filtered-resources&#x89E3;&#x51B3;&#x65B9;&#x6CD5;">idea&#x6253;&#x5305;&#x53D1;&#x51FA;&#x8B66;&#x544A;Using platform encoding (UTF-8 actually) to copy filtered resources,&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</h2>
+<p><a href="https://blog.csdn.net/qq_37554565/article/details/90713122" target="_blank">https://blog.csdn.net/qq_37554565/article/details/90713122</a></p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-xml">
+&#x5728;<span class="hljs-tag">&lt;<span class="hljs-name">project</span>&gt;</span>&#x5143;&#x7D20;&#x4E0B;&#x9762;&#x6DFB;&#x52A0;:
+
+   <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span>     
+    <span class="hljs-tag">&lt;<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>     
+
+   <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>
+</code></pre>
+<hr>
+<h2 id="&#x521D;&#x5B66;-dubbo-zookeeper&#x8E29;&#x8FC7;&#x7684;&#x5751;&#xFF1A;unexpected-exception-parsing-xml-document-from-urlduplicate-spring-bean-id-&#xFF1F;">&#x521D;&#x5B66; dubbo-zookeeper&#x8E29;&#x8FC7;&#x7684;&#x5751;&#xFF1A;Unexpected exception parsing XML document from URL;Duplicate spring bean id &#xFF1F;</h2>
+<p><a href="https://blog.csdn.net/weixin_43926139/article/details/100576425" target="_blank">https://blog.csdn.net/weixin_43926139/article/details/100576425</a></p>
+<h2 id="maven&#x7684;setting&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;mirror&#x548C;repository&#x7684;&#x533A;&#x522B;--mirrorof&#x8BBE;&#x7F6E;">maven&#x7684;setting&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;mirror&#x548C;repository&#x7684;&#x533A;&#x522B; | mirrorOf&#x8BBE;&#x7F6E;</h2>
+<p><a href="https://www.jianshu.com/p/274c363ffd7c" target="_blank">https://www.jianshu.com/p/274c363ffd7c</a></p>
 
                                 
                                 </section>
@@ -1410,7 +1435,7 @@ mvn <span class="hljs-_">-f</span> pom.xml dependency:copy-dependencies
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.7","depth":2,"next":{"title":"html-record","level":"1.1.8","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"brew-record","level":"1.1.6","depth":2,"path":"records/brew-record/brew-record.md","ref":"records/brew-record/brew-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2020-06-03T19:45:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-03T19:45:33.877Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"java-record","level":"1.1.7","depth":2,"next":{"title":"html-record","level":"1.1.8","depth":2,"path":"records/html-record/html-record.md","ref":"records/html-record/html-record.md","articles":[]},"previous":{"title":"brew-record","level":"1.1.6","depth":2,"path":"records/brew-record/brew-record.md","ref":"records/brew-record/brew-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/java-record/java-record.md","mtime":"2020-06-05T19:05:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-05T19:06:00.051Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
