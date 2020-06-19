@@ -444,9 +444,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.26" data-path="../Alfred-record/Alfred-record.html">
+        <li class="chapter " data-level="1.1.26" data-path="../Alfred record/Alfred record.html">
             
-                <a href="../Alfred-record/Alfred-record.html">
+                <a href="../Alfred record/Alfred record.html">
             
                     
                     Alfred-record
@@ -715,35 +715,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>@(Java_work)</p>
+                                <p>@(&#x5DE5;&#x4F5C;&#x7B14;&#x8BB0;)</p>
 <h1 id="brew-record">brew-record</h1>
-<p><img src="1589601265000.png" alt="Alt text"></p>
 <p>[TOC]</p>
+<p><img src="1592553579201.png" alt="Alt text"></p>
 <hr>
-<h2 id="&#x89E3;&#x51B3;homebrew&#x4E0B;&#x8F7D;&#x66F4;&#x65B0;&#x6781;&#x6162;&#x7684;&#x95EE;&#x9898;">&#x89E3;&#x51B3;Homebrew&#x4E0B;&#x8F7D;&#x66F4;&#x65B0;&#x6781;&#x6162;&#x7684;&#x95EE;&#x9898;</h2>
-<p><a href="https://www.raydbg.com/2019/Homebrew-Update-Slow/" target="_blank">https://www.raydbg.com/2019/Homebrew-Update-Slow/</a></p>
-<h3 id="step1">step1:</h3>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#x66FF;&#x6362;brew.git:</span>
-<span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$(brew --repo)</span>&quot;</span>
-git remote <span class="hljs-built_in">set</span>-url origin https://mirrors.aliyun.com/homebrew/brew.git
-<span class="hljs-comment"># &#x66FF;&#x6362;homebrew-core.git:</span>
-<span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span>
-git remote <span class="hljs-built_in">set</span>-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+<h2 id="brew-search-&#x63CF;&#x8FF0;&#x4E2D;&#x641C;&#x7D22;&#x5173;&#x952E;&#x5B57;">brew search &#x63CF;&#x8FF0;&#x4E2D;&#x641C;&#x7D22;&#x5173;&#x952E;&#x5B57;</h2>
+<pre><code class="lang-bash">brew search --desc xargs
 
-<span class="hljs-comment"># &#x66FF;&#x6362;homebrew-bottles:</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&apos;</span> &gt;&gt; ~/.zshrc
+<span class="hljs-comment">## will give the result</span>
+<span class="hljs-comment">## findutils: Collection of GNU find, xargs, and locate</span>
+</code></pre>
+<hr>
+<h2 id="homebrew-&#x66F4;&#x6362;&#x963F;&#x91CC;&#x4E91;&#x955C;&#x50CF;&#x6E90;">Homebrew &#x66F4;&#x6362;&#x963F;&#x91CC;&#x4E91;&#x955C;&#x50CF;&#x6E90;</h2>
+<p><a href="https://www.phpdever.com/2019/08/02/homebrew-replace-aliyun/" target="_blank">https://www.phpdever.com/2019/08/02/homebrew-replace-aliyun/</a></p>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x6709;&#x8FC7;&#x8FD9;&#x6837;&#x7CDF;&#x7CD5;&#x7684;&#x7ECF;&#x5386;&#xFF0C;&#x5F53;&#x4F60;&#x6EE1;&#x5FC3;&#x6B22;&#x559C;&#x7684;&#x6572;&#x4E0B; &#x201C;brew install &#x5E94;&#x7528;&#x540D;&#x79F0;&#x201D;&#xFF0C;&#x9759;&#x9759;&#x7684;&#x7B49;&#x5F85;&#x5B89;&#x88C5;&#x7ED3;&#x679C;&#x7684;&#x65F6;&#x5019;&#xFF0C;Homebrew&#x5728; Updating Homebrew&#x5361;&#x6B7B;&#x4E86;&#x3002;</p>
+<p>Homebrew&#x662F;&#x4E00;&#x6B3E;Mac OS&#x5E73;&#x53F0;&#x4E0B;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x62E5;&#x6709;&#x5B89;&#x88C5;&#x3001;&#x5378;&#x8F7D;&#x3001;&#x66F4;&#x65B0;&#x3001;&#x67E5;&#x770B;&#x3001;&#x641C;&#x7D22;&#x7B49;&#x5F88;&#x591A;&#x5B9E;&#x7528;&#x7684;&#x529F;&#x80FD;&#x3002;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5305;&#x7BA1;&#x7406;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x4F60;&#x5173;&#x5FC3;&#x5404;&#x79CD;&#x4F9D;&#x8D56;&#x548C;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5341;&#x5206;&#x65B9;&#x4FBF;&#x5FEB;&#x6377;&#x3002;</p>
+<p>&#x4F7F;&#x7528; &#x963F;&#x91CC;&#x4E91; &#x7684; Homebrew &#x955C;&#x50CF;&#x6E90;&#x8FDB;&#x884C;&#x52A0;&#x901F;
+&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x66F4;&#x6362;&#x8FC7;&#x955C;&#x50CF;&#x6E90;&#xFF0C;&#x6267;&#x884C; brew &#x547D;&#x4EE4;&#x5B89;&#x88C5;&#x5E94;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8DDF;&#x4EE5;&#x4E0B; 3 &#x4E2A;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#x6709;&#x5173;&#xFF1A;</p>
+<ul>
+<li>brew.git</li>
+<li>homebrew-core.git</li>
+<li>homebrew-bottles
+&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#x5C06;&#x8FD9; 3 &#x4E2A;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#x5168;&#x90E8;&#x66FF;&#x6362;&#x4E3A; &#x963F;&#x91CC;&#x4E91; &#x63D0;&#x4F9B;&#x7684;&#x5730;&#x5740;</li>
+</ul>
+<h3 id="&#x66F4;&#x6362;-brewgit">&#x66F4;&#x6362; brew.git</h3>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$(brew --repo)</span>&quot;</span>
+
+git remote <span class="hljs-built_in">set</span>-url origin https://mirrors.aliyun.com/homebrew/brew.git
+</code></pre>
+<h3 id="&#x66F4;&#x6362;-homebrew-coregit">&#x66F4;&#x6362; homebrew-core.git</h3>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span>
+
+git remote <span class="hljs-built_in">set</span>-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+</code></pre>
+<p>&#x6267;&#x884C;&#x4E0A;&#x8FF0;&#x547D;&#x4EE4;&#x4E4B;&#x540E;&#xFF0C;&#x8BF7;&#x6267;&#x884C; brew update &#x547D;&#x4EE4;</p>
+<pre><code class="lang-bash">brew update
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x6267;&#x884C; brew config &#x547D;&#x4EE4;&#xFF0C;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</p>
+<pre><code class="lang-plain">HOMEBREW_VERSION: 2.1.5
+ORIGIN: https://mirrors.aliyun.com/homebrew/brew.git
+HEAD: db58b9f41b70a331dbe9b8371527a23e8ddcc718
+Last commit: 2 days ago
+Core tap ORIGIN: https://mirrors.aliyun.com/homebrew/homebrew-core.git
+Core tap HEAD: 5e2a0aaa5fb49aeb4a820ab085f0e53f4de14371
+Core tap last commit: 23 hours ago
+HOMEBREW_PREFIX: /usr/local
+CPU: dodeca-core 64-bit kabylake
+Homebrew Ruby: 2.3.7 =&gt; /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby
+Clang: 11.0 build 1100
+Git: 2.21.0 =&gt; /usr/local/bin/git
+Curl: 7.54.0 =&gt; /usr/bin/curl
+Java: 1.8.0_211
+macOS: 10.14.5-x86_64
+CLT: 11.0.0.0.1.1559496560
+Xcode: N/A
+CLT headers: 11.0.0.0.1.1559496560
+</code></pre>
+<h3 id="&#x66F4;&#x6362;-homebrew-bottles">&#x66F4;&#x6362; homebrew-bottles</h3>
+<p>&#x8FD9;&#x4E0E;&#x4F60;&#x5F53;&#x524D; macOS &#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x7684; shell &#x7248;&#x672C;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x67E5;&#x770B; Shell&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$SHELL</span>
+</code></pre>
+<p>&#x6839;&#x636E;&#x7248;&#x672C;&#x4E0D;&#x540C;&#xFF0C;&#x4F1A;&#x8F93;&#x51FA;2&#x79CD;&#x7ED3;&#x679C;&#xFF0C;/bin/zsh &#x6216; /bin/bash&#xFF0C;&#x6839;&#x636E;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x5373;&#x53EF;</p>
+<p>/bin/zsh &#x7ED3;&#x679C;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&apos;</span> &gt;&gt; ~/.zshrc
+
 <span class="hljs-built_in">source</span> ~/.zshrc
 </code></pre>
-<h3 id="step2">step2:</h3>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#x66FF;&#x6362;homebrew-cask.git:</span>
-<span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$(brew --repo)</span>&quot;</span>/Library/Taps/homebrew/homebrew-cask
-git remote <span class="hljs-built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
-</code></pre>
-<hr>
-<pre><code class="lang-bash">brew install gnu-sed
+<p>/bin/bash &#x7ED3;&#x679C;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles&apos;</span> &gt;&gt; ~/.bash_profile
 
-<span class="hljs-comment">## &#x4F7F;&#x7528; gsed = GNU sed &#x548C;linux sed &#x4E00;&#x6837;, mac &#x81EA;&#x5E26;sed &#x529F;&#x80FD;&#x6709;&#x9650;</span>
+<span class="hljs-built_in">source</span> ~/.bash_profile
 </code></pre>
+<p>&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x66F4;&#x6362; Homebrew &#x9ED8;&#x8BA4;&#x6E90;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x5566;&#xFF0C;&#x5C3D;&#x60C5;&#x5730;&#x53BB; brew install &#x5427;&#xFF01;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x7B80;&#x5355;&#x5462;&#xFF1F;</p>
 
                                 
                                 </section>
@@ -787,7 +831,7 @@ git remote <span class="hljs-built_in">set</span>-url origin https://mirrors.ust
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"brew-record","level":"1.1.5","depth":2,"next":{"title":"node-record","level":"1.1.6","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"previous":{"title":"Git-record","level":"1.1.4","depth":2,"path":"records/Git-record/Git-record.md","ref":"records/Git-record/Git-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/brew-record/brew-record.md","mtime":"2020-05-16T04:18:03.283Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-19T05:06:44.372Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"brew-record","level":"1.1.5","depth":2,"next":{"title":"node-record","level":"1.1.6","depth":2,"path":"records/node-record/node-record.md","ref":"records/node-record/node-record.md","articles":[]},"previous":{"title":"Git-record","level":"1.1.4","depth":2,"path":"records/Git-record/Git-record.md","ref":"records/Git-record/Git-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/brew-record/brew-record.md","mtime":"2020-06-19T08:32:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-19T08:33:16.099Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
