@@ -28,6 +28,8 @@ cd $HOME/git_repository/snbook
 
 #rm cp.sh
 #rm gulpfile.js
+rm -rf bookmark
+
 
 git add --all
 
