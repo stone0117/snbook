@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>openwrt-record · stone park gitbook</title>
+        <title>proxychains-ng-record · stone park gitbook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -62,10 +62,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../mongodb-record/mongodb-record.html" />
+    <link rel="next" href="../Linux-commands-record/Linux-commands-record.html" />
     
     
-    <link rel="prev" href="../windows-record/windows-record.html" />
+    <link rel="prev" href="../IntelliJ_IDEA-record/IntelliJ_IDEA-record.html" />
     
 
     <style>
@@ -483,9 +483,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.29" data-path="openwrt-record.html">
+        <li class="chapter " data-level="1.1.29" data-path="../openwrt-record/openwrt-record.html">
             
-                <a href="openwrt-record.html">
+                <a href="../openwrt-record/openwrt-record.html">
             
                     
                     openwrt-record
@@ -678,9 +678,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.44" data-path="../proxychains-ng-record/proxychains-ng-record.html">
+        <li class="chapter active" data-level="1.1.44" data-path="proxychains-ng-record.html">
             
-                <a href="../proxychains-ng-record/proxychains-ng-record.html">
+                <a href="proxychains-ng-record.html">
             
                     
                     proxychains-ng-record
@@ -752,7 +752,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >openwrt-record</a>
+        <a href="../.." >proxychains-ng-record</a>
     </h1>
 </div>
 
@@ -767,238 +767,136 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>@(Java_work)</p>
-<h1 id="openwrt-record">openwrt-record</h1>
-<p><img src="1584469436166.png" alt="Alt text"></p>
+                                <p>@(&#x5DE5;&#x4F5C;&#x7B14;&#x8BB0;)</p>
+<h1 id="proxychains-ng-record">proxychains-ng-record</h1>
 <p>[TOC]</p>
 <hr>
-<h2 id="&#x5237;breedweb">&#x5237;BreedWeb</h2>
-<p><a href="https://www.youtube.com/watch?v=I0O2V_1Tx5s&amp;list=PLiACDN8rEFmQadgF7oSvgoaW9UkR0bzKJ&amp;index=91&amp;t=4s" target="_blank">https://www.youtube.com/watch?v=I0O2V_1Tx5s&amp;list=PLiACDN8rEFmQadgF7oSvgoaW9UkR0bzKJ&amp;index=91&amp;t=4s</a></p>
-<h2 id="openwrt&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;ip-&#x65E0;&#x7EBF;&#x4E2D;&#x7EE7;&#x5FC5;&#x5907;&#x64CD;&#x4F5C;-&#x4E0D;&#x7136;&#x548C;&#x732B;&#x51B2;&#x7A81;">Openwrt&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;IP (&#x65E0;&#x7EBF;&#x4E2D;&#x7EE7;&#x5FC5;&#x5907;&#x64CD;&#x4F5C;, &#x4E0D;&#x7136;&#x548C;&#x732B;&#x51B2;&#x7A81;)</h2>
-<pre><code class="lang-plain">1.&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x4FEE;&#x6539;
-
-vi etc/config/network 
-
-:wq&#x9000;&#x51FA;&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x542F;&#x5C31;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x4E3A;&#x60F3;&#x8981;&#x7684;192.168.x.xxx
-
-&#x66F4;&#x65B0;&#x56FA;&#x4EF6;&#x4E4B;&#x540E;&#x8FD8;&#x8981;&#x91CD;&#x65B0;&#x4FEE;&#x6539;&#x3002;
-
-2.&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x6E90;&#x7801;&#xFF0C;&#x4E00;&#x52B3;&#x6C38;&#x9038;
-
-&#x4FEE;&#x6539;&#x4F4D;&#x7F6E;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x67D0;&#x4E00;&#x4F4D;&#x7F6E;&#xFF0C;&#x7248;&#x672C;&#x4E0D;&#x540C;&#xFF0C;&#x4F4D;&#x7F6E;&#x4E0D;&#x540C;
-
-/package/base-files/files/lib/functions/uci-defaults.sh
-
-&#x6216;&#x8005;
-
-/package/base-files/files/bin/config_generate
-
-&#x4FEE;&#x6539;&#x5B8C;&#x4E4B;&#x540E;&#x4FDD;&#x5B58;&#x7F16;&#x8BD1;&#xFF0C;&#x5373;&#x53EF;&#x3002;
-</code></pre>
-<h2 id="&#x6781;&#x8DEF;&#x7531;4-openwrt-v2ray">&#x6781;&#x8DEF;&#x7531;4-openwrt-v2ray</h2>
-<p><a href="https://ibcl.us/HC5962-V2Ray_20190518/" target="_blank">https://ibcl.us/HC5962-V2Ray_20190518/</a></p>
-<ol>
-<li>&#x8FDB;&#x5165;&#x8DEF;&#x7531;&#x5668;<pre><code class="lang-bash">ssh root@192.168.3.1
-</code></pre>
-</li>
-<li>&#x66F4;&#x65B0;&#x8F6F;&#x4EF6;</li>
-</ol>
-<pre><code class="lang-bash">opkg update
-</code></pre>
-<ol>
-<li>&#x5B89;&#x88C5; vsftpd&#x3001;iptables-mod-tproxy&#x3001;kmod-ipt-tproxy&#x3001;ca-certificates</li>
-</ol>
-<pre><code class="lang-bash">opkg install vsftpd iptables-mod-tproxy kmod-ipt-tproxy ca-certificates
-</code></pre>
-<ol>
-<li>&#x4F7F;&#x7528; FileZilla &#x7684; FTP &#x534F;&#x8BAE;&#x4E0E;&#x8DEF;&#x7531;&#x5668;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF0C;&#x5206;&#x522B;&#x5728; /usr/bin/&#x3001;/etc/ &#x4E0B;&#x65B0;&#x5EFA;&#x540D;&#x4E3A; v2ray &#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x4E0A;&#x4F20;&#x4E8B;&#x5148;&#x4E0B;&#x8F7D;&#x5E76;&#x5DF2;&#x7ECF;&#x89E3;&#x538B;&#xFF08;v2ray-linux-mipsle.zip&#xFF09;&#x7684;&#x9884;&#x7F16;&#x8BD1; V2Ray &#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF08;v2ray_softfloat&#x3001;v2ctl_softfloat&#xFF09;&#x5230; /usr/bin/v2ray/&#xFF0C;&#x66F4;&#x540D;&#x4E3A; v2ray&#x3001;v2ctl&#x3002;
-<a href="https://cdn-static.ibcl.us/HC5962-V2Ray_20190518/v2ray-linux-mipsle-softfloat-compressed.zip" target="_blank">https://cdn-static.ibcl.us/HC5962-V2Ray_20190518/v2ray-linux-mipsle-softfloat-compressed.zip</a></li>
-</ol>
-<p><code>&#x6CA1;&#x6709;FileZilla &#x5C31;&#x7528; WinSCP&#x5427;</code></p>
-<pre><code class="lang-bash">mkdir /usr/bin/v2ray
-mkdir /etc/v2ray
-</code></pre>
-<p>5.&#x8D4B;&#x4E88; 755 &#x6743;&#x9650;&#x3002;</p>
-<pre><code class="lang-bash">chmod +x /usr/bin/v2ray/v2ray /usr/bin/v2ray/v2ctl
-</code></pre>
-<ol>
-<li>screen &#x540E;&#x53F0;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;
-<a href="https://cdn-static.ibcl.us/HC5962-V2Ray_20190518/screen_4.6.2-1_mipsel_24kc.ipk" target="_blank">https://cdn-static.ibcl.us/HC5962-V2Ray_20190518/screen_4.6.2-1_mipsel_24kc.ipk</a></li>
-</ol>
-<p>&#x4E0A;&#x4F20; ipk &#x5230;&#x8DEF;&#x7531;&#x5668; /tmp &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x7136;&#x540E;&#x5B89;&#x88C5;&#x3002;</p>
-<pre><code class="lang-bash">opkg install /tmp/screen_4.6.2-1_mipsel_24kc.ipk
-</code></pre>
-<h3 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
-<p>&#x535A;&#x4E3B;&#x7684; VPS &#x9009;&#x7528;&#x4E86; WebSocket + Nginx + TLS &#x7684;&#x65B9;&#x6848;&#xFF0C;&#x6240;&#x4EE5;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x793A;&#x8303;&#x5982;&#x4E0B;&#xFF0C;&#x914C;&#x60C5;&#x66F4;&#x6539;&#x3002;</p>
-<pre><code class="lang-json">{
-  <span class="hljs-string">&quot;inbounds&quot;</span>: [
-    {
-      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1080</span>,
-      <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>,
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;socks&quot;</span>,
-      <span class="hljs-string">&quot;sniffing&quot;</span>: {
-        <span class="hljs-string">&quot;enabled&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;destOverride&quot;</span>: [<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>]
-      },
-      <span class="hljs-string">&quot;settings&quot;</span>: {
-        <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-string">&quot;noauth&quot;</span>,
-        <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">true</span>
-      }
-    },
-    {
-      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">8080</span>,
-      <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>,
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;http&quot;</span>,
-      <span class="hljs-string">&quot;sniffing&quot;</span>: {
-        <span class="hljs-string">&quot;enabled&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;destOverride&quot;</span>: [<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>]
-      },
-      <span class="hljs-string">&quot;settings&quot;</span>: {
-        <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">300</span>
-      }
-    },
-    {
-      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">12345</span>,
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;dokodemo-door&quot;</span>,
-      <span class="hljs-string">&quot;sniffing&quot;</span>: {
-        <span class="hljs-string">&quot;enabled&quot;</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">&quot;destOverride&quot;</span>: [<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>]
-      },
-      <span class="hljs-string">&quot;settings&quot;</span>: {
-        <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp,udp&quot;</span>,
-        <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">true</span>
-      }
-    },
-    {
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;dokodemo-door&quot;</span>,
-      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">5353</span>,
-      <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
-      <span class="hljs-string">&quot;settings&quot;</span>: {
-        <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;1.0.0.1&quot;</span>,
-        <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">53</span>,
-        <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;udp&quot;</span>,
-        <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">0</span>
-      }
-    }
-  ],
-  <span class="hljs-string">&quot;outbounds&quot;</span>: [
-    {
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
-      <span class="hljs-string">&quot;settings&quot;</span>: {
-        <span class="hljs-string">&quot;vnext&quot;</span>: [
-          {
-            <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;example.org&quot;</span>,
-            <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">443</span>,
-            <span class="hljs-string">&quot;users&quot;</span>: [
-              {
-                <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;ad335920-7932-11e9-b475-0800200c9a66&quot;</span>,
-                <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;aes-128-gcm&quot;</span>,
-                <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">64</span>
-              }
-            ]
-          }
-        ]
-      },
-      <span class="hljs-string">&quot;streamSettings&quot;</span>: {
-        <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;ws&quot;</span>,
-        <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;tls&quot;</span>,
-        <span class="hljs-string">&quot;wsSettings&quot;</span>: {
-          <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;/internal-proxy&quot;</span>
-        }
-      }
-    }
-  ]
-}
-</code></pre>
-<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F7F;&#x7528; UTF-8 &#x7F16;&#x7801;&#x3001;UNIX LF &#x6362;&#x884C;&#x7B26;&#x4E0A;&#x4F20;&#x5230; /etc/v2ray
-&#x7F16;&#x8F91; /etc/hosts&#xFF0C;&#x586B;&#x5165;&#x670D;&#x52A1;&#x5668; IP &#x5730;&#x5740;</p>
-<pre><code class="lang-plain">12.34.56.78 example.org
-</code></pre>
-<h3 id="&#x52A0;&#x5165;&#x5F00;&#x673A;&#x542F;&#x52A8;&#x9879;">&#x52A0;&#x5165;&#x5F00;&#x673A;&#x542F;&#x52A8;&#x9879;</h3>
-<p>&#x7F16;&#x8F91; /etc/rc.local&#xFF0C;&#x4E8E; exit 0 &#x524D;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x3002;</p>
-<pre><code class="lang-bash">sleep 5 &amp;&amp; screen -dmS v2ray /usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
-</code></pre>
-<h3 id="dns-&#x8F6C;&#x53D1;&#x8BBE;&#x7F6E;">DNS &#x8F6C;&#x53D1;&#x8BBE;&#x7F6E;</h3>
-<p>LuCI &gt; Network &gt; Interfaces &gt; WAN &gt; Advanced Settings &gt; &#x53D6;&#x6D88;&#x52FE;&#x9009; Use DNS servers advertised by peer&#x3002;&#x5176;&#x4F59;&#x8BBE;&#x7F6E;&#x4E0D;&#x53D8;&#xFF0C;&#x4FDD;&#x5B58;&#x5E76;&#x5E94;&#x7528;&#xFF08;Save &amp; Apply&#xFF09;&#x3002;</p>
-<p>LuCI &gt; Interfaces &gt; LAN &gt; DHCP Server &gt; &#x5C06; 6,192.168.1.1 &#x586B;&#x5165; DHCP-Options &#x9879;&#x4E2D; &#x3002;192.168.1.1 &#x662F;&#x8BBE;&#x5907;&#x7684;&#x7BA1;&#x7406;&#x5730;&#x5740;&#x3002;&#x5176;&#x4F59;&#x8BBE;&#x7F6E;&#x4E0D;&#x53D8;&#xFF0C;&#x4FDD;&#x5B58;&#x5E76;&#x5E94;&#x7528;&#xFF08;Save &amp; Apply&#xFF09;&#x3002;&#x6B64;&#x4E3E;&#x662F;&#x5411;&#x6BCF;&#x53F0;&#x8FDE;&#x63A5;&#x5230;&#x8DEF;&#x7531;&#x5668;&#x7684;&#x8BBE;&#x5907;&#x901A;&#x544A; DNS &#x5730;&#x5740;&#x4E3A;&#x7F51;&#x5173;&#x5730;&#x5740;&#x3002;</p>
-<p><code>6,192.168.1.1</code> &#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x7F51;&#x5173;&#x6765;&#x8BBE;&#x7F6E;, &#x5373;&#x5982;&#x679C;&#x7F51;&#x5173;&#x662F; 192.168.3.1 &#x5C31;&#x8BBE;&#x7F6E;&#x6210; <code>6,192.168.3.1</code></p>
-<p>LuCI &gt; Network &gt; DHCP and DNS &gt; General Settings &gt; &#x5C06; 127.0.0.1#5353 &#x586B;&#x5165; DNS forwardings&#x3002;&#x5176;&#x4F59;&#x8BBE;&#x7F6E;&#x4E0D;&#x53D8;&#xFF0C;&#x4FDD;&#x5B58;&#x5E76;&#x5E94;&#x7528;&#xFF08;Save &amp; Apply&#xFF09;&#x3002;&#x6B64;&#x4E3E;&#x662F;&#x5C06;&#x6240;&#x6709; DNS &#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x5168;&#x90E8;&#x8F6C;&#x53D1;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x9632;&#x6B62;&#x672C;&#x5730; ISP &#x6295;&#x6BD2;&#x3002;</p>
-<h3 id="iptables-&#x8F6C;&#x53D1;&#x8BBE;&#x7F6E;">iptables &#x8F6C;&#x53D1;&#x8BBE;&#x7F6E;</h3>
-<p>LuCI &gt; Network &gt; Firewall &gt; Custom Rules &gt; &#x590D;&#x5236;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;12345 &#x662F; dokodemo-door &#x7684;&#x7AEF;&#x53E3;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539; 12.34.56.78 &#x4E3A;&#x670D;&#x52A1;&#x5668;&#x7684;&#x771F;&#x5B9E; IP&#x3002;</p>
-<pre><code class="lang-plain"># Chain TCP
-iptables -t nat -N V2RAY
-# Reserved IP TCP
-iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
-iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
-iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
-iptables -t nat -A V2RAY -d 169.254.0.0/16 -j RETURN
-iptables -t nat -A V2RAY -d 172.16.0.0/12 -j RETURN
-iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
-iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
-iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
-# VPS IP
-iptables -t nat -A V2RAY -d 12.34.56.78 -j RETURN
-# Apply Forwarding Rules TCP
-iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
-iptables -t nat -A PREROUTING -p tcp -j V2RAY
-iptables -t nat -A OUTPUT -p tcp -j V2RAY
-# Chain UDP
-iptables -t mangle -N V2RAYUDP
-# Reserved IP UDP
-iptables -t mangle -A V2RAYUDP -d 0.0.0.0/8 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 10.0.0.0/8 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 127.0.0.0/8 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 169.254.0.0/16 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 172.16.0.0/12 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 192.168.0.0/16 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 224.0.0.0/4 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 240.0.0.0/4 -j RETURN
-# NTP IP
-iptables -t mangle -A V2RAYUDP -d 133.243.238.163 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 133.243.238.243 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 133.243.238.244 -j RETURN
-iptables -t mangle -A V2RAYUDP -d 133.243.238.244 -j RETURN
-# Apply Forwarding Rules UDP
-iptables -t mangle -A V2RAYUDP -p udp -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
-iptables -t mangle -A PREROUTING -p udp -j V2RAYUDP
-ip rule add fwmark 1 table 100
-ip route add local default dev lo table 100
-</code></pre>
-<p>&#x7136;&#x540E;&#xFF0C;&#x70B9;&#x51FB; Restart Firewall&#xFF0C;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;
-&#x8FD9;&#x6837;&#x4FBF;&#x8F6C;&#x53D1;&#x4E86; TCP&#x3001;UDP &#x6D41;&#x91CF;&#x3002;</p>
-<p>&#x7531;&#x4E8E; V2Ray &#x9700;&#x8981;&#x672C;&#x5730;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x7684;&#x65F6;&#x95F4;&#x8BEF;&#x5DEE;&#x4E0D;&#x8D85;&#x8FC7;&#x4E09;&#x5206;&#x949F;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x8BBE;&#x7F6E; NTP &#x670D;&#x52A1;&#x5668;&#x76F4;&#x8FDE;&#x4EE5;&#x5BF9;&#x65F6;&#x3002;&#x535A;&#x4E3B;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x65E5;&#x672C; NICT &#x7684; NTP &#x670D;&#x52A1;&#x5668;&#x3002;&#x6240;&#x4EE5;&#x5728; LuCI &gt; System &gt; System &gt; Time Synchronization &#x4E2D;&#x52FE;&#x9009; Enable NTP client &#xFF0C;&#x5E76;&#x66F4;&#x6539; NTP &#x670D;&#x52A1;&#x5668;&#x4E3A;&#x4EE5;&#x4E0B;&#x5730;&#x5740;&#xFF1A;</p>
-<pre><code class="lang-plain">133.243.238.163
-133.243.238.243
-133.243.238.244
-133.243.238.164
-</code></pre>
-<p>&#x4FDD;&#x5B58;&#x3002;</p>
-<h3 id="&#x5927;&#x529F;&#x544A;&#x6210;">&#x5927;&#x529F;&#x544A;&#x6210;</h3>
-<p>LuCI &gt; System &gt; Reboot &gt; Perform Reboot</p>
-<p>&#x7B49;&#x5F85;&#x8DEF;&#x7531;&#x5668;&#x91CD;&#x542F;&#x4E4B;&#x540E;&#xFF0C;&#x8BD5;&#x8BD5; Google &#x80FD;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x4E86;&#x5462;?</p>
+<p><img src="abc001.jpg" alt="Alt text"></p>
 <hr>
-<h2 id="&#x5206;&#x6D41;&#x8DEF;&#x7531;&#x5668;">&#x5206;&#x6D41;&#x8DEF;&#x7531;&#x5668;</h2>
-<p><a href="https://blog.dreamtobe.cn/r7800-openwrt-v2ray/" target="_blank">https://blog.dreamtobe.cn/r7800-openwrt-v2ray/</a></p>
-<hr>
-<p>hc5962-squashfs-factory.bin</p>
-<p>&#x6781;&#x8DEF;&#x7531;4 OpenWrt R9.1.1 b70&#x56FA;&#x4EF6;
-<a href="http://www.upantool.com/gujian/lede/13772.html" target="_blank">http://www.upantool.com/gujian/lede/13772.html</a></p>
-<p>felix-fly/v2ray-openwrt
-<a href="https://github.com/felix-fly/v2ray-openwrt" target="_blank">https://github.com/felix-fly/v2ray-openwrt</a></p>
-<p>kuoruan/openwrt-v2ray
-<a href="https://github.com/kuoruan/openwrt-v2ray" target="_blank">https://github.com/kuoruan/openwrt-v2ray</a></p>
-<hr>
-<h2 id="&#x6781;&#x8DEF;&#x7531;4b70hc5962-r9&#x56FA;&#x4EF6;">&#x6781;&#x8DEF;&#x7531;4/B70/HC5962 R9&#x56FA;&#x4EF6;</h2>
-<p><a href="https://www.right.com.cn/forum/thread-1358591-1-1.html" target="_blank">https://www.right.com.cn/forum/thread-1358591-1-1.html</a></p>
-<p><a href="https://xxxxmovie.oss-cn-beijing.aliyuncs.com/20191108openwrt-ramips-mt7621-hc5962-squashfs-factory.bin" target="_blank">https://xxxxmovie.oss-cn-beijing.aliyuncs.com/20191108openwrt-ramips-mt7621-hc5962-squashfs-factory.bin</a></p>
-<p>xxxx&#x9700;&#x66FF;&#x6362;</p>
-<p>&#x5148;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;ip 192.168.1.1 &#x6539;&#x6210; 192.168.2.1
-&#x7CFB;&#x7EDF;-&gt;&#x91CD;&#x542F;-&gt;&#x91CD;&#x542F;&#x8DEF;&#x7531;
-&#x7136;&#x540E;&#x4E2D;&#x7EE7;wifi
-&#x7136;&#x540E;&#x518D;&#x8BBE;&#x7F6E;ShadowSocksR Plus+</p>
-<p>&#x670D;&#x52A1;&#x5668;&#x8282;&#x70B9;-&gt;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;v2ray
-&#x8BBE;&#x7F6E;&#x5BA2;&#x6237;&#x7AEF; &#x4FDD;&#x5B58;&amp;&#x5E94;&#x7528;</p>
+<h2 id="mac&#x4E0B;&#x5B89;&#x88C5;-proxychains-ng">MAC&#x4E0B;&#x5B89;&#x88C5; proxychains-ng</h2>
+<p>&#x5173;&#x95ED; SIP</p>
+<p>macOS 10.11 &#x540E;&#x4E0B;&#x7531;&#x4E8E;&#x5F00;&#x542F;&#x4E86; SIP&#xFF08;System Integrity Protection&#xFF09; &#x4F1A;&#x5BFC;&#x81F4;&#x547D;&#x4EE4;&#x884C;&#x4E0B; proxychains-ng &#x4EE3;&#x7406;&#x7684;&#x6A21;&#x5F0F;&#x5931;&#x6548;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x8981;&#x4F7F;&#x7528; proxychains-ng &#x8FD9;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5148;&#x5173;&#x95ED; SIP&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x7684;&#x5173;&#x95ED;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x90E8;&#x5206;&#x5173;&#x95ED; SIP(&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x6709;&#x7528;)</p>
+<blockquote>
+<p>&#x91CD;&#x542F;Mac&#xFF0C;&#x6309;&#x4F4F;Option&#x952E;&#x8FDB;&#x5165;&#x542F;&#x52A8;&#x76D8;&#x9009;&#x62E9;&#x6A21;&#x5F0F;&#xFF0C;&#x518D;&#x6309;&#x2318; + R&#x8FDB;&#x5165;Recovery&#x6A21;&#x5F0F;&#x3002;
+&#x5B9E;&#x7528;&#x5DE5;&#x5177;&#xFF08;Utilities&#xFF09;-&gt; &#x7EC8;&#x7AEF;&#xFF08;Terminal&#xFF09;&#x3002;
+&#x8F93;&#x5165;&#x547D;&#x4EE4;csrutil enable --without debug&#x8FD0;&#x884C;&#x3002;
+&#x91CD;&#x542F;&#x8FDB;&#x5165;&#x7CFB;&#x7EDF;&#x540E;&#xFF0C;&#x7EC8;&#x7AEF;&#x91CC;&#x8F93;&#x5165; csrutil status&#xFF0C;&#x7ED3;&#x679C;&#x4E2D;&#x5982;&#x679C;&#x6709; Debugging Restrictions: disabled &#x5219;&#x8BF4;&#x660E;&#x5173;&#x95ED;&#x6210;&#x529F;&#x3002;</p>
+</blockquote>
+<p>&#x5B8C;&#x5168;&#x5173;&#x95ED; SIP</p>
+<blockquote>
+<p>&#x91CD;&#x542F;Mac&#xFF0C;&#x6309;&#x4F4F;Option&#x952E;&#x8FDB;&#x5165;&#x542F;&#x52A8;&#x76D8;&#x9009;&#x62E9;&#x6A21;&#x5F0F;&#xFF0C;&#x518D;&#x6309;&#x2318; + R&#x8FDB;&#x5165;Recovery&#x6A21;&#x5F0F;&#x3002;
+&#x5B9E;&#x7528;&#x5DE5;&#x5177;&#xFF08;Utilities&#xFF09;-&gt; &#x7EC8;&#x7AEF;&#xFF08;Terminal&#xFF09;&#x3002;
+&#x8F93;&#x5165;&#x547D;&#x4EE4;csrutil disable&#x8FD0;&#x884C;&#x3002;
+&#x91CD;&#x542F;&#x8FDB;&#x5165;&#x7CFB;&#x7EDF;&#x540E;&#xFF0C;&#x7EC8;&#x7AEF;&#x91CC;&#x8F93;&#x5165; csrutil status&#xFF0C;&#x7ED3;&#x679C;&#x4E2D;&#x5982;&#x679C;&#x6709; System Integrity Protection status:disabled. &#x5219;&#x8BF4;&#x660E;&#x5173;&#x95ED;&#x6210;&#x529F;&#x3002;</p>
+</blockquote>
+<h2 id="&#x5B89;&#x88C5;-proxychains-ng">&#x5B89;&#x88C5; Proxychains-ng</h2>
+<p>&#x5B89;&#x88C5;&#x597D; Homebrew &#x540E;&#xFF0C;&#x7EC8;&#x7AEF;&#x4E2D;&#x8F93;&#x5165;</p>
+<pre><code class="lang-bash">brew install proxychains-ng
+</code></pre>
+<h2 id="&#x914D;&#x7F6E;-proxychains-ng">&#x914D;&#x7F6E; proxychains-ng</h2>
+<p>proxychains-ng&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540D;&#x4E3A;proxychains.conf&#x3002;</p>
+<ul>
+<li>&#x901A;&#x8FC7;&#x6E90;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x7684;&#x9ED8;&#x8BA4;&#x4E3A;/etc/proxychains.conf&#x3002;</li>
+<li>Mac&#x4E0B;&#x7528;Homebrew&#x5B89;&#x88C5;&#x7684;&#x9ED8;&#x8BA4;&#x4E3A;/usr/local/etc/proxychains.conf&#x3002;</li>
+</ul>
+<p>proxychains-ng&#x7684;&#x914D;&#x7F6E;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x5C06;&#x4EE3;&#x7406;&#x52A0;&#x5165;[ProxyList]&#x4E2D;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-plain">$ vim proxychains.conf
+
+quiet_mode
+dynamic_chain
+chain_len = 1 #round_robin_chain&#x548C;random_chain&#x4F7F;&#x7528;
+proxy_dns
+remote_dns_subnet 224
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+localnet 127.0.0.0/255.0.0.0
+localnet 10.0.0.0/255.0.0.0
+localnet 172.16.0.0/255.240.0.0
+localnet 192.168.0.0/255.255.0.0
+
+[ProxyList]
+socks5  127.0.0.1 1086
+http    127.0.0.1 1087
+</code></pre>
+<p>proxychains-ng&#x652F;&#x6301;&#x591A;&#x79CD;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;,&#x9ED8;&#x8BA4;&#x662F;&#x9009;&#x62E9; strict_chain&#x3002;</p>
+<ul>
+<li>dynamic_chain &#xFF1A;&#x52A8;&#x6001;&#x6A21;&#x5F0F;,&#x6309;&#x7167;&#x4EE3;&#x7406;&#x5217;&#x8868;&#x987A;&#x5E8F;&#x81EA;&#x52A8;&#x9009;&#x53D6;&#x53EF;&#x7528;&#x4EE3;&#x7406;</li>
+<li>strict_chain &#xFF1A;&#x4E25;&#x683C;&#x6A21;&#x5F0F;,&#x4E25;&#x683C;&#x6309;&#x7167;&#x4EE3;&#x7406;&#x5217;&#x8868;&#x987A;&#x5E8F;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#xFF0C;&#x6240;&#x6709;&#x4EE3;&#x7406;&#x5FC5;&#x987B;&#x53EF;&#x7528;</li>
+<li>round_robin_chain &#xFF1A;&#x8F6E;&#x8BE2;&#x6A21;&#x5F0F;&#xFF0C;&#x81EA;&#x52A8;&#x8DF3;&#x8FC7;&#x4E0D;&#x53EF;&#x7528;&#x4EE3;&#x7406;</li>
+<li>random_chain &#xFF1A;&#x968F;&#x673A;&#x6A21;&#x5F0F;,&#x968F;&#x673A;&#x4F7F;&#x7528;&#x4EE3;&#x7406;</li>
+</ul>
+<h2 id="proxychains-ng-&#x4F7F;&#x7528;">proxychains-ng &#x4F7F;&#x7528;</h2>
+<p>proxychains-ng&#x7528;&#x6CD5;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x4F7F;&#x7528;&#x683C;&#x5F0F;&#x5982;&#x4E0B;:</p>
+<pre><code>proxychains4 &#x7A0B;&#x5E8F; &#x53C2;&#x6570;
+</code></pre><p>proxychains-ng &#x6D4B;&#x8BD5;</p>
+<pre><code>proxychains4 curl ip.cn
+</code></pre><h2 id="proxychains-ng-&#x4F18;&#x5316;">proxychains-ng &#x4F18;&#x5316;</h2>
+<p>alias</p>
+<p>&#x7ED9;proxychains4&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#xFF0C;&#x5728; /.zshrc&#x6216;/.bashrc&#x672B;&#x5C3E;&#x52A0;&#x5165;&#x5982;&#x4E0B;&#x884C;&#xFF1A;</p>
+<pre><code>#   ---------------------------------------
+#   proxychain-ng config
+#   ---------------------------------------
+alias pc=&apos;proxychains4&apos;
+</code></pre><p>&#x4EE5;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x7C7B;&#x4F3C;$ pc curl <a href="http://www.google.com&#x8FD9;&#x6837;&#x8C03;&#x7528;proxychains4&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x8F93;&#x5165;&#x3002;" target="_blank">http://www.google.com&#x8FD9;&#x6837;&#x8C03;&#x7528;proxychains4&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x8F93;&#x5165;&#x3002;</a></p>
+<h2 id="&#x81EA;&#x52A8;&#x8865;&#x5168;">&#x81EA;&#x52A8;&#x8865;&#x5168;</h2>
+<p>&#x4F60;&#x8F93;&#x4E86;&#x5F88;&#x957F;&#x4E00;&#x6BB5;&#x547D;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x7A81;&#x7136;&#x60F3;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x600E;&#x4E48;&#x529E;&#xFF1F;</p>
+<p>iTerm&#x4E2D;&#x524D;&#x7F00;&#x8865;&#x5168;
+&#x5728; iTerm -&gt; Preferences -&gt; Profiles -&gt; Keys &#x4E2D;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x952E;&#xFF0C;&#x4F8B;&#x5982; &#x2325; + p &#xFF0C;Action &#x9009;&#x62E9; Send Hex Code&#xFF0C;&#x952E;&#x503C;&#x4E3A; 0x1 0x70 0x63 0x20 0xd&#xFF0C;&#x4FDD;&#x5B58;&#x751F;&#x6548;&#x3002;</p>
+<p>&#x4EE5;&#x540E;&#x547D;&#x4EE4;&#x8981;&#x4EE3;&#x7406;&#x5C31;&#x76F4;&#x63A5;&#x6572;&#x547D;&#x4EE4;&#xFF0C;&#x7136;&#x540E; &#x2325; + p &#x5373;&#x53EF;&#xFF0C;&#x8FD9;&#x6837;&#x547D;&#x4EE4;&#x8865;&#x5168;&#x4E5F;&#x80FD;&#x4FDD;&#x7559;&#x4E86;&#x3002;</p>
+<p>&#x9644;&#x4E0A; Hex Code &#x5BF9;&#x5E94;&#x8868;&#xFF0C;&#x83B7;&#x53D6;&#x5DE5;&#x5177;&#x4E3A;keycodes(<a href="http://manytricks.com/keycodes/" target="_blank">http://manytricks.com/keycodes/</a>)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Hex Code</th>
+<th style="text-align:right">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0x1</td>
+<td style="text-align:right">&#x2303; + a</td>
+</tr>
+<tr>
+<td style="text-align:left">0x70</td>
+<td style="text-align:right">p</td>
+</tr>
+<tr>
+<td style="text-align:left">0x63</td>
+<td style="text-align:right">c</td>
+</tr>
+<tr>
+<td style="text-align:left">0x20</td>
+<td style="text-align:right">[space]</td>
+</tr>
+<tr>
+<td style="text-align:left">0xd</td>
+<td style="text-align:right">&#x21A9;&#xFE0E;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="oh-my-zsh&#x4E2D;&#x524D;&#x7F00;&#x8865;&#x5168;">oh-my-zsh&#x4E2D;&#x524D;&#x7F00;&#x8865;&#x5168;</h2>
+<pre><code>git clone git@github.com:six-ddc/zsh-proxychains-ng.git ~/.oh-my-zsh/custom/plugins/zsh-proxychains-ng
+echo &quot;plugins+=(zsh-proxychains-ng)&quot; &gt;&gt; ~/.zshrc
+</code></pre><p>&#x4F7F;&#x7528;&#x65F6;&#x6309;[ESC]-P &#xFF0C;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;(&#x53BB;&#x9664;)proxychains4 -q&#x547D;&#x4EE4;&#x524D;&#x7F00;&#xFF0C;&#x652F;&#x6301; emacs &#x548C; vi mode &#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x4EE3;&#x7406;SHELL&#x5B9E;&#x73B0;&#x5168;&#x5C40;&#x4EE3;&#x7406;
+&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x662F;&#x89C9;&#x5F97;&#x6BCF;&#x6B21;&#x4F7F;&#x7528;&#x90FD;&#x8981;&#x8F93;&#x5165;proxychains4&#x6216;&#x5176;&#x522B;&#x540D;&#xFF0C;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#x3002;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;proxychains-ng&#x4EE3;&#x7406;&#x4E00;&#x4E2A;shell&#xFF0C;&#x5728;shell&#x4E2D;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x4E86;&#x3002;</p>
+<p>&#x65B9;&#x6CD5;&#x4E00;</p>
+<p>&#x624B;&#x52A8;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">export</span> PROXYCHAINS_CONF_FILE=/usr/<span class="hljs-built_in">local</span>/Cellar/proxychains-ng/4.11/etc/proxychains.conf
+$ <span class="hljs-built_in">export</span> DYLD_INSERT_LIBRARIES=/usr/<span class="hljs-built_in">local</span>/Cellar/proxychains-ng/4.11/lib/libproxychains4.dylib
+$ <span class="hljs-built_in">export</span> DYLD_FORCE_FLAT_NAMESPACE=1
+</code></pre>
+<p>&#x65B9;&#x6CD5;&#x4E8C;</p>
+<p>proxychains-ng&#x76F4;&#x63A5;&#x8C03;&#x7528;SHELL</p>
+<p>BASH</p>
+<pre><code class="lang-bash">$ proxychains4  -q /bin/bash
+</code></pre>
+<p>ZSH</p>
+<pre><code class="lang-bash">$ proxychains4  -q /bin/zsh
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5728;&#x5F53;&#x524D; shell &#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x6240;&#x6709;&#x7A0B;&#x5E8F;&#x7684;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x90FD;&#x4F1A;&#x8D70;&#x4EE3;&#x7406;&#x4E86;&#x3002;&#x53EF;&#x4EE5;&#x628A;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x52A0;&#x5165;&#x5230;&#x7528;&#x6237;&#x76EE;&#x5F55;&#x7684;.bashrc&#x6216;&#x8005;.zshrc&#x4E2D;,&#x7528;&#x6237;&#x767B;&#x5F55;&#x540E;&#x81EA;&#x52A8;&#x4EE3;&#x7406;&#x4E00;&#x4E2A;shell,&#x8FD9;&#x5C31;&#x7C7B;&#x4F3C;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x4EE3;&#x7406;&#x4E86;&#x3002;&#x5728;&#x8FD9;&#x4E2A;SHELL&#x4E0B;&#x7684;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x4E86;&#x3002;</p>
 
                                 
                                 </section>
@@ -1026,12 +924,12 @@ ip route add local default dev lo table 100
 
             
                 
-                <a href="../windows-record/windows-record.html" class="navigation navigation-prev " aria-label="Previous page: windows-record">
+                <a href="../IntelliJ_IDEA-record/IntelliJ_IDEA-record.html" class="navigation navigation-prev " aria-label="Previous page: IntelliJ_IDEA-record">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../mongodb-record/mongodb-record.html" class="navigation navigation-next " aria-label="Next page: mongodb-record">
+                <a href="../Linux-commands-record/Linux-commands-record.html" class="navigation navigation-next " aria-label="Next page: Linux-commands-record">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1042,7 +940,7 @@ ip route add local default dev lo table 100
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"openwrt-record","level":"1.1.29","depth":2,"next":{"title":"mongodb-record","level":"1.1.30","depth":2,"path":"records/mongodb-record/mongodb-record.md","ref":"records/mongodb-record/mongodb-record.md","articles":[]},"previous":{"title":"windows-record","level":"1.1.28","depth":2,"path":"records/windows-record/windows-record.md","ref":"records/windows-record/windows-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/openwrt-record/openwrt-record.md","mtime":"2020-03-18T16:05:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-23T14:30:02.784Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"proxychains-ng-record","level":"1.1.44","depth":2,"next":{"title":"Linux-commands-record","level":"1.1.45","depth":2,"path":"records/Linux-commands-record/Linux-commands-record.md","ref":"records/Linux-commands-record/Linux-commands-record.md","articles":[]},"previous":{"title":"IntelliJ_IDEA-record","level":"1.1.43","depth":2,"path":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","ref":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/proxychains-ng-record/proxychains-ng-record.md","mtime":"2020-06-23T13:37:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-23T14:30:02.784Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
