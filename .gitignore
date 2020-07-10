@@ -18,6 +18,7 @@
 
 # 表示仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
 /TODO
+/todo
 
 # 表示忽略 build/目录下的所有文件，过滤整个build文件夹；
 build/
