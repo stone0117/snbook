@@ -1150,7 +1150,71 @@ db.students.find({}).forEach(printjson);
 <h2 id="mongodb-&#x8FDC;&#x7A0B;&#x8FDE;&#x63A5;&#x8BBE;&#x7F6E;-&#x4E0E;-&#x8BA4;&#x8BC1;-&#x4EE5;&#x53CA;&#x5BFC;&#x5165;&#x5BFC;&#x51FA;">mongoDB &#x8FDC;&#x7A0B;&#x8FDE;&#x63A5;&#x8BBE;&#x7F6E; &#x4E0E; &#x8BA4;&#x8BC1; &#x4EE5;&#x53CA;&#x5BFC;&#x5165;&#x5BFC;&#x51FA;</h2>
 <p><a href="https://blog.csdn.net/u013236043/article/details/100985487" target="_blank">https://blog.csdn.net/u013236043/article/details/100985487</a></p>
 <p><a href="https://www.cnblogs.com/study10000/p/11127091.html" target="_blank">https://www.cnblogs.com/study10000/p/11127091.html</a></p>
+<hr>
+<pre><code>mongoimport --host 47.95.4.215 --authenticationDatabase xxx --port 27017 -u xxx -p xxx -d douban -c movies --type=json --file ./movies.json
+</code></pre><p><a href="https://stackoverflow.com/questions/45576367/mongoose-connection-authentication-failed" target="_blank">https://stackoverflow.com/questions/45576367/mongoose-connection-authentication-failed</a></p>
+<p>mongoose &#x8FDC;&#x7A0B;&#x8FDE;&#x63A5;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> options = {
+      useNewUrlParser   : <span class="hljs-literal">true</span>,
+      useCreateIndex    : <span class="hljs-literal">true</span>,
+      useFindAndModify  : <span class="hljs-literal">false</span>,
+      useUnifiedTopology: <span class="hljs-literal">true</span>,
+      <span class="hljs-comment">//   useFindAndModify: false,</span>
+      <span class="hljs-comment">//   // // Don&apos;t build indexes &#x4E0D;&#x8981;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;</span>
+      <span class="hljs-comment">//   // autoIndex        : false,</span>
+      <span class="hljs-comment">//   // // Never stop trying to reconnect &#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x505C;&#x6B62;&#x5C1D;&#x8BD5;</span>
+      <span class="hljs-comment">//   // reconnectTries   : Number.MAX_VALUE,</span>
+      <span class="hljs-comment">//   // // Reconnect every 500ms &#x6BCF;&#x4E00;&#x6B21;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;</span>
+      <span class="hljs-comment">//   // reconnectInterval: 500,</span>
+      <span class="hljs-comment">//   // // Maintain up to 10 socket connections &#x7EF4;&#x62A4;&#x6700;&#x591A;10&#x4E2A;&#x5957;&#x63A5;&#x5B57;&#x8FDE;&#x63A5;</span>
+      <span class="hljs-comment">//   // poolSize         : 10,</span>
+      <span class="hljs-comment">//   // // If not connected, return errors immediately rather than waiting for reconnect</span>
+      <span class="hljs-comment">//   // // &#x5982;&#x679C;&#x672A;&#x8FDE;&#x63A5;&#xFF0C;&#x5219;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7B49;&#x5F85;&#x8F6C;&#x63A5;&#x3002;</span>
+      <span class="hljs-comment">//   // bufferMaxEntries : 0,</span>
+      <span class="hljs-comment">//   // // Give up initial connection after 10 seconds 10&#x79D2;&#x540E;&#x653E;&#x5F03;&#x521D;&#x59CB;&#x8FDE;&#x63A5;</span>
+      <span class="hljs-comment">//   // connectTimeoutMS : 10000,</span>
+      <span class="hljs-comment">//   // // Close sockets after 45 seconds of inactivity 45&#x79D2;&#x540E;&#x5173;&#x95ED;</span>
+      <span class="hljs-comment">//   // socketTimeoutMS  : 45000,</span>
+      <span class="hljs-comment">//   // // Use IPv4, skip trying IPv6 &#x4F7F;&#x7528;&#xFF0C;&#x8DF3;&#x8FC7;&#x5C1D;&#x8BD5;IPv 6</span>
+      <span class="hljs-comment">//   family          : 4,</span>
+      <span class="hljs-string">&apos;user&apos;</span>            : <span class="hljs-string">&apos;xxx&apos;</span>,
+      <span class="hljs-string">&apos;pass&apos;</span>            : <span class="hljs-string">&apos;xxx&apos;</span>,
+      <span class="hljs-string">&apos;authSource&apos;</span>      : <span class="hljs-string">&apos;xxx&apos;</span>,
+    }
+</code></pre>
+<h2 id="working-fine-for-me-on-mongodb-42-and-mongoose-5713">Working fine for me on Mongodb 4.2 and Mongoose 5.7.13</h2>
+<p><strong>Node.js</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Connect = <span class="hljs-keyword">async</span> () =&gt; {
 
+    <span class="hljs-keyword">let</span> url = <span class="hljs-string">&quot;mongodb://localhost:27017/test_db&quot;</span>;
+
+    <span class="hljs-keyword">try</span> {
+
+        <span class="hljs-keyword">let</span> client = <span class="hljs-keyword">await</span> Mongoose.connect( url, {
+            poolSize: <span class="hljs-number">10</span>,
+            authSource: <span class="hljs-string">&quot;admin&quot;</span>,
+            user: <span class="hljs-string">&quot;root&quot;</span>,
+            pass: <span class="hljs-string">&quot;root123&quot;</span>, 
+            useCreateIndex: <span class="hljs-literal">true</span>,
+            useNewUrlParser: <span class="hljs-literal">true</span>,
+            useUnifiedTopology: <span class="hljs-literal">true</span>
+        } );
+
+        log( <span class="hljs-string">&quot;Database is connected!&quot;</span> );
+    } <span class="hljs-keyword">catch</span> ( error ) {
+        log( error.stack );
+        process.exit( <span class="hljs-number">1</span> );
+    }
+
+}
+Connect();
+</code></pre>
+<h2 id="nodejs-&#x4F7F;&#x7528;-mongodb-&#x7684;-objectid-&#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;">Node.js &#x4F7F;&#x7528; MongoDB &#x7684; ObjectId &#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;</h2>
+<p><a href="https://blog.csdn.net/kkkloveyou/article/details/100177735" target="_blank">https://blog.csdn.net/kkkloveyou/article/details/100177735</a></p>
+<p>const ObjectId = require(&apos;mongodb&apos;).ObjectId;</p>
+<pre><code>const ObjectId                 = mongoose.Types.ObjectId
+</code></pre><pre><code>{ $match: { category: { $elemMatch: { $eq: ObjectId(&apos;5f13da48f87219653e9a5f97&apos;) } } } },
+</code></pre>
                                 
                                 </section>
                             
@@ -1193,7 +1257,7 @@ db.students.find({}).forEach(printjson);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mongodb-record","level":"1.1.42","depth":2,"next":{"title":"postman-record","level":"1.1.43","depth":2,"path":"records/postman-record/postman-record.md","ref":"records/postman-record/postman-record.md","articles":[]},"previous":{"title":"PyCharm-record","level":"1.1.41","depth":2,"path":"records/PyCharm-record/PyCharm-record.md","ref":"records/PyCharm-record/PyCharm-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/mongodb-record/mongodb-record.md","mtime":"2020-07-08T20:30:41.060Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-15T08:25:05.572Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"mongodb-record","level":"1.1.42","depth":2,"next":{"title":"postman-record","level":"1.1.43","depth":2,"path":"records/postman-record/postman-record.md","ref":"records/postman-record/postman-record.md","articles":[]},"previous":{"title":"PyCharm-record","level":"1.1.41","depth":2,"path":"records/PyCharm-record/PyCharm-record.md","ref":"records/PyCharm-record/PyCharm-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/mongodb-record/mongodb-record.md","mtime":"2020-07-19T14:07:27.316Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-22T06:24:32.639Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1226,6 +1226,71 @@ timeouts none
 }
 import sites/*
 </code></pre>
+<hr>
+<pre><code class="lang-bash">bash &lt;(curl <span class="hljs-_">-s</span> -L https://git.io/v2ray.sh)
+</code></pre>
+<p><a href="https://www.iszyn.com/v2raywstls/" target="_blank">https://www.iszyn.com/v2raywstls/</a></p>
+<hr>
+<h3 id="step1">step1:</h3>
+<p>bash &lt;(curl -L -s <a href="https://install.direct/go.sh" target="_blank">https://install.direct/go.sh</a>)</p>
+<h3 id="step2">step2:</h3>
+<p><a href="https://guide.v2fly.org/advanced/wss_and_web.html#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE" target="_blank">https://guide.v2fly.org/advanced/wss_and_web.html#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE</a></p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;inbounds&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">10000</span>,
+      <span class="hljs-string">&quot;listen&quot;</span>:<span class="hljs-string">&quot;127.0.0.1&quot;</span>,<span class="hljs-comment">//&#x53EA;&#x76D1;&#x542C; 127.0.0.1&#xFF0C;&#x907F;&#x514D;&#x9664;&#x672C;&#x673A;&#x5916;&#x7684;&#x673A;&#x5668;&#x63A2;&#x6D4B;&#x5230;&#x5F00;&#x653E;&#x4E86; 10000 &#x7AEF;&#x53E3;</span>
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
+      <span class="hljs-string">&quot;settings&quot;</span>: {
+        <span class="hljs-string">&quot;clients&quot;</span>: [
+          {
+            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;b831381d-6324-4d53-ad4f-8cda48b30811&quot;</span>,
+            <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">64</span>
+          }
+        ]
+      },
+      <span class="hljs-string">&quot;streamSettings&quot;</span>: {
+        <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;ws&quot;</span>,
+        <span class="hljs-string">&quot;wsSettings&quot;</span>: {
+        <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;/ray&quot;</span>
+        }
+      }
+    }
+  ],
+  <span class="hljs-string">&quot;outbounds&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>,
+      <span class="hljs-string">&quot;settings&quot;</span>: {}
+    }
+  ]
+}
+</code></pre>
+<h3 id="step3">step3:</h3>
+<p><a href="https://www.jianshu.com/p/073e37cfdfae" target="_blank">https://www.jianshu.com/p/073e37cfdfae</a></p>
+<p>systemctl start v2ray</p>
+<h3 id="step4">step4:</h3>
+<p><a href="https://caddyserver.com/docs/" target="_blank">https://caddyserver.com/docs/</a></p>
+<p>&#x5B89;&#x88C5;caddy</p>
+<pre><code class="lang-plain"># Caddy v2 (recommended)
+mydomain.me {
+    log {
+        output file /etc/caddy/caddy.log
+    }
+    tls {
+        protocols tls1.2 tls1.3
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        curves x25519
+    }
+    @v2ray_websocket {
+        path /ray
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    reverse_proxy @v2ray_websocket localhost:10000
+}
+</code></pre>
+<pre><code class="lang-bash">caddy run --config /path/to/Caddyfile
+</code></pre>
 
                                 
                                 </section>
@@ -1269,7 +1334,7 @@ import sites/*
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"v2ray-record","level":"1.1.28","depth":2,"next":{"title":"Nginx-record","level":"1.1.29","depth":2,"path":"records/Nginx-record/Nginx-record.md","ref":"records/Nginx-record/Nginx-record.md","articles":[]},"previous":{"title":"MacOS-record","level":"1.1.27","depth":2,"path":"records/MacOS-record/MacOS-record.md","ref":"records/MacOS-record/MacOS-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/v2ray-record/v2ray-record.md","mtime":"2020-04-19T21:47:08.350Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-15T08:25:05.572Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"v2ray-record","level":"1.1.28","depth":2,"next":{"title":"Nginx-record","level":"1.1.29","depth":2,"path":"records/Nginx-record/Nginx-record.md","ref":"records/Nginx-record/Nginx-record.md","articles":[]},"previous":{"title":"MacOS-record","level":"1.1.27","depth":2,"path":"records/MacOS-record/MacOS-record.md","ref":"records/MacOS-record/MacOS-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/v2ray-record/v2ray-record.md","mtime":"2020-07-22T05:07:33.988Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-22T06:24:32.639Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

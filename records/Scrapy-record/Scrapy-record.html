@@ -1082,6 +1082,50 @@ You can start your first spider with:
         open(str(self.fname)+ <span class="hljs-string">&apos;.txt&apos;</span>, <span class="hljs-string">&apos;a&apos;</span>).write(<span class="hljs-string">&apos;\n&apos;</span>)
         self.fname = self.fname + <span class="hljs-number">1</span>
 </code></pre>
+<hr>
+<h1 id="how-to-give-url-to-scrapy-for-crawling"><a href="https://stackoverflow.com/questions/9681114/how-to-give-url-to-scrapy-for-crawling" target="_blank">How to give URL to scrapy for crawling?</a></h1>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MySpider</span><span class="hljs-params">(BaseSpider)</span>:</span>
+
+    name = <span class="hljs-string">&apos;my_spider&apos;</span>    
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, *args, **kwargs)</span>:</span> 
+      super(MySpider, self).__init__(*args, **kwargs) 
+
+      self.start_urls = [kwargs.get(<span class="hljs-string">&apos;start_url&apos;</span>)]
+</code></pre>
+<h2 id="scrapy&#x6846;&#x67B6;get-&#x3001;getall-&#x3001;extract-&#x3001;extractfirst&#x7684;&#x533A;&#x522B;"><a href="https://segmentfault.com/a/1190000018559454" target="_blank">Scrapy&#x6846;&#x67B6;get() &#x3001;getall() &#x3001;extract() &#x3001;extract_first()&#x7684;&#x533A;&#x522B;</a></h2>
+<p><strong>&#x5F00;&#x7BC7;&#x660E;&#x4E49;&#xFF1A;get() &#x3001;getall() &#x662F;&#x65B0;&#x7248;&#x672C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;extract() &#x3001;extract_first()&#x662F;&#x65E7;&#x7248;&#x672C;&#x7684;&#x65B9;&#x6CD5;&#x3002;</strong></p>
+<p><strong>&#x524D;&#x8005;&#x66F4;&#x597D;&#x7528;&#xFF0C;&#x53D6;&#x4E0D;&#x5230;&#x5C31;&#x8FD4;&#x56DE;None&#xFF0C;&#x540E;&#x8005;&#x53D6;&#x4E0D;&#x5230;&#x5C31;raise&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</strong></p>
+<p><strong>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x65B0;&#x65B9;&#x6CD5;&#xFF0C;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D;&#x4E5F;&#x90FD;&#x6539;&#x7528;&#x524D;&#x8005;&#x4E86;</strong></p>
+<hr>
+<p><a href="https://blog.csdn.net/weixin_30414155/article/details/95519362" target="_blank"><em>XPATH</em>&#x4E4B;<em>normalize-space</em>(.)&#x548C;<em>normalize-space</em>(text())&#x533A;&#x522B;</a></p>
+<h2 id="scrapy&#x4E2D;&#x5982;&#x4F55;&#x5411;spider&#x4F20;&#x5165;&#x53C2;&#x6570;">Scrapy&#x4E2D;&#x5982;&#x4F55;&#x5411;Spider&#x4F20;&#x5165;&#x53C2;&#x6570;</h2>
+<p><a href="https://blog.csdn.net/pengjunlee/article/details/90604736" target="_blank">https://blog.csdn.net/pengjunlee/article/details/90604736</a></p>
+<pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+<span class="hljs-keyword">import</span> scrapy
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TiebaSpider</span><span class="hljs-params">(scrapy.Spider)</span>:</span>
+    name = <span class="hljs-string">&apos;tieba&apos;</span>  <span class="hljs-comment"># &#x8D34;&#x5427;&#x722C;&#x866B;</span>
+    allowed_domains = [<span class="hljs-string">&apos;tieba.baidu.com&apos;</span>]  <span class="hljs-comment"># &#x5141;&#x8BB8;&#x722C;&#x53D6;&#x7684;&#x8303;&#x56F4;</span>
+    start_urls = []  <span class="hljs-comment"># &#x722C;&#x866B;&#x8D77;&#x59CB;&#x5730;&#x5740;</span>
+
+    <span class="hljs-comment"># &#x547D;&#x4EE4;&#x683C;&#x5F0F;&#xFF1A; scrapy crawl tieba -a tiebaName=&#x653E;&#x7F6E;&#x5947;&#x5175; -a pn=250</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, tiebaName=None, pn=None, *args, **kwargs)</span>:</span>
+        print(<span class="hljs-string">&apos;&lt; &#x8D34;&#x5427;&#x540D;&#x79F0; &gt;&#xFF1A; &apos;</span> + tiebaName)
+        super(eval(self.__class__.__name__), self).__init__(*args, **kwargs)
+        self.start_urls = [<span class="hljs-string">&apos;https://tieba.baidu.com/f?kw=%s&amp;ie=utf-8&amp;pn=%s&apos;</span> % (tiebaName,pn)]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parse</span><span class="hljs-params">(self, response)</span>:</span>
+        print(response.request.url) <span class="hljs-comment"># &#x7ED3;&#x679C;&#xFF1A;https://tieba.baidu.com/f?kw=%E6%94%BE%E7%BD%AE%E5%A5%87%E5%85%B5&amp;ie=utf-8&amp;pn=250</span>
+</code></pre>
+<h2 id="&#x522B;&#x518D;&#x6EE5;&#x7528;scrapy-crawlspider&#x4E2D;&#x7684;followtrue">&#x522B;&#x518D;&#x6EE5;&#x7528;scrapy CrawlSpider&#x4E2D;&#x7684;follow=True</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/25650763" target="_blank">https://zhuanlan.zhihu.com/p/25650763</a></p>
+<p>&#x5176;&#x5B9E;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#x8FD8;&#x89E3;&#x91CA;&#x4E86;&#x6587;&#x6863;&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x5173;&#x4E8E;rules&#x987A;&#x5E8F;&#x7684;&#x95EE;&#x9898;:</p>
+<blockquote>
+<p>Each Rule defines a certain behaviour for crawling the site. Rules objects are described below. If multiple rules match the same link, the first one will be used, according to the order they&#x2019;re defined in this attribute.</p>
+</blockquote>
+<p>&#x591A;&#x4E2A;Rule&#x5339;&#x914D;&#x540C;&#x4E00;&#x4E2A;&#x94FE;&#x63A5;, &#x53EA;&#x6709;&#x7B2C;&#x4E00;&#x4E2A;Rule&#x4F1A;&#x88AB;&#x4F7F;&#x7528;, &#x7528;&#x6E90;&#x4EE3;&#x7801;&#x6765;&#x89E3;&#x91CA;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5339;&#x914D;&#x5230;&#x4E86;&#x94FE;&#x63A5;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x5230;set&#x4E2D;&#x53BB;&#x91CD;&#x4E86;, &#x6240;&#x4EE5;&#x4E4B;&#x540E;&#x7684;&#x5339;&#x914D;&#x90FD;&#x65E0;&#x6CD5;&#x6DFB;&#x52A0;. &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528;rules&#x65F6;, &#x5982;&#x679C;&#x4E24;&#x4E2A;Rule&#x6709;&#x4EA4;&#x96C6;, &#x8981;&#x6CE8;&#x610F;&#x987A;&#x5E8F;.</p>
+<p><img src="v2-9615ce97966e51ab87c131dd89f59269_720w.jpg" alt="img"></p>
 
                                 
                                 </section>
@@ -1125,7 +1169,7 @@ You can start your first spider with:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Scrapy-record","level":"1.1.34","depth":2,"next":{"title":"Alfred-record","level":"1.1.35","depth":2,"path":"records/Alfred-record/Alfred-record.md","ref":"records/Alfred-record/Alfred-record.md","articles":[]},"previous":{"title":"trojan-record","level":"1.1.33","depth":2,"path":"records/trojan-record/trojan-record.md","ref":"records/trojan-record/trojan-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Scrapy-record/Scrapy-record.md","mtime":"2020-07-04T11:57:25.096Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-15T08:25:05.572Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Scrapy-record","level":"1.1.34","depth":2,"next":{"title":"Alfred-record","level":"1.1.35","depth":2,"path":"records/Alfred-record/Alfred-record.md","ref":"records/Alfred-record/Alfred-record.md","articles":[]},"previous":{"title":"trojan-record","level":"1.1.33","depth":2,"path":"records/trojan-record/trojan-record.md","ref":"records/trojan-record/trojan-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Scrapy-record/Scrapy-record.md","mtime":"2020-07-20T12:05:34.700Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-22T06:24:32.639Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
