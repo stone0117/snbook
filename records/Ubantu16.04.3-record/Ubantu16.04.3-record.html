@@ -405,9 +405,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.23" data-path="../Maven-record/Maven-record.md">
+        <li class="chapter " data-level="1.1.23" data-path="../Maven-record/Maven-record.html">
             
-                <span>
+                <a href="../Maven-record/Maven-record.html">
             
                     
                     Maven-record
@@ -1445,10 +1445,135 @@ sudo git <span class="hljs-built_in">clone</span> https://github.com/adobe-fonts
 sudo <span class="hljs-built_in">fc</span>-cache <span class="hljs-_">-f</span> -v /usr/share/fonts/adobe-fonts/<span class="hljs-built_in">source</span>-code-pro
 </code></pre>
 <hr>
-<h2 id="please-check-that-your-locale-settings&#x95EE;&#x9898;">Please check that your locale settings&#x95EE;&#x9898;</h2>
-<p><a href="https://www.jianshu.com/p/32544edd7362" target="_blank">https://www.jianshu.com/p/32544edd7362</a></p>
-<h2 id="&#x89E3;&#x51B3;-manpath-cant-set-the-locale-make-sure-lc-and-lang-are-correct">&#x89E3;&#x51B3; &quot;manpath: can&apos;t set the locale; make sure $LC_* and $LANG are correct&quot;</h2>
-<p><a href="https://gist.github.com/seafooler/7ab1b6b5676663b884318d3ba76513d9" target="_blank">https://gist.github.com/seafooler/7ab1b6b5676663b884318d3ba76513d9</a></p>
+<h2 id="ubantu-&#x5B89;&#x88C5;-&#x7EC8;&#x7AEF;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;">ubantu &#x5B89;&#x88C5; &#x7EC8;&#x7AEF;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;</h2>
+<p><a href="https://blog.mrwang.pw/2018/12/13/Linux%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8ssr/" target="_blank">https://blog.mrwang.pw/2018/12/13/Linux%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8ssr/</a></p>
+<p>&#x4E5F;&#x8BB8;&#x662F;&#x4F7F;&#x7528;Linux&#x7684;&#x5927;&#x4F6C;&#x90FD;&#x4E0D;&#x5C51;&#x4E8E;&#x5199;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#x7684;&#x6559;&#x7A0B;&#x5427;&#xFF0C;&#x6240;&#x4EE5;&#x5173;&#x4E8E;&#x5982;&#x4F55;&#x5728;Linux&#x4E0A;&#x5B89;&#x88C5;&#x4F7F;&#x7528;ssr&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6559;&#x7A0B;&#x6BD4;&#x8F83;&#x5C11;&#x53C8;&#x6BD4;&#x8F83;&#x6A21;&#x7CCA;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x5C31;&#x6765;&#x5199;&#x8FD9;&#x4E2A;&#x6559;&#x7A0B;&#x5427;&#xFF0C;&#x540C;&#x65F6;&#x56E0;&#x4E3A;Linux&#x514B;&#x9686;GitHub&#x7684;&#x4ED3;&#x5E93;&#x5947;&#x6162;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x8D85;&#x65F6;&#x7684;&#x60C5;&#x51B5;&#xFF08;&#x5728;&#x6B64;&#x611F;&#x8C22;GFW&#xFF09;&#xFF0C;&#x6587;&#x4E2D;&#x53CA;&#x811A;&#x672C;&#x7684;Git&#x4ED3;&#x5E93;&#x5747;&#x4F4D;&#x4E8E;&#x6211;&#x81EA;&#x5DF1;&#x642D;&#x5EFA;&#x7684;gogs&#x3002;</p>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<p>&#x9996;&#x5148;&#x786E;&#x8BA4;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x81EA;&#x5DF1;&#x5B89;&#x88C5;&#x4E86;Git&#x3002;</p>
+<p><strong>ubuntu</strong></p>
+<pre><code class="lang-bash">sudo apt-get install git
+</code></pre>
+<p><strong>Centos</strong></p>
+<pre><code class="lang-bash">sudo yum install git
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;&#x5177;&#x6709;&#x5199;&#x6743;&#x9650;&#x7684;&#x76EE;&#x5F55;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x83B7;&#x53D6;&#x5230;ssr&#x811A;&#x672C;&#x4ED3;&#x5E93;</p>
+<pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> http://git.mrwang.pw/Reed/Linux_ssr_script.git
+</code></pre>
+<p>&#x8FDB;&#x5165;&#x521A;&#x521A;&#x514B;&#x9686;&#x7684;&#x4ED3;&#x5E93;&#x76EE;&#x5F55;&#x5E76;&#x8D4B;&#x4E88;ssr&#x811A;&#x672C;&#x6267;&#x884C;&#x6743;&#x9650;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> Linux_ssr_script &amp;&amp; chmod +x ./ssr
+</code></pre>
+<p>&#x7136;&#x540E;&#x5C06;&#x811A;&#x672C;&#x653E;&#x5165;&#x53EF;&#x6267;&#x884C;&#x811A;&#x672C;&#x7684;&#x76EE;&#x5F55;</p>
+<pre><code class="lang-bash">sudo mv ./ssr /usr/<span class="hljs-built_in">local</span>/sbin/
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x811A;&#x672C;&#x7684;&#x5B89;&#x88C5;</p>
+<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<p>&#x8F93;&#x5165;ssr&#xFF0C;&#x4FBF;&#x4F1A;&#x6709;&#x5982;&#x4E0B;&#x7684;&#x63D0;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-bash">ShadowSocksR python client tool
+<span class="hljs-keyword">if</span> you have not installed ssr, run `ssr install` first
+Usage:
+     ssr <span class="hljs-built_in">help</span> Install/Uninstall
+     ssr install      install shadowsocksr client
+     ssr uninstall    uninstall shadowsocksr client
+
+ Config and Subscribe
+     ssr update       update subscription from http://ss.pythonic.life
+     ssr config       edit config.json
+     ssr xclip        paste configs from clipboard to config.json
+
+ Start/Stop/Restart
+     ssr start        start the shadowsocks service
+     ssr stop         stop the shadowsocks service
+     ssr restart      restart the shadowsocks service
+
+ Testing and Maintenance
+     ssr <span class="hljs-built_in">test</span> get ip from cip.cc using socks5 proxy
+     ssr <span class="hljs-built_in">log</span>          cat the <span class="hljs-built_in">log</span> of shadowsocks
+     ssr shell        <span class="hljs-built_in">cd</span> into ssr installation dir
+     ssr clean        clean ssr configuration backups
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x9996;&#x5148;&#x6267;&#x884C;</p>
+<pre><code class="lang-bash">ssr install
+</code></pre>
+<p>&#x811A;&#x672C;&#x5B83;&#x4F1A;&#x4E0B;&#x8F7D;ssr&#x5BA2;&#x6237;&#x7AEF;&#x5E76;&#x79FB;&#x52A8;&#x5230;&#x5408;&#x9002;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6765;&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-bash">ssr config
+</code></pre>
+<p>&#x5728;&#x91CC;&#x9762;&#x8F93;&#x5165;&#x4F60;&#x7684;&#x8282;&#x70B9;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x4FDD;&#x5B58;&#x3002;</p>
+<p><strong>&#x542F;&#x52A8;</strong>
+&#x73B0;&#x5728;&#xFF0C;&#x6765;&#x542F;&#x52A8;ssr&#x8FDB;&#x884C;&#x54F2;&#x5B66;&#x4E0A;&#x7F51;&#x5427;&#xFF01;</p>
+<pre><code class="lang-bash">ssr start
+</code></pre>
+<p><strong>&#x5173;&#x95ED;</strong>
+&#x5173;&#x95ED;ssr&#x53EF;&#x4EE5;&#x8F93;&#x5165;</p>
+<pre><code class="lang-bash">ssr stop
+</code></pre>
+<h3 id="&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;">&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;</h3>
+<p><strong>&#x63D0;&#x793A;&#x5B89;&#x88C5;curl</strong></p>
+<pre><code class="lang-bash">sudo apt install curl
+<span class="hljs-comment">#&#x5DF2;&#x7ECF;&#x63D0;&#x793A;&#x5F88;&#x660E;&#x786E;&#x4E86;&#xFF0C;sudo apt install curl</span>
+<span class="hljs-comment">#&#x5148;&#x66F4;&#x65B0;&#x4E00;&#x4E0B;</span>
+
+sudo apt-get update
+sudo apt install curl
+</code></pre>
+<p><strong>&#x5B89;&#x88C5;ProxyChains4</strong></p>
+<ol>
+<li>&#x7B80;&#x4ECB;</li>
+</ol>
+<blockquote>
+<p>ProxyChains4 &#x662F;linux&#x5E73;&#x53F0;&#x7684;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x5207;&#x6362;&#x8F6F;&#x4EF6;&#x3002;&#x6700;&#x8FD1;&#x5728;ubuntu &#x4E0A;&#x4F7F;&#x7528;ss &#x8FDB;&#x884C;&#x4E0A;&#x7F51;&#xFF0C;&#x6BCF;&#x6B21;&#x4EE3;&#x7406;&#x7684;&#x5207;&#x6362;&#x90FD;&#x662F;&#x975E;&#x5E38;&#x9EBB;&#x70E6;&#x3002;
+ProxyChains4 &#x80FD;&#x5F88;&#x597D;&#x7684;&#x89E3;&#x51B3;socks&#x4EE3;&#x7406;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;&#x95EE;&#x9898;&#x3002;</p>
+</blockquote>
+<ol>
+<li>&#x5B89;&#x88C5;</li>
+</ol>
+<pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> https://github.com/rofl0r/proxychains-ng.git
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> proxychains-ng
+
+<span class="hljs-comment">#&#x6B64;&#x5904;&#x7684;prefix&#x8DEF;&#x5F84;&#x4E00;&#x5B9A;&#x662F;/usr &#x5982;&#x679C;&#x6362;&#x6210;&#x5176;&#x4ED6;&#x4F1A;&#x51FA;&#x73B0;couldnt locate </span>
+./configure --prefix=/usr --sysconfdir=/etc libproxychains4.so
+
+make <span class="hljs-comment">#&#x9700;&#x8981;gcc&#x73AF;&#x5883;</span>
+sudo make install
+sudo make install-config
+</code></pre>
+<ol>
+<li>&#x914D;&#x7F6E;</li>
+</ol>
+<pre><code class="lang-bash">sudo vi /etc/proxychains.conf
+
+[ProxyList]
+<span class="hljs-comment"># add proxy here ...</span>
+<span class="hljs-comment"># meanwile</span>
+<span class="hljs-comment"># defaults set to &quot;tor&quot;</span>
+socks5     127.0.0.1 1080
+</code></pre>
+<ol>
+<li>&#x7528;&#x6CD5;</li>
+</ol>
+<pre><code class="lang-bash">proxychains4 firefox
+proxychains4 ping www.google.com
+proxychains4 telnet somehot.com
+</code></pre>
+<hr>
+<h2 id="ubantu-&#x56FE;&#x5F62;&#x754C;&#x9762;-&#x79D1;&#x5B66;&#x4E0A;&#x7F51;">ubantu &#x56FE;&#x5F62;&#x754C;&#x9762; &#x79D1;&#x5B66;&#x4E0A;&#x7F51;</h2>
+<pre><code class="lang-bash">mkdir -p ~/ssr
+<span class="hljs-built_in">cd</span> ~/ssr
+
+wget https://github.com/qingshuisiyuan/electron-ssr-backup/releases/download/v0.2.6/electron-ssr-0.2.6.deb
+
+sudo dpkg -i electron-ssr-0.2.6.deb
+</code></pre>
+<p><img src="1573243224826.png" alt="Alt text"></p>
+<p>&#x5269;&#x4E0B;&#x7684;&#x5C31;&#x662F;&#x586B;&#x5199;&#x670D;&#x52A1;&#x5668; &#x53C2;&#x8003;&#x4EE5;&#x4E0B;
+<a href="https://alanlee.fun/2018/05/18/ubuntu-ssr/" target="_blank">https://alanlee.fun/2018/05/18/ubuntu-ssr/</a></p>
+<hr>
+<h2 id="ubuntu&#x4E0B;deb&#x5305;&#x7684;&#x5B89;&#x88C5;">Ubuntu&#x4E0B;deb&#x5305;&#x7684;&#x5B89;&#x88C5;</h2>
+<p><a href="https://blog.csdn.net/qwdafedv/article/details/77836137" target="_blank">https://blog.csdn.net/qwdafedv/article/details/77836137</a></p>
+<h2 id="ubuntu&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8F6F;&#x4EF6;&#x66F4;&#x65B0;&#x6E90;&#x548C;&#x66F4;&#x65B0;&#x955C;&#x50CF;">ubuntu&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8F6F;&#x4EF6;&#x66F4;&#x65B0;&#x6E90;&#x548C;&#x66F4;&#x65B0;&#x955C;&#x50CF;</h2>
+<p><a href="https://blog.csdn.net/d5224/article/details/52025897" target="_blank">https://blog.csdn.net/d5224/article/details/52025897</a>
+<a href="https://www.linuxidc.com/Linux/2017-11/148627.htm" target="_blank">https://www.linuxidc.com/Linux/2017-11/148627.htm</a></p>
 
                                 
                                 </section>
@@ -1492,7 +1617,7 @@ sudo <span class="hljs-built_in">fc</span>-cache <span class="hljs-_">-f</span> 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ubantu16.04.3-record","level":"1.1.67","depth":2,"next":{"title":"IntelliJ_IDEA-record","level":"1.1.68","depth":2,"path":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","ref":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","articles":[]},"previous":{"title":"ECMAScript_6-record","level":"1.1.66","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Ubantu16.04.3-record/Ubantu16.04.3-record.md","mtime":"2020-07-10T10:39:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-08T19:25:32.749Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ubantu16.04.3-record","level":"1.1.67","depth":2,"next":{"title":"IntelliJ_IDEA-record","level":"1.1.68","depth":2,"path":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","ref":"records/IntelliJ_IDEA-record/IntelliJ_IDEA-record.md","articles":[]},"previous":{"title":"ECMAScript_6-record","level":"1.1.66","depth":2,"path":"records/ECMAScript_6-record/ECMAScript_6-record.md","ref":"records/ECMAScript_6-record/ECMAScript_6-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/Ubantu16.04.3-record/Ubantu16.04.3-record.md","mtime":"2020-11-08T19:25:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-08T19:28:08.773Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
