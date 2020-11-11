@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-cd $HOME/git_repository/snbook_edit
-/usr/local/bin/bash sn_unzip.sh
-/usr/local/bin/node summary.js
-/usr/local/bin/bash unzip_publish.sh
