@@ -1685,7 +1685,118 @@ public class SleepHelperAspect{
 <a href="https://zhidao.baidu.com/question/371238289198208804.html" target="_blank">https://zhidao.baidu.com/question/371238289198208804.html</a>
 --------------------- </p>
 <p>&#x539F;&#x6587;&#xFF1A;<a href="https://blog.csdn.net/u011983531/article/details/70504281" target="_blank">https://blog.csdn.net/u011983531/article/details/70504281</a></p>
+<hr>
+<h2 id="aopaspectj-autoproxy-"><code>&lt;aop:aspectj-autoproxy /&gt;</code></h2>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">xsd:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;aspectj-autoproxy&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span> <span class="hljs-attr">source</span>=<span class="hljs-string">&quot;java:org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator&quot;</span>&gt;</span>&lt;![CDATA[
+    Enables the use of the @AspectJ style of Spring AOP.
 
+    See org.springframework.context.annotation.EnableAspectJAutoProxy Javadoc
+    for information on code-based alternatives to this XML element.
+            ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xsd:complexType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xsd:sequence</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xsd:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;include&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;includeType&quot;</span> <span class="hljs-attr">minOccurs</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">maxOccurs</span>=<span class="hljs-string">&quot;unbounded&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span>&gt;</span>&lt;![CDATA[
+    Indicates that only @AspectJ beans with names matched by the (regex)
+    pattern will be considered as defining aspects to use for Spring autoproxying.
+                        ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:element</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:sequence</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xsd:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;proxy-target-class&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;xsd:boolean&quot;</span> <span class="hljs-attr">default</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span>&gt;</span>&lt;![CDATA[
+    Are class-based (CGLIB) proxies to be created? By default, standard
+    Java interface-based proxies are created.
+                    ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:attribute</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xsd:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;expose-proxy&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;xsd:boolean&quot;</span> <span class="hljs-attr">default</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span>&gt;</span>&lt;![CDATA[
+    Indicate that the proxy should be exposed by the AOP framework as a
+    ThreadLocal for retrieval via the AopContext class. Off by default,
+    i.e. no guarantees that AopContext access will work.
+                    ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:attribute</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:complexType</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:element</span>&gt;</span>
+</code></pre>
+<p><strong>proxy-target-class</strong> &#x9ED8;&#x8BA4;&#x662F;false</p>
+<p><strong>proxy-target-class=&quot;true&quot; &#x4E0E;proxy-target-class=&quot;false&quot;&#x7684;&#x533A;&#x522B;</strong></p>
+<p>proxy-target-class&#x5C5E;&#x6027;&#x503C;&#x51B3;&#x5B9A;&#x662F;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x7684;&#x8FD8;&#x662F;&#x57FA;&#x4E8E;&#x7C7B;&#x7684;&#x4EE3;&#x7406;&#x88AB;&#x521B;&#x5EFA;&#x3002;&#x5982;&#x679C;proxy-target-class &#x5C5E;&#x6027;&#x503C;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;true&#xFF0C;&#x90A3;&#x4E48;&#x57FA;&#x4E8E;&#x7C7B;&#x7684;&#x4EE3;&#x7406;&#x5C06;&#x8D77;&#x4F5C;&#x7528;&#xFF08;&#x8FD9;&#x65F6;&#x9700;&#x8981;cglib&#x5E93;&#xFF09;&#x3002;&#x5982;&#x679C;proxy-target-class&#x5C5E;&#x503C;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;false&#x6216;&#x8005;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x88AB;&#x7701;&#x7565;&#xFF0C;&#x90A3;&#x4E48;&#x6807;&#x51C6;&#x7684;JDK &#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x7684;&#x4EE3;&#x7406;&#x5C06;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<p><strong><aop:aspectj-autoproxy proxy-target-class="false"> &#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#xFF0C;&#x4F7F;&#x7528;JDK&#x52A8;&#x6001;&#x4EE3;&#x7406;</aop:aspectj-autoproxy></strong></p>
+<p><strong><aop:aspectj-autoproxy proxy-target-class="true"> &#x57FA;&#x4E8E;&#x7C7B;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;cglib&#x5E93;</aop:aspectj-autoproxy></strong></p>
+<hr>
+<h2 id=""><aop:config></aop:config></h2>
+<p>proxy-target-class=&quot;true&quot; &#x8868;&#x793A;&#x5F3A;&#x5236;&#x4F7F;&#x7528; CGLIB &#x6280;&#x672F;&#x6765;&#x5B9E;&#x73B0;AOP&#xFF0C;&#x56E0;&#x4E3A;CGLIB&#x662F;&#x751F;&#x6210;&#x5B50;&#x7C7B;&#x4E5F;&#x5C31;&#x662F;&#x4EE3;&#x7406;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;proxy-target-class&#xFF0C;&#x8868;&#x793A;&#x662F;&#x5426;&#x4EE3;&#x7406;&#x76EE;&#x6807;&#x7C7B;&#x3002;</p>
+<p><aop:config> &#x5C31;&#x4F1A;&#x7531;spring&#x6765;&#x9009;&#x62E9;&#xFF0C;spring&#x4F18;&#x5148;&#x4F7F;&#x7528;JDK&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x6765;&#x5B9E;&#x73B0;AOP&#x3002;</aop:config></p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">xsd:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;config&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span>&gt;</span>&lt;![CDATA[
+    A section (compartmentalization) of AOP-specific configuration (including
+    aspects, pointcuts, etc).
+            ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xsd:complexType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xsd:sequence</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xsd:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;pointcut&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;pointcutType&quot;</span> <span class="hljs-attr">minOccurs</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">maxOccurs</span>=<span class="hljs-string">&quot;unbounded&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span>&gt;</span>&lt;![CDATA[
+    A named pointcut definition.
+                        ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:element</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xsd:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;advisor&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;advisorType&quot;</span> <span class="hljs-attr">minOccurs</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">maxOccurs</span>=<span class="hljs-string">&quot;unbounded&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span> <span class="hljs-attr">source</span>=<span class="hljs-string">&quot;java:org.springframework.aop.Advisor&quot;</span>&gt;</span>&lt;![CDATA[
+    A named advisor definition.
+                        ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:element</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xsd:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;aspect&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;aspectType&quot;</span> <span class="hljs-attr">minOccurs</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">maxOccurs</span>=<span class="hljs-string">&quot;unbounded&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span>&gt;</span>&lt;![CDATA[
+    A named aspect definition.
+                        ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:element</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:sequence</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xsd:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;proxy-target-class&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;xsd:boolean&quot;</span> <span class="hljs-attr">default</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span>&gt;</span>&lt;![CDATA[
+    Are class-based (CGLIB) proxies to be created? By default, standard
+    Java interface-based proxies are created.
+                    ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:attribute</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xsd:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;expose-proxy&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;xsd:boolean&quot;</span> <span class="hljs-attr">default</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xsd:annotation</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xsd:documentation</span>&gt;</span>&lt;![CDATA[
+    Indicate that the proxy should be exposed by the AOP framework as a
+    ThreadLocal for retrieval via the AopContext class. Off by default,
+    i.e. no guarantees that AopContext access will work.
+                    ]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">xsd:documentation</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:annotation</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:attribute</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:complexType</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xsd:element</span>&gt;</span>
+</code></pre>
+<hr>
+<h2 id="spring-aop-&#x4E0D;&#x540C;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#x4EA7;&#x751F;&#x7684;&#x51B2;&#x7A81;&#x95EE;&#x9898;"><a href="https://www.cnblogs.com/digdeep/p/4624998.html" target="_blank">Spring AOP &#x4E0D;&#x540C;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#x4EA7;&#x751F;&#x7684;&#x51B2;&#x7A81;&#x95EE;&#x9898;</a></h2>
+<h2 id="&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x89E3;&#x6790;-&#x539F;&#x6765;&#x662F;namespacehandlersupport">&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x89E3;&#x6790; &#x539F;&#x6765;&#x662F;NamespaceHandlerSupport</h2>
+<p><img src="image-20210129134418470.png" alt="image-20210129134418470"></p>
+<hr>
+<h2 id="defaultadvisorautoproxycreator-&#x914D;&#x7F6E;">DefaultAdvisorAutoProxyCreator &#x914D;&#x7F6E;</h2>
+<pre><code>   &lt;bean class=&quot;org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator&quot; depends-on=&quot;lifecycleBeanPostProcessor&quot;&gt;
+       &lt;property name=&quot;proxyTargetClass&quot; value=&quot;true&quot;/&gt;
+   &lt;/bean&gt;
+</code></pre>
                                 
                                 </section>
                             
@@ -1728,7 +1839,7 @@ public class SleepHelperAspect{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"spring-aop-record","level":"1.1.66","depth":2,"next":{"title":"javascript-record","level":"1.1.67","depth":2,"path":"records/javascript-record/javascript-record.md","ref":"records/javascript-record/javascript-record.md","articles":[]},"previous":{"title":"Typescript-record","level":"1.1.65","depth":2,"path":"records/Typescript-record/Typescript-record.md","ref":"records/Typescript-record/Typescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/spring-aop-record/spring-aop-record.md","mtime":"2021-01-29T00:48:03.925Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T01:11:34.794Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"spring-aop-record","level":"1.1.66","depth":2,"next":{"title":"javascript-record","level":"1.1.67","depth":2,"path":"records/javascript-record/javascript-record.md","ref":"records/javascript-record/javascript-record.md","articles":[]},"previous":{"title":"Typescript-record","level":"1.1.65","depth":2,"path":"records/Typescript-record/Typescript-record.md","ref":"records/Typescript-record/Typescript-record.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons@2.1.0","edit-link","packt-fontsettings"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"packt-fontsettings":{"family":"sans","size":2,"theme":"white"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"stone0117/snbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页","base":"https://github.com/stone0117/snbook_edit/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"stone","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"stone park gitbook","language":"zh-hans","gitbook":"*","description":"日常记录"},"file":{"path":"records/spring-aop-record/spring-aop-record.md","mtime":"2021-01-29T05:58:56.238Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-31T06:27:01.635Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
