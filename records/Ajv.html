@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Ajv</title>
+    <meta charset='utf-8'>
+    <link href='https://cdn.maxiang.io/res-min/themes/marxico.css' rel='stylesheet'>
+    <style></style>
+  </head>
+  <body>
+    <div id='preview-contents' class='note-content'>
+
+      <h1 id="ajv">Ajv</h1>
+
+      <div>
+        <div class="toc">
+          <div class="toc">
+            <ul>
+              <li><a href="#ajv">Ajv</a>
+                <ul>
+                  <li><a href="#官方文档">官方文档</a></li>
+                  <li><a href="#中文文档">中文文档</a></li>
+                  <li><a href="#在线测试">在线测试</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="官方文档">官方文档</h2>
+
+      <p><a href="https://ajv.js.org/guide/getting-started.html" target="_blank">https://ajv.js.org/guide/getting-started.html</a></p>
+
+      <hr>
+
+      <h2 id="中文文档">中文文档</h2>
+
+      <p><a href="https://chinabigpan.github.io/ajv-docs-zh-cn/routes/basic/" target="_blank">https://chinabigpan.github.io/ajv-docs-zh-cn/routes/basic/</a></p>
+
+      <hr>
+
+      <h2 id="在线测试">在线测试</h2>
+
+      <p><a href="https://npm.runkit.com/ajv" target="_blank">https://npm.runkit.com/ajv</a></p>
+
+      <hr>
+
+      <pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><div class="hljs-line"><span class="hljs-keyword">const</span> Ajv = <span class="hljs-built_in">require</span>(<span class="hljs-string">"ajv"</span>)
+</div><div class="hljs-line"><span class="hljs-keyword">const</span> ajv = <span class="hljs-keyword">new</span> Ajv() <span class="hljs-comment">// options can be passed, e.g. {allErrors: true}</span>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><span class="hljs-keyword">const</span> schema = {
+</div><div class="hljs-line">  <span class="hljs-attr">type</span>: <span class="hljs-string">"object"</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">properties</span>: {
+</div><div class="hljs-line">    <span class="hljs-attr">foo</span>: {<span class="hljs-attr">type</span>: <span class="hljs-string">"integer"</span>},
+</div><div class="hljs-line">    <span class="hljs-attr">bar</span>: {<span class="hljs-attr">type</span>: <span class="hljs-string">"string"</span>}
+</div><div class="hljs-line">  },
+</div><div class="hljs-line">  <span class="hljs-attr">required</span>: [<span class="hljs-string">"foo"</span>],
+</div><div class="hljs-line">  <span class="hljs-attr">additionalProperties</span>: <span class="hljs-literal">false</span>
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><span class="hljs-keyword">const</span> validate = ajv.compile(schema)
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><span class="hljs-keyword">const</span> data = {
+</div><div class="hljs-line">  <span class="hljs-attr">foo</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">  <span class="hljs-attr">bar</span>: <span class="hljs-string">"abc"</span>
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><span class="hljs-keyword">const</span> valid = validate(data)
+</div><div class="hljs-line"><span class="hljs-keyword">if</span> (!valid) <span class="hljs-built_in">console</span>.log(validate.errors)
+</div></code></pre>
+
+      <p>‘</p></div>
+  </body>
+</html>
